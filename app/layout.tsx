@@ -62,7 +62,7 @@ export const metadata: Metadata = {
 		siteName: "KRAFTz",
 		images: [
 			{
-				url: "/og-image.jpg",
+				url: "/og-image.svg",
 				width: 1200,
 				height: 630,
 				alt: "KRAFTz - Krafting Growth Intelligently",
@@ -74,7 +74,7 @@ export const metadata: Metadata = {
 		title: "KRAFTz - Krafting Growth Intelligently",
 		description:
 			"KRAFTz delivers comprehensive digital marketing, hospitality consulting, and travel experience services.",
-		images: ["/og-image.jpg"],
+		images: ["/og-image.svg"],
 		creator: "@kraftz",
 	},
 	robots: {
