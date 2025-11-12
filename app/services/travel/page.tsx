@@ -1,6 +1,3 @@
-import ServicesHero from "@/components/services/hero";
-import ServiceOverview from "@/components/services/overview";
-import AnimatedParagraph from "@/components/services/animated-paragraph";
 import TravelPageClient from "./travel-client";
 import type { Metadata } from "next";
 

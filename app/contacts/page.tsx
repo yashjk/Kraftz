@@ -1,5 +1,4 @@
 import FormContainer from "@/components/contacts/formcontainer";
-import Hero from "@/components/contacts/hero";
 import type { Metadata } from "next";
 
 export const metadata: Metadata = {

@@ -1,5 +1,4 @@
 import { cn } from "@/lib/utils";
-import Image from "next/image";
 
 function Overview() {
 	return (
@@ -35,7 +34,7 @@ function Overview() {
 					<br />
 					From hotel revenue management to OTA optimization, from digital
 					performance marketing, we design solutions that connect strategy with
-					results. We don't just improve performance we transform potential into
+					results. We don&apos;t just improve performance we transform potential into
 					precision, and growth into leadership.
 				</p>
 			</div>

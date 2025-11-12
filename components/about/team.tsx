@@ -85,7 +85,7 @@ function Team() {
 				<FadeInUp delay={0.6} triggerOnce={true}>
 					<div className="space-y-4 text-muted-foreground leading-relaxed text-base md:text-lg max-w-3xl mx-auto">
 						<p>
-							We've successfully led initiatives that built large hotel portfolios,
+							We&apos;ve successfully led initiatives that built large hotel portfolios,
 							improved market share, and transformed revenue performance across
 							multiple geographies.
 						</p>

@@ -18,13 +18,13 @@ function Culture() {
 			<h2 className="my-8 text-4xl md:text-6xl">Our Culture</h2>
 			<p className="text-gray-500 leading-normal text-lg">
 				Built on trust, collaboration, and measurable outcomes, our culture
-				thrives on excellence and accountability. We don't just consult we
+				thrives on excellence and accountability. We don&apos;t just consult we
 				collaborate, co-create, and deliver transformation.
 				<br />
 				<br />
 				Every partnership we undertake is guided by our commitment to clarity,
 				creativity, and commercial success. At Kraftz, growth is not a metric —
-				it's a mindset.
+				it&apos;s a mindset.
 			</p>
 		</section>
 	);
