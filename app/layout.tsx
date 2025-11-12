@@ -48,6 +48,10 @@ export const metadata: Metadata = {
 		address: false,
 		telephone: false,
 	},
+	icons: {
+		icon: "/icon.svg",
+		apple: "/icon.svg",
+	},
 	openGraph: {
 		type: "website",
 		locale: "en_US",
@@ -94,7 +98,7 @@ export const metadata: Metadata = {
 		canonical: "/",
 	},
 	category: "Business Services",
-    generator: 'v0.app'
+	generator: "v0.app",
 };
 
 const organizationSchema = {
