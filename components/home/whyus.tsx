@@ -93,6 +93,7 @@ function Whyus() {
 								delay={itemDelay}
 								triggerOnce={true}
 								usePositionDelay={false}
+								className="h-full"
 							>
 								<motion.div
 									whileHover={{
@@ -100,7 +101,7 @@ function Whyus() {
 										scale: 1.02,
 										transition: { duration: 0.3 },
 									}}
-									className="card-3d relative p-6 md:p-8 rounded-xl bg-gradient-to-br from-white to-accent/5 border border-border transition-all duration-300 hover:shadow-lg hover:border-accent/40"
+									className="card-3d relative p-6 md:p-8 rounded-xl bg-gradient-to-br from-white to-accent/5 border border-border transition-all duration-300 hover:shadow-lg hover:border-accent/40 h-full flex flex-col"
 								>
 									<motion.div
 										className="absolute top-0 left-0 w-1.5 h-12 bg-gradient-to-b from-primary to-primary/30 rounded-full"
@@ -108,7 +109,7 @@ function Whyus() {
 										transition={{ duration: 0.3 }}
 									/>
 
-									<div className="pl-5">
+									<div className="pl-5 flex flex-col flex-grow">
 										<h3
 											className="text-lg md:text-xl font-semibold mb-3 text-foreground"
 											style={{
@@ -119,7 +120,7 @@ function Whyus() {
 											{feature.title}
 										</h3>
 
-										<p className="text-muted-foreground leading-relaxed mb-4 text-sm md:text-base">
+										<p className="text-muted-foreground leading-relaxed mb-4 text-sm md:text-base flex-grow">
 											<AnimatedText
 												text={feature.description}
 												wordDelay={0.02}
@@ -128,7 +129,7 @@ function Whyus() {
 											/>
 										</p>
 
-										<Link href="/contacts">
+										<Link href="/contacts" className="mt-auto">
 											<motion.div
 												className="inline-flex items-center text-primary font-medium transition-colors duration-300 hover:text-secondary cursor-pointer"
 												whileHover={{ x: 5 }}

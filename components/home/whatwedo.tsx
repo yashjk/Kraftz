@@ -144,10 +144,11 @@ function WhatWeDo() {
 								delay={itemDelay}
 								triggerOnce={true}
 								usePositionDelay={false}
+								className="h-full"
 							>
-								<Link href={service.href}>
+								<Link href={service.href} className="h-full block">
 									<motion.div
-										className="service-card group relative p-8 cursor-pointer"
+										className="service-card group relative p-8 cursor-pointer h-full flex flex-col"
 										whileHover={{ y: -8, transition: { duration: 0.3 } }}
 									>
 										{/* Decorative corner element */}
@@ -175,7 +176,7 @@ function WhatWeDo() {
 											{service.title}
 										</h3>
 
-										<p className="text-muted-foreground leading-relaxed text-sm md:text-base">
+										<p className="text-muted-foreground leading-relaxed text-sm md:text-base flex-grow">
 											{service.description}
 										</p>
 
