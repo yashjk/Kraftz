@@ -142,7 +142,7 @@ export default function RootLayout({
 	return (
 		<html lang="en">
 			<body
-				className={`${gilda.variable} ${jost.variable} ${playfair.variable} antialiased max-w-[1536px] mx-auto`}
+				className={`${gilda.variable} ${jost.variable} ${playfair.variable} antialiased bg-white`}
 			>
 				<Script
 					id="organization-schema"

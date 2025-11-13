@@ -58,8 +58,8 @@ function FormContainer() {
 							</h1>
 							<p className="text-muted-foreground text-sm md:text-base max-w-2xl mx-auto">
 								Reach out to us for digital marketing services, hospitality
-								consulting, or luxury travel experiences. We&apos;re here to help
-								your business grow intelligently.
+								consulting, or luxury travel experiences. We&apos;re here to
+								help your business grow intelligently.
 							</p>
 						</div>
 					</FadeInUp>
@@ -142,7 +142,7 @@ function FormContainer() {
 									</div>
 									<div className="flex-1 min-w-0">
 										<div
-											className="text-xs font-semibold text-muted-foreground uppercase tracking-wider mb-1"
+											className="text-sm font-semibold text-muted-foreground uppercase tracking-wider mb-1"
 											style={{
 												fontFamily: "var(--font-playfair), serif",
 											}}

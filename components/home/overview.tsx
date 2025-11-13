@@ -19,7 +19,7 @@ function Overview() {
 	return (
 		<section
 			id="overview"
-			className="relative px-8 md:px-16 lg:px-28 py-16 md:py-24 bg-background"
+			className="relative px-8 md:px-16 lg:px-28 pt-8 md:pt-12 pb-16 md:pb-24 bg-background"
 		>
 			<div className="max-w-6xl mx-auto">
 				<div className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-12 items-center">

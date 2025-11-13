@@ -486,7 +486,10 @@ export function AnimatedText({
 				const lineWords = paragraphLineWords[paragraphIndex];
 
 				return (
-					<span key={paragraphIndex} style={{ display: "block" }}>
+					<span
+						key={paragraphIndex}
+						style={{ display: "block", fontSize: "16px" }}
+					>
 						{lines.map((line, lineIndex) => {
 							const lineStartDelay = getLineStartDelay(
 								paragraphIndex,
