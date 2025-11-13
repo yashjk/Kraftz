@@ -161,34 +161,33 @@ function Hero() {
 		},
 	];
 
-	// Spring animations for shapes with parallax delay
-	const shapeSprings = shapes.map((shape) => ({
-		...shape,
-		x: useSpring(useMotionValue(0), {
-			stiffness: Math.max(15, 35 - shape.id * 0.5),
-			damping: 20,
-		}),
-		y: useSpring(useMotionValue(0), {
-			stiffness: Math.max(15, 35 - shape.id * 0.5),
-			damping: 20,
-		}),
-	}));
+	// Spring animations for shapes with parallax delay - use state instead of hooks in loops
+	const [shapeOffsets, setShapeOffsets] = useState<
+		Array<{ x: number; y: number }>
+	>(shapes.map(() => ({ x: 0, y: 0 })));
 
-	// Update shape positions with parallax
+	// Update shape positions with parallax using smooth transitions
 	useEffect(() => {
-		shapeSprings.forEach((shapeSpring) => {
-			const offsetX =
-				(mousePosition.x -
-					(typeof window !== "undefined" ? window.innerWidth : 0) / 2) *
-				shapeSpring.delay;
-			const offsetY =
-				(mousePosition.y -
-					(typeof window !== "undefined" ? window.innerHeight : 0) / 2) *
-				shapeSpring.delay;
-			shapeSpring.x.set(offsetX);
-			shapeSpring.y.set(offsetY);
-		});
-	}, [mousePosition, shapeSprings]);
+		const updateOffsets = () => {
+			setShapeOffsets(
+				shapes.map((shape) => {
+					const offsetX =
+						(mousePosition.x -
+							(typeof window !== "undefined" ? window.innerWidth : 0) / 2) *
+						shape.delay;
+					const offsetY =
+						(mousePosition.y -
+							(typeof window !== "undefined" ? window.innerHeight : 0) / 2) *
+						shape.delay;
+					return { x: offsetX, y: offsetY };
+				})
+			);
+		};
+
+		// Use requestAnimationFrame for smooth updates
+		const rafId = requestAnimationFrame(updateOffsets);
+		return () => cancelAnimationFrame(rafId);
+	}, [mousePosition]);
 
 	// Gradient orb/glow that follows cursor
 	const orbX = useSpring(useMotionValue(0), { stiffness: 50, damping: 25 });
@@ -225,7 +224,7 @@ function Hero() {
 		}
 	}, [mousePosition]);
 
-	// Multi-colored particle trail
+	// Multi-colored particle trail - defined outside to avoid dependency issues
 	const particleColors = [
 		"bg-primary/50",
 		"bg-accent/50",
@@ -273,7 +272,8 @@ function Hero() {
 		}, 60);
 
 		return () => clearInterval(interval);
-	}, []); // Empty dependency array - interval runs continuously
+		// eslint-disable-next-line react-hooks/exhaustive-deps
+	}, []); // Empty dependency array - interval runs continuously, particleColors is stable
 
 	// Update and fade particles
 	useEffect(() => {
@@ -372,7 +372,7 @@ function Hero() {
 
 				{/* Floating geometric shapes with parallax delay */}
 				{shapes.map((shape, index) => {
-					const spring = shapeSprings[index];
+					const offset = shapeOffsets[index];
 					const isClient = typeof window !== "undefined";
 					const baseX = isClient
 						? (window.innerWidth * parseFloat(shape.x)) / 100
@@ -386,8 +386,8 @@ function Hero() {
 							key={shape.id}
 							className="absolute pointer-events-none"
 							style={{
-								x: spring.x,
-								y: spring.y,
+								x: offset.x,
+								y: offset.y,
 								left: baseX,
 								top: baseY,
 								width: shape.size,
@@ -399,9 +399,26 @@ function Hero() {
 								scale: [1, 1.1, 1],
 							}}
 							transition={{
-								duration: 15 + shape.id * 2,
-								repeat: Infinity,
-								ease: "linear",
+								x: {
+									type: "spring",
+									stiffness: Math.max(15, 35 - shape.id * 0.5),
+									damping: 20,
+								},
+								y: {
+									type: "spring",
+									stiffness: Math.max(15, 35 - shape.id * 0.5),
+									damping: 20,
+								},
+								rotate: {
+									duration: 15 + shape.id * 2,
+									repeat: Infinity,
+									ease: "linear",
+								},
+								scale: {
+									duration: 15 + shape.id * 2,
+									repeat: Infinity,
+									ease: "linear",
+								},
 							}}
 						>
 							{shape.type === "circle" && (
