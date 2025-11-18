@@ -56,6 +56,15 @@ function Whyus() {
 			<div className="relative">
 				{/* Hero Section */}
 				<section className="relative px-8 md:px-16 lg:px-28 pt-12 md:pt-16 lg:pt-20 pb-6 bg-gradient-to-b from-background via-background to-accent/5 overflow-hidden">
+					{/* Top gradient line separator */}
+					<FadeInUp delay={0.1} triggerOnce={true}>
+						<motion.div
+							className="absolute top-0 left-0 right-0 h-1 bg-gradient-to-r from-transparent via-accent to-transparent opacity-30"
+							initial={{ scaleX: 0 }}
+							animate={{ scaleX: 1 }}
+							transition={{ duration: 1 }}
+						/>
+					</FadeInUp>
 					{/* Animated background elements */}
 					<motion.div
 						className="absolute top-0 right-0 w-96 h-96 bg-gradient-to-br from-primary/10 to-transparent rounded-full blur-3xl"
