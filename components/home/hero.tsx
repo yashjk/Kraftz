@@ -502,14 +502,48 @@ function Hero() {
 		const shapeCount = 35; // Mix of icons and geometric shapes - increased for more shapes
 		const shapesArray = [];
 
+		// Create a grid-based distribution system for even spacing
+		const gridCols = Math.ceil(Math.sqrt(shapeCount));
+		const gridRows = Math.ceil(shapeCount / gridCols);
+		const cellWidth = 100 / gridCols;
+		const cellHeight = 100 / gridRows;
+
+		// Shuffle arrays to randomize which shapes/icons appear where
+		const shuffledIcons = [...icons].sort(() => Math.random() - 0.5);
+		const shuffledGeometricShapes = [...geometricShapes].sort(
+			() => Math.random() - 0.5
+		);
+
+		// Create array of positions and shuffle them
+		const positions: Array<{ x: number; y: number }> = [];
+		for (let row = 0; row < gridRows; row++) {
+			for (let col = 0; col < gridCols; col++) {
+				if (positions.length < shapeCount) {
+					// Add some randomness within each cell for natural look
+					const baseX = col * cellWidth + cellWidth / 2;
+					const baseY = row * cellHeight + cellHeight / 2;
+					const jitterX = (Math.random() - 0.5) * cellWidth * 0.4; // 40% jitter
+					const jitterY = (Math.random() - 0.5) * cellHeight * 0.4;
+					positions.push({
+						x: Math.max(5, Math.min(95, baseX + jitterX)),
+						y: Math.max(5, Math.min(95, baseY + jitterY)),
+					});
+				}
+			}
+		}
+		// Shuffle positions to avoid patterns
+		positions.sort(() => Math.random() - 0.5);
+
 		for (let i = 0; i < shapeCount; i++) {
 			const isGeometric = i % 2 === 0; // Alternate between geometric and icons
-			const xPercent = Math.random() * 100;
-			const yPercent = Math.random() * 100;
+			const position = positions[i];
+			const xPercent = position.x;
+			const yPercent = position.y;
 			const size = 40 + Math.random() * 40; // 40-80px
 
 			if (isGeometric) {
-				const shapeType = geometricShapes[i % geometricShapes.length];
+				const shapeType =
+					shuffledGeometricShapes[i % shuffledGeometricShapes.length];
 				shapesArray.push({
 					id: `shape-${i}`,
 					type: "geometric",
@@ -519,7 +553,7 @@ function Hero() {
 					size,
 				});
 			} else {
-				const Icon = icons[i % icons.length];
+				const Icon = shuffledIcons[i % shuffledIcons.length];
 				shapesArray.push({
 					id: `shape-${i}`,
 					type: "icon",
