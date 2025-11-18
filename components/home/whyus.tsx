@@ -53,43 +53,58 @@ function Whyus() {
 
 	return (
 		<>
-			<section className="relative px-8 md:px-16 lg:px-28 pt-12 md:pt-16 lg:pt-20 pb-6 bg-background overflow-hidden">
-				<FadeInUp delay={0.3} triggerOnce={true}>
+			<div className="relative">
+				{/* Hero Section */}
+				<section className="relative px-8 md:px-16 lg:px-28 pt-12 md:pt-16 lg:pt-20 pb-6 bg-gradient-to-b from-background via-background to-accent/5 overflow-hidden">
+					{/* Animated background elements */}
 					<motion.div
-						className="absolute top-0 left-0 right-0 h-1 bg-gradient-to-r from-transparent via-accent to-transparent opacity-30"
-						initial={{ scaleX: 0 }}
-						animate={{ scaleX: 1 }}
-						transition={{ duration: 1 }}
-					/>
-				</FadeInUp>
-				<div className="absolute inset-0 pointer-events-none">
-					<motion.div
-						className="absolute bottom-0 right-0 w-96 h-96 bg-accent/10 rounded-full blur-3xl"
+						className="absolute top-0 right-0 w-96 h-96 bg-gradient-to-br from-primary/10 to-transparent rounded-full blur-3xl"
 						animate={{
-							scale: [1, 1.2, 1],
-							opacity: [0.3, 0.5, 0.3],
+							x: [0, 30, 0],
+							y: [0, -30, 0],
+							scale: [1, 1.1, 1],
 						}}
 						transition={{
-							duration: 8,
+							duration: 20,
 							repeat: Infinity,
 							ease: "easeInOut",
 						}}
 					/>
-				</div>
+					<motion.div
+						className="absolute bottom-0 left-0 w-80 h-80 bg-gradient-to-tr from-accent/15 to-transparent rounded-full blur-3xl"
+						animate={{
+							x: [0, -20, 0],
+							y: [0, 20, 0],
+							scale: [1, 1.15, 1],
+						}}
+						transition={{
+							duration: 25,
+							repeat: Infinity,
+							ease: "easeInOut",
+						}}
+					/>
 
-				<div className="relative">
-					<FadeInUp triggerOnce={true}>
-						<div className="mb-12 md:mb-16">
-							<h2 className="font-heading text-4xl md:text-5xl lg:text-5xl font-bold text-[#0249A7] leading-tight mb-4 text-center">
+					<div className="relative text-center px-8 md:px-28">
+						<FadeInUp delay={0.2} triggerOnce={true}>
+							<h2 className="font-heading text-4xl md:text-5xl lg:text-5xl font-bold mb-6 text-[#0249A7]">
 								Why Choose Kraftz?
 							</h2>
-							<p className="text-[18px] md:text-lg text-muted-foreground text-center max-w-2xl mx-auto">
-								We combine expertise, innovation, and proven results to
-								transform your hospitality business
+						</FadeInUp>
+						<FadeInUp delay={0.3} triggerOnce={true}>
+							<p className="text-[18px] md:text-lg leading-relaxed text-foreground">
+								<AnimatedText
+									text="We combine expertise, innovation, and proven results to transform your hospitality business. Our holistic approach integrates revenue management, distribution strategy, and brand elevation to deliver measurable growth and exceptional guest experiences."
+									delay={0.4}
+									wordDelay={0.02}
+									triggerOnce={true}
+								/>
 							</p>
-						</div>
-					</FadeInUp>
+						</FadeInUp>
+					</div>
+				</section>
 
+				{/* Features Grid */}
+				<div className="px-8 md:px-16 lg:px-28 pt-6 pb-12 md:pb-20 bg-background">
 					<div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-2 md:gap-3">
 						{features.map((feature, index) => {
 							const itemDelay = index * 0.1;
@@ -146,7 +161,7 @@ function Whyus() {
 						})}
 					</div>
 				</div>
-			</section>
+			</div>
 			<ConnectCTA />
 			<FadeInUp delay={features.length * 0.6 + 0.2} triggerOnce={true}>
 				<div className="my-4 h-1.5 w-32 bg-gradient-to-r from-secondary via-secondary to-transparent opacity-60 mx-auto" />
