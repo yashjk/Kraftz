@@ -1,6 +1,6 @@
 "use client";
 
-import { motion } from "framer-motion";
+import { motion, Transition } from "framer-motion";
 import { ReactNode, useState, useEffect, useRef } from "react";
 import { useInView } from "react-intersection-observer";
 
@@ -36,24 +36,24 @@ export const scaleIn = {
 };
 
 // Animation transition defaults
-export const defaultTransition = {
+export const defaultTransition: Transition = {
 	duration: 0.6,
-	ease: [0.4, 0, 0.2, 1],
+	ease: [0.4, 0, 0.2, 1] as [number, number, number, number],
 };
 
-export const fastTransition = {
+export const fastTransition: Transition = {
 	duration: 0.3,
-	ease: [0.4, 0, 0.2, 1],
+	ease: [0.4, 0, 0.2, 1] as [number, number, number, number],
 };
 
-export const slowTransition = {
+export const slowTransition: Transition = {
 	duration: 0.8,
-	ease: [0.4, 0, 0.2, 1],
+	ease: [0.4, 0, 0.2, 1] as [number, number, number, number],
 };
 
 // Helper function to calculate delay based on position (top-left to bottom-right)
 export function calculatePositionDelay(
-	elementRef: React.RefObject<HTMLElement>,
+	elementRef: React.RefObject<HTMLElement | null>,
 	baseDelay: number = 0
 ): number {
 	if (!elementRef.current) return baseDelay;
@@ -116,7 +116,9 @@ export function FadeInUp({
 			initial="hidden"
 			animate={inView ? "visible" : "hidden"}
 			variants={fadeInUp}
-			transition={{ ...defaultTransition, delay: calculatedDelay }}
+			transition={
+				{ ...defaultTransition, delay: calculatedDelay } as Transition
+			}
 			className={className}
 		>
 			{children}
@@ -167,7 +169,9 @@ export function FadeIn({
 			initial="hidden"
 			animate={inView ? "visible" : "hidden"}
 			variants={fadeIn}
-			transition={{ ...defaultTransition, delay: calculatedDelay }}
+			transition={
+				{ ...defaultTransition, delay: calculatedDelay } as Transition
+			}
 			className={className}
 		>
 			{children}
@@ -218,7 +222,9 @@ export function SlideInLeft({
 			initial="hidden"
 			animate={inView ? "visible" : "hidden"}
 			variants={slideInLeft}
-			transition={{ ...defaultTransition, delay: calculatedDelay }}
+			transition={
+				{ ...defaultTransition, delay: calculatedDelay } as Transition
+			}
 			className={className}
 		>
 			{children}
@@ -269,7 +275,9 @@ export function SlideInRight({
 			initial="hidden"
 			animate={inView ? "visible" : "hidden"}
 			variants={slideInRight}
-			transition={{ ...defaultTransition, delay: calculatedDelay }}
+			transition={
+				{ ...defaultTransition, delay: calculatedDelay } as Transition
+			}
 			className={className}
 		>
 			{children}
@@ -320,7 +328,9 @@ export function ScaleIn({
 			initial="hidden"
 			animate={inView ? "visible" : "hidden"}
 			variants={scaleIn}
-			transition={{ ...defaultTransition, delay: calculatedDelay }}
+			transition={
+				{ ...defaultTransition, delay: calculatedDelay } as Transition
+			}
 			className={className}
 		>
 			{children}
@@ -486,10 +496,7 @@ export function AnimatedText({
 				const lineWords = paragraphLineWords[paragraphIndex];
 
 				return (
-					<span
-						key={paragraphIndex}
-						style={{ display: "block", fontSize: "16px" }}
-					>
+					<span key={paragraphIndex} style={{ display: "block" }}>
 						{lines.map((line, lineIndex) => {
 							const lineStartDelay = getLineStartDelay(
 								paragraphIndex,
@@ -529,7 +536,12 @@ export function AnimatedText({
 																transition: {
 																	delay: wordDelayValue,
 																	duration: wordDuration,
-																	ease: [0.4, 0, 0.2, 1],
+																	ease: [0.4, 0, 0.2, 1] as [
+																		number,
+																		number,
+																		number,
+																		number
+																	],
 																},
 														  }
 														: { opacity: 0, y: 20 }

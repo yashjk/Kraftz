@@ -47,16 +47,10 @@ function FormContainer() {
 				<div className="relative max-w-7xl mx-auto">
 					<FadeInUp triggerOnce={true}>
 						<div className="text-center mb-6">
-							<h1
-								className="text-4xl md:text-5xl lg:text-6xl mb-3 text-[#2d5a8a]"
-								style={{
-									fontFamily: "var(--font-playfair), serif",
-									fontWeight: 700,
-								}}
-							>
+							<h1 className="font-heading text-4xl md:text-5xl lg:text-6xl font-bold mb-3 text-[#0249A7]">
 								Contact Us
 							</h1>
-							<p className="text-muted-foreground text-sm md:text-base max-w-2xl mx-auto">
+							<p className="text-[18px] md:text-lg leading-relaxed text-muted-foreground max-w-2xl mx-auto">
 								Reach out to us for digital marketing services, hospitality
 								consulting, or luxury travel experiences. We&apos;re here to
 								help your business grow intelligently.
@@ -91,15 +85,10 @@ function FormContainer() {
 										</svg>
 									</div>
 									<div className="flex-1 min-w-0">
-										<div
-											className="text-xs font-semibold text-muted-foreground uppercase tracking-wider mb-1"
-											style={{
-												fontFamily: "var(--font-playfair), serif",
-											}}
-										>
+										<div className="font-heading text-[18px] font-semibold text-muted-foreground uppercase tracking-wider mb-1">
 											Email
 										</div>
-										<div className="text-base font-medium text-foreground group-hover:text-primary transition-colors break-all">
+										<div className="text-[18px] font-medium text-foreground group-hover:text-primary transition-colors break-all">
 											{contactInfo.email}
 										</div>
 									</div>
@@ -141,15 +130,10 @@ function FormContainer() {
 										</svg>
 									</div>
 									<div className="flex-1 min-w-0">
-										<div
-											className="text-sm font-semibold text-muted-foreground uppercase tracking-wider mb-1"
-											style={{
-												fontFamily: "var(--font-playfair), serif",
-											}}
-										>
+										<div className="font-heading text-[18px] font-semibold text-muted-foreground uppercase tracking-wider mb-1">
 											UAE
 										</div>
-										<div className="text-base font-medium text-foreground group-hover:text-primary transition-colors">
+										<div className="text-[18px] font-medium text-foreground group-hover:text-primary transition-colors">
 											{contactInfo.phone_uae}
 										</div>
 									</div>
@@ -186,25 +170,20 @@ function FormContainer() {
 										</svg>
 									</div>
 									<div className="flex-1 min-w-0">
-										<div
-											className="text-xs font-semibold text-muted-foreground uppercase tracking-wider mb-1.5"
-											style={{
-												fontFamily: "var(--font-playfair), serif",
-											}}
-										>
+										<div className="font-heading text-[18px] font-semibold text-muted-foreground uppercase tracking-wider mb-1.5">
 											India
 										</div>
 										<div className="space-y-1.5">
 											<motion.a
 												href={`tel:${contactInfo.phone_ind_1}`}
-												className="block text-base font-medium text-foreground hover:text-primary transition-colors"
+												className="block text-[18px] font-medium text-foreground hover:text-primary transition-colors"
 												whileHover={{ x: 4 }}
 											>
 												{contactInfo.phone_ind_1}
 											</motion.a>
 											<motion.a
 												href={`tel:${contactInfo.phone_ind_2}`}
-												className="block text-base font-medium text-foreground hover:text-primary transition-colors"
+												className="block text-[18px] font-medium text-foreground hover:text-primary transition-colors"
 												whileHover={{ x: 4 }}
 											>
 												{contactInfo.phone_ind_2}
@@ -223,16 +202,10 @@ function FormContainer() {
 				<div className="relative max-w-7xl mx-auto">
 					<FadeInUp triggerOnce={true}>
 						<div className="text-center mb-6">
-							<span className="text-primary text-xs font-semibold tracking-widest uppercase mb-2 block">
+							<span className="text-primary text-[18px] font-semibold tracking-widest uppercase mb-2 block">
 								Our Offices
 							</span>
-							<h2
-								className="text-2xl md:text-3xl lg:text-4xl mb-3"
-								style={{
-									fontFamily: "var(--font-playfair), serif",
-									fontWeight: 700,
-								}}
-							>
+							<h2 className="font-heading text-4xl md:text-5xl lg:text-5xl font-bold mb-3 text-[#0249A7]">
 								Visit Us
 							</h2>
 						</div>
@@ -279,29 +252,23 @@ function FormContainer() {
 													/>
 												</svg>
 											</div>
-											<h3
-												className="text-lg md:text-xl mb-3"
-												style={{
-													fontFamily: "var(--font-playfair), serif",
-													fontWeight: 700,
-												}}
-											>
+											<h3 className="font-heading text-lg md:text-xl font-bold mb-3 text-[#0249A7]">
 												UAE Offices
 											</h3>
 											<div className="space-y-3 mb-4">
 												<div>
-													<div className="text-xs font-semibold text-foreground mb-0.5">
+													<div className="text-[18px] font-semibold text-foreground mb-0.5">
 														Business Office
 													</div>
-													<p className="text-muted-foreground text-sm leading-relaxed">
+													<p className="text-muted-foreground text-[18px] md:text-lg leading-relaxed">
 														{contactInfo.address_uae_business}
 													</p>
 												</div>
 												<div>
-													<div className="text-xs font-semibold text-foreground mb-0.5">
+													<div className="text-[18px] font-semibold text-foreground mb-0.5">
 														Registered Office
 													</div>
-													<p className="text-muted-foreground text-sm leading-relaxed">
+													<p className="text-muted-foreground text-[18px] md:text-lg leading-relaxed">
 														{contactInfo.address_uae_registered}
 													</p>
 												</div>
@@ -312,7 +279,7 @@ function FormContainer() {
 												)}`}
 												target="_blank"
 												rel="noopener noreferrer"
-												className="inline-flex items-center text-primary hover:text-primary/80 transition-colors font-medium text-xs"
+												className="inline-flex items-center text-primary hover:text-primary/80 transition-colors font-medium text-[18px]"
 											>
 												View Business Office on Google Maps
 												<svg
@@ -365,16 +332,10 @@ function FormContainer() {
 													/>
 												</svg>
 											</div>
-											<h3
-												className="text-lg md:text-xl mb-3"
-												style={{
-													fontFamily: "var(--font-playfair), serif",
-													fontWeight: 700,
-												}}
-											>
+											<h3 className="font-heading text-lg md:text-xl font-bold mb-3 text-[#0249A7]">
 												India Office
 											</h3>
-											<p className="text-muted-foreground text-sm leading-relaxed mb-4">
+											<p className="text-[18px] md:text-lg leading-relaxed text-muted-foreground mb-4">
 												{contactInfo.address_ind}
 											</p>
 											<a
@@ -383,7 +344,7 @@ function FormContainer() {
 												)}`}
 												target="_blank"
 												rel="noopener noreferrer"
-												className="inline-flex items-center text-primary hover:text-primary/80 transition-colors font-medium text-xs"
+												className="inline-flex items-center text-primary hover:text-primary/80 transition-colors font-medium text-[18px]"
 											>
 												View on Google Maps
 												<svg

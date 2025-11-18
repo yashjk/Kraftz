@@ -20,14 +20,6 @@ function Header() {
 		{ href: "/contacts", label: "Contact" },
 	];
 
-	// Filter out Home link when on home page
-	const filteredNavLinks = navLinks.filter((link) => {
-		if (pathname === "/" && link.href === "/") {
-			return false;
-		}
-		return true;
-	});
-
 	useEffect(() => {
 		const handleScroll = () => {
 			setScrolled(window.scrollY > 20);
@@ -55,7 +47,7 @@ function Header() {
 				initial={{ y: -100, opacity: 0 }}
 				animate={{ y: 0, opacity: 1 }}
 				transition={{ duration: 0.5 }}
-				className={`px-8 md:px-16 lg:px-28 py-5 flex justify-between items-center border-b border-border sticky top-0 z-50 transition-all duration-300 ${
+				className={`px-8 md:px-16 lg:px-28 flex justify-between items-center border-b border-border sticky top-0 z-50 transition-all duration-300 ${
 					scrolled
 						? "bg-white backdrop-blur-lg shadow-sm"
 						: "bg-white backdrop-blur-md"
@@ -64,7 +56,7 @@ function Header() {
 				<Logo className="cursor-pointer" />
 
 				<nav className="hidden md:flex gap-10 text-foreground">
-					{filteredNavLinks.map((link) => {
+					{navLinks.map((link) => {
 						const isActive = pathname === link.href;
 						return (
 							<Link
@@ -74,7 +66,7 @@ function Header() {
 							>
 								<motion.p
 									whileHover={{ y: -2 }}
-									className="relative font-medium transition-colors duration-300 hover:text-brand py-2"
+									className="relative font-medium transition-colors duration-300 hover:text-brand"
 								>
 									{link.label}
 									{isActive && (
@@ -137,7 +129,7 @@ function Header() {
 						className="md:hidden fixed inset-0 top-20 bg-background/95 backdrop-blur-lg border-b border-border z-40"
 					>
 						<nav className="flex flex-col gap-1 p-4">
-							{filteredNavLinks.map((link, index) => {
+							{navLinks.map((link, index) => {
 								const isActive = pathname === link.href;
 								return (
 									<motion.div

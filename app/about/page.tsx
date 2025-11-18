@@ -2,6 +2,7 @@ import Culture from "@/components/about/culture";
 import Overview from "@/components/about/overview";
 import Team from "@/components/about/team";
 import VisionMission from "@/components/about/visionmission";
+import ConnectCTA from "@/components/common/connect-cta";
 import type { Metadata } from "next";
 
 export const metadata: Metadata = {
@@ -39,6 +40,7 @@ function About() {
 			<VisionMission />
 			<Team />
 			<Culture />
+			<ConnectCTA />
 		</>
 	);
 }

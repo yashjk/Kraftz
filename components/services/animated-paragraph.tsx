@@ -12,7 +12,7 @@ interface AnimatedParagraphProps {
 
 function AnimatedParagraph({
 	text,
-	className = "text-gray-500 leading-normal text-lg",
+	className = "text-muted-foreground text-[18px] md:text-lg leading-relaxed",
 	wordDelay = 0.03,
 	delay = 0,
 	threshold = 0.25,

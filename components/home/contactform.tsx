@@ -35,11 +35,7 @@ function ContactForm({
       >
         <FadeInUp delay={0.1} triggerOnce={true}>
           <h4
-            className="text-3xl text-brand mb-8"
-            style={{
-              fontFamily: "var(--font-playfair), serif",
-              fontWeight: 700,
-            }}
+            className="font-heading text-4xl md:text-5xl lg:text-5xl font-bold text-[#0249A7] mb-8"
           >
             {formTitle}
           </h4>

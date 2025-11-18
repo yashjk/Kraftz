@@ -2,21 +2,28 @@ import { cn } from "@/lib/utils";
 
 function Culture() {
 	return (
-		<section className="relative px-8 md:px-28 xl:px-96 py-28 text-center bg-[#f1f1f1]">
-			<h6
+		<section className="relative px-8 md:px-28 pt-8 md:pt-10 pb-12 md:pb-16 text-center">
+			<h2
 				className={cn(
-					// before content
-					"before:content-[url(https://moonlit-nextjs.netlify.app/assets/images/shape/section__style__three-1.svg)]",
-					// after content
-					"after:content-[url(https://moonlit-nextjs.netlify.app/assets/images/shape/section__style__three-2.svg)]",
-					// general
-					"text-brand text-xl"
+					"font-heading my-4 md:my-6 text-4xl md:text-5xl lg:text-5xl font-bold leading-tight text-[#0249A7]",
+					"flex items-center justify-center gap-2 px-2"
 				)}
 			>
-				Values & Beliefs
-			</h6>
-			<h2 className="my-8 text-4xl md:text-6xl">Our Culture</h2>
-			<p className="text-gray-500 leading-normal text-lg">
+				<img
+					src="https://moonlit-nextjs.netlify.app/assets/images/shape/section__style__three-1.svg"
+					alt=""
+					className="h-5 md:h-6 lg:h-7 w-auto object-contain"
+					aria-hidden="true"
+				/>
+				<span>Our Culture</span>
+				<img
+					src="https://moonlit-nextjs.netlify.app/assets/images/shape/section__style__three-2.svg"
+					alt=""
+					className="h-5 md:h-6 lg:h-7 w-auto object-contain"
+					aria-hidden="true"
+				/>
+			</h2>
+			<p className="text-[18px] md:text-lg leading-relaxed text-muted-foreground">
 				Built on trust, collaboration, and measurable outcomes, our culture
 				thrives on excellence and accountability. We don&apos;t just consult we
 				collaborate, co-create, and deliver transformation.
