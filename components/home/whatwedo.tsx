@@ -103,7 +103,7 @@ function WhatWeDo() {
 						</h2>
 					</FadeInUp>
 					<FadeInUp delay={0.3} triggerOnce={true}>
-						<p className="text-[18px] md:text-lg leading-relaxed text-muted-foreground">
+						<p className="text-[18px] md:text-lg leading-relaxed text-foreground">
 							<AnimatedText
 								text="At Kraftz, we provide end-to-end hospitality and travel solutions, all designed to elevate performance and accelerate growth. We Kraft precision strategies that empower property owners to maximize revenue and create exceptional experiences for travelers."
 								delay={0.4}
@@ -161,7 +161,7 @@ function WhatWeDo() {
 										{service.title}
 									</h3>
 
-										<p className="text-[18px] md:text-lg leading-relaxed text-muted-foreground mb-4 flex-grow">
+										<p className="text-[18px] md:text-lg leading-relaxed text-foreground mb-4 flex-grow">
 										{service.description}
 									</p>
 
