@@ -99,16 +99,6 @@ function Whyus() {
 								Why Choose Kraftz?
 							</h2>
 						</FadeInUp>
-						<FadeInUp delay={0.3} triggerOnce={true}>
-							<p className="text-[18px] md:text-lg leading-relaxed text-foreground">
-								<AnimatedText
-									text="We combine expertise, innovation, and proven results to transform your hospitality business. Our holistic approach integrates revenue management, distribution strategy, and brand elevation to deliver measurable growth and exceptional guest experiences."
-									delay={0.4}
-									wordDelay={0.02}
-									triggerOnce={true}
-								/>
-							</p>
-						</FadeInUp>
 					</div>
 				</section>
 

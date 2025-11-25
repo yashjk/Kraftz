@@ -4,9 +4,9 @@ import type { Metadata } from "next";
 export const metadata: Metadata = {
 	title: "Contact Us",
 	description:
-		"Get in touch with KRAFTz. Contact us for digital marketing services, hospitality consulting, or luxury travel experiences. We're here to help your business grow intelligently.",
+		"Get in touch with Kraftz. Contact us for digital marketing services, hospitality consulting, or luxury travel experiences. We're here to help your business grow intelligently.",
 	keywords: [
-		"contact KRAFTz",
+		"contact Kraftz",
 		"get in touch",
 		"marketing consultation",
 		"hospitality consulting inquiry",
@@ -14,15 +14,15 @@ export const metadata: Metadata = {
 		"business inquiry",
 	],
 	openGraph: {
-		title: "Contact Us | KRAFTz",
+		title: "Contact Us | Kraftz",
 		description:
-			"Get in touch with KRAFTz for digital marketing services, hospitality consulting, or luxury travel experiences.",
+			"Get in touch with Kraftz for digital marketing services, hospitality consulting, or luxury travel experiences.",
 		url: "/contacts",
 	},
 	twitter: {
-		title: "Contact Us | KRAFTz",
+		title: "Contact Us | Kraftz",
 		description:
-			"Get in touch with KRAFTz for digital marketing services, hospitality consulting, or luxury travel experiences.",
+			"Get in touch with Kraftz for digital marketing services, hospitality consulting, or luxury travel experiences.",
 	},
 	alternates: {
 		canonical: "/contacts",

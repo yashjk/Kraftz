@@ -8,9 +8,9 @@ import type { Metadata } from "next";
 export const metadata: Metadata = {
 	title: "About Us",
 	description:
-		"Learn about KRAFTz - our vision, mission, culture, and team. We are dedicated to crafting growth intelligently through digital marketing, hospitality consulting, and exceptional travel experiences.",
+		"Learn about Kraftz - our vision, mission, culture, and team. We are dedicated to crafting growth intelligently through digital marketing, hospitality consulting, and exceptional travel experiences.",
 	keywords: [
-		"about KRAFTz",
+		"about Kraftz",
 		"company culture",
 		"team",
 		"vision mission",
@@ -18,15 +18,15 @@ export const metadata: Metadata = {
 		"hospitality consultants",
 	],
 	openGraph: {
-		title: "About Us | KRAFTz",
+		title: "About Us | Kraftz",
 		description:
-			"Learn about KRAFTz - our vision, mission, culture, and team dedicated to crafting growth intelligently.",
+			"Learn about Kraftz - our vision, mission, culture, and team dedicated to crafting growth intelligently.",
 		url: "/about",
 	},
 	twitter: {
-		title: "About Us | KRAFTz",
+		title: "About Us | Kraftz",
 		description:
-			"Learn about KRAFTz - our vision, mission, culture, and team dedicated to crafting growth intelligently.",
+			"Learn about Kraftz - our vision, mission, culture, and team dedicated to crafting growth intelligently.",
 	},
 	alternates: {
 		canonical: "/about",

@@ -23,11 +23,11 @@ export const metadata: Metadata = {
 		process.env.NEXT_PUBLIC_SITE_URL || "https://kraftz.com"
 	),
 	title: {
-		default: "KRAFTz - Krafting Growth Intelligently",
-		template: "%s | KRAFTz",
+		default: "Kraftz - Krafting Growth Intelligently",
+		template: "%s | Kraftz",
 	},
 	description:
-		"KRAFTz delivers comprehensive digital marketing, hospitality consulting, and travel experience services. We help businesses grow intelligently through strategic marketing, revenue optimization, and exceptional customer experiences.",
+		"Kraftz delivers comprehensive digital marketing, hospitality consulting, and travel experience services. We help businesses grow intelligently through strategic marketing, revenue optimization, and exceptional customer experiences.",
 	keywords: [
 		"digital marketing",
 		"hospitality consulting",
@@ -40,9 +40,9 @@ export const metadata: Metadata = {
 		"business growth",
 		"digital transformation",
 	],
-	authors: [{ name: "KRAFTz" }],
-	creator: "KRAFTz",
-	publisher: "KRAFTz",
+	authors: [{ name: "Kraftz" }],
+	creator: "Kraftz",
+	publisher: "Kraftz",
 	formatDetection: {
 		email: false,
 		address: false,
@@ -56,24 +56,24 @@ export const metadata: Metadata = {
 		type: "website",
 		locale: "en_US",
 		url: "/",
-		title: "KRAFTz - Krafting Growth Intelligently",
+		title: "Kraftz - Krafting Growth Intelligently",
 		description:
-			"KRAFTz delivers comprehensive digital marketing, hospitality consulting, and travel experience services. We help businesses grow intelligently.",
-		siteName: "KRAFTz",
+			"Kraftz delivers comprehensive digital marketing, hospitality consulting, and travel experience services. We help businesses grow intelligently.",
+		siteName: "Kraftz",
 		images: [
 			{
 				url: "/og-image.svg",
 				width: 1200,
 				height: 630,
-				alt: "KRAFTz - Krafting Growth Intelligently",
+				alt: "Kraftz - Krafting Growth Intelligently",
 			},
 		],
 	},
 	twitter: {
 		card: "summary_large_image",
-		title: "KRAFTz - Krafting Growth Intelligently",
+		title: "Kraftz - Krafting Growth Intelligently",
 		description:
-			"KRAFTz delivers comprehensive digital marketing, hospitality consulting, and travel experience services.",
+			"Kraftz delivers comprehensive digital marketing, hospitality consulting, and travel experience services.",
 		images: ["/og-image.svg"],
 		creator: "@kraftz",
 	},
@@ -104,9 +104,9 @@ export const metadata: Metadata = {
 const organizationSchema = {
 	"@context": "https://schema.org",
 	"@type": "Organization",
-	name: "KRAFTz",
+	name: "Kraftz",
 	description:
-		"KRAFTz delivers comprehensive digital marketing, hospitality consulting, and travel experience services. We help businesses grow intelligently through strategic marketing, revenue optimization, and exceptional customer experiences.",
+		"Kraftz delivers comprehensive digital marketing, hospitality consulting, and travel experience services. We help businesses grow intelligently through strategic marketing, revenue optimization, and exceptional customer experiences.",
 	url: process.env.NEXT_PUBLIC_SITE_URL || "https://kraftz.com",
 	logo: `${
 		process.env.NEXT_PUBLIC_SITE_URL || "https://kraftz.com"

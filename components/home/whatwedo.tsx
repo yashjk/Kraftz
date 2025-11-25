@@ -44,7 +44,7 @@ function WhatWeDo() {
 			title: "Digital Marketing & Brand Experience",
 			description:
 				"Your digital presence should work as hard as your front line. We blend storytelling, design, and analytics to make your brand visible, desirable, and discoverable across search, social, and web.",
-			href: "/services/digital-marketing#digital-strategy-consulting",
+			href: "/services/digital-marketing",
 		},
 		{
 			id: 5,
@@ -60,7 +60,7 @@ function WhatWeDo() {
 			title: "Travel Experiences",
 			description:
 				"Travel, tailored to excellence. For all age travellers personal or business, we curate global stays, journeys, and partnerships that define modern luxury.",
-			href: "/services/travel#travel-experiences",
+			href: "/services/travel",
 		},
 	];
 
@@ -102,16 +102,6 @@ function WhatWeDo() {
 							What We Do
 						</h2>
 					</FadeInUp>
-					<FadeInUp delay={0.3} triggerOnce={true}>
-						<p className="text-[18px] md:text-lg leading-relaxed text-foreground">
-							<AnimatedText
-								text="At Kraftz, we provide end-to-end hospitality and travel solutions, all designed to elevate performance and accelerate growth. We Kraft precision strategies that empower property owners to maximize revenue and create exceptional experiences for travelers."
-								delay={0.4}
-								wordDelay={0.02}
-								triggerOnce={true}
-							/>
-						</p>
-					</FadeInUp>
 				</div>
 			</section>
 
@@ -132,38 +122,38 @@ function WhatWeDo() {
 								className="h-full"
 							>
 								<Link href={service.href} className="h-full block">
-								<motion.div
+									<motion.div
 										className="service-card group relative p-8 cursor-pointer h-full flex flex-col"
-									whileHover={{ y: -8, transition: { duration: 0.3 } }}
-								>
-									{/* Decorative corner element */}
-									<motion.div
-										className="absolute -top-2 -right-2 w-8 h-8 border-t-2 border-r-2 border-accent/30 group-hover:border-accent transition-colors"
-										whileHover={{ scale: 1.1 }}
-									/>
-
-									{/* Icon container */}
-									<motion.div
-										className="mb-6"
-										whileHover={{ scale: 1.1, rotate: 5 }}
-										transition={{ type: "spring", stiffness: 300 }}
+										whileHover={{ y: -8, transition: { duration: 0.3 } }}
 									>
-										<div className="inline-flex items-center justify-center w-16 h-16 rounded-xl bg-gradient-to-br from-primary/10 via-accent/10 to-secondary/10 group-hover:from-primary/20 group-hover:via-accent/20 group-hover:to-secondary/20 transition-all duration-300 shadow-sm group-hover:shadow-md">
-											<IconComponent
-												size={32}
-												className="text-primary group-hover:text-accent transition-colors duration-300"
-											/>
-										</div>
-									</motion.div>
+										{/* Decorative corner element */}
+										<motion.div
+											className="absolute -top-2 -right-2 w-8 h-8 border-t-2 border-r-2 border-accent/30 group-hover:border-accent transition-colors"
+											whileHover={{ scale: 1.1 }}
+										/>
 
-									{/* Content */}
+										{/* Icon container */}
+										<motion.div
+											className="mb-6"
+											whileHover={{ scale: 1.1, rotate: 5 }}
+											transition={{ type: "spring", stiffness: 300 }}
+										>
+											<div className="inline-flex items-center justify-center w-16 h-16 rounded-xl bg-gradient-to-br from-primary/10 via-accent/10 to-secondary/10 group-hover:from-primary/20 group-hover:via-accent/20 group-hover:to-secondary/20 transition-all duration-300 shadow-sm group-hover:shadow-md">
+												<IconComponent
+													size={32}
+													className="text-primary group-hover:text-accent transition-colors duration-300"
+												/>
+											</div>
+										</motion.div>
+
+										{/* Content */}
 										<h3 className="font-heading text-xl md:text-2xl font-semibold mb-4 text-[#0249A7] group-hover:text-primary transition-colors duration-300">
-										{service.title}
-									</h3>
+											{service.title}
+										</h3>
 
 										<p className="text-[18px] md:text-lg leading-relaxed text-foreground mb-4 flex-grow">
-										{service.description}
-									</p>
+											{service.description}
+										</p>
 
 										{/* Read more link */}
 										<div className="mt-auto pt-4">
@@ -190,14 +180,14 @@ function WhatWeDo() {
 											</motion.div>
 										</div>
 
-									{/* Bottom accent line */}
-									<motion.div
-										className="absolute bottom-0 left-8 right-8 h-px bg-gradient-to-r from-transparent via-accent/20 to-transparent group-hover:via-accent/60 transition-all duration-300"
-										initial={{ scaleX: 0 }}
-										animate={{ scaleX: 1 }}
-										transition={{ duration: 0.6, delay: itemDelay + 0.3 }}
-									/>
-								</motion.div>
+										{/* Bottom accent line */}
+										<motion.div
+											className="absolute bottom-0 left-8 right-8 h-px bg-gradient-to-r from-transparent via-accent/20 to-transparent group-hover:via-accent/60 transition-all duration-300"
+											initial={{ scaleX: 0 }}
+											animate={{ scaleX: 1 }}
+											transition={{ duration: 0.6, delay: itemDelay + 0.3 }}
+										/>
+									</motion.div>
 								</Link>
 							</FadeInUp>
 						);

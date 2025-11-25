@@ -4,7 +4,7 @@ import type { Metadata } from "next";
 export const metadata: Metadata = {
 	title: "Digital Marketing Services",
 	description:
-		"KRAFTz Digital Marketing Solutions transforms how brands are seen, searched, and remembered. We offer SEO, PPC, social media management, content strategy, web design, AI marketing, and analytics services.",
+		"Kraftz Digital Marketing Solutions transforms how brands are seen, searched, and remembered. We offer SEO, PPC, social media management, content strategy, web design, AI marketing, and analytics services.",
 	keywords: [
 		"digital marketing services",
 		"SEO services",
@@ -18,13 +18,13 @@ export const metadata: Metadata = {
 		"influencer marketing",
 	],
 	openGraph: {
-		title: "Digital Marketing Services | KRAFTz",
+		title: "Digital Marketing Services | Kraftz",
 		description:
-			"Transform how your brand is seen, searched, and remembered with KRAFTz Digital Marketing Solutions. SEO, PPC, social media, and more.",
+			"Transform how your brand is seen, searched, and remembered with Kraftz Digital Marketing Solutions. SEO, PPC, social media, and more.",
 		url: "/services/digital-marketing",
 	},
 	twitter: {
-		title: "Digital Marketing Services | KRAFTz",
+		title: "Digital Marketing Services | Kraftz",
 		description:
 			"Transform how your brand is seen, searched, and remembered with KRAFTz Digital Marketing Solutions.",
 	},

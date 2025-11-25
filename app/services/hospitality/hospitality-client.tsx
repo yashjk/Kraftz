@@ -9,7 +9,7 @@ function HospitalityPageClient() {
 	return (
 		<>
 			<ServicesHero
-				title="Hospitality Services"
+				title="Hospitality Solutions"
 				imageSrc="/hospitality-hero.jpg"
 				description={`Kraftz Hospitality Consulting delivers comprehensive, end-to-end consulting services designed to help hotels, resorts, villas, serviced apartments and accommodation providers to unlock peak performance.
 
@@ -27,6 +27,8 @@ Whether you are looking to increase direct bookings, implement data analytics sy
 						id: "revenue-management-system-rms",
 					},
 					{ label: "Business Intelligence", id: "business-intelligence" },
+					{ label: "Data & Analytics", id: "data-analytics" },
+					{ label: "OTA Management", id: "ota-management" },
 					{
 						label: "Reputation Management / ORM",
 						id: "reputation-management-orm",
@@ -68,13 +70,13 @@ Whether you are looking to increase direct bookings, implement data analytics sy
 					className="text-muted-foreground leading-relaxed text-[18px] md:text-lg"
 				/>
 			</ServiceOverview>
-			<ServiceOverview title="Data & Analytics">
+			<ServiceOverview id="data-analytics" title="Data & Analytics">
 				<AnimatedParagraph
 					text="Data is the foundation of modern hotel performance. At Kraftz, we help hotels harness big data, AI insights, and predictive analytics to enhance guest experiences, forecast demand, and improve operational efficiency. \n\n Our consultants specialize in data mapping, segmentation, and reporting automation — ensuring that decision-makers have the right insights at the right time. \n\n Highlights: Predictive demand forecastingGuest segmentation and loyalty analyticsData visualization dashboardsAI-driven reporting and automation"
 					className="text-muted-foreground leading-relaxed text-[18px] md:text-lg"
 				/>
 			</ServiceOverview>
-			<ServiceOverview title="OTA Management">
+			<ServiceOverview id="ota-management" title="OTA Management">
 				<AnimatedParagraph
 					text="Kraftz optimizes Online Travel Agency (OTA) performance through smart distribution and visibility strategies. We manage OTA listings, rate parity, and content accuracy to maximize conversions. \n\n By aligning your OTA strategy with revenue and branding goals, we ensure your property maintains top visibility, consistent pricing, and high conversion ratios. \n\n Services Include: OTA channel setup & auditRate and content parity managementPerformance tracking & market insightsCommission optimization & yield strategy"
 					className="text-muted-foreground leading-relaxed text-[18px] md:text-lg"

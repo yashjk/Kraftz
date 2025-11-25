@@ -6,16 +6,30 @@ import { FadeInUp, AnimatedText } from "@/lib/animations";
 import { useCursor } from "@/hooks/use-cursor";
 import { useEffect, useState, useRef, useMemo } from "react";
 import {
-	Car,
-	Bed,
-	Droplet,
-	Plane,
-	UtensilsCrossed,
+	TrendingUp,
+	Network,
+	Brain,
+	Share2,
+	Star,
 	MapPin,
 	Hotel,
 	Luggage,
-	Building2,
-	ConciergeBell,
+	Plane,
+	BarChart3,
+	Search,
+	Megaphone,
+	Users,
+	Target,
+	Zap,
+	Globe,
+	Briefcase,
+	Camera,
+	MessageSquare,
+	Rocket,
+	ChartLine,
+	Database,
+	Settings,
+	Sparkles,
 } from "lucide-react";
 
 // Floating Shape Component
@@ -29,11 +43,11 @@ function FloatingShape({
 	shape: {
 		id: string;
 		type: string;
-		Icon?: typeof Car;
-		shapeType?: string;
+		Icon?: typeof TrendingUp;
 		xPercent: number;
 		yPercent: number;
 		size: number;
+		color: string;
 	};
 	index: number;
 	relativeMousePos: { x: number; y: number };
@@ -53,42 +67,42 @@ function FloatingShape({
 			Math.pow(relativeMousePos.y - shapeY, 2)
 	);
 
-	// Water current effect from cursor movement - affects ALL shapes
-	// Make it work even when cursor is far away, just weaker
-	const maxDistance = 800; // Larger range so all shapes are affected
-	const distanceFactor = Math.max(0.2, 1 - distance / maxDistance); // Minimum 0.2 so always some effect
-	const currentStrength = distanceFactor * cursorCurrent.strength * 1.5; // Increased multiplier
+	// Water current effect from cursor movement - affects ALL shapes uniformly
+	// Uniform strength for all shapes regardless of distance
+	const uniformStrength = cursorCurrent.strength * 2.5;
 
 	// Water current direction - flow in the direction of cursor movement (not perpendicular)
 	const currentAngle = Math.atan2(cursorCurrent.y, cursorCurrent.x);
-	const currentX = Math.cos(currentAngle) * currentStrength * 40; // Increased multiplier
-	const currentY = Math.sin(currentAngle) * currentStrength * 40;
+
+	const currentX = Math.cos(currentAngle) * uniformStrength * 70; // Uniform multiplier
+	const currentY = Math.sin(currentAngle) * uniformStrength * 70;
 
 	// Use motion values for reactive cursor effects
 	const cursorOffsetX = useMotionValue(0);
 	const cursorOffsetY = useMotionValue(0);
 	const cursorRotate = useMotionValue(0);
 
-	const springX = useSpring(cursorOffsetX, { stiffness: 60, damping: 25 });
-	const springY = useSpring(cursorOffsetY, { stiffness: 60, damping: 25 });
-	const springRotate = useSpring(cursorRotate, { stiffness: 60, damping: 25 });
+	// More responsive springs for better cursor interaction
+	const springX = useSpring(cursorOffsetX, { stiffness: 100, damping: 20 });
+	const springY = useSpring(cursorOffsetY, { stiffness: 100, damping: 20 });
+	const springRotate = useSpring(cursorRotate, { stiffness: 80, damping: 18 });
 
 	// Update motion values when cursor current changes
 	useEffect(() => {
 		cursorOffsetX.set(currentX);
 		cursorOffsetY.set(currentY);
-		cursorRotate.set(currentStrength * 5); // Increased rotation
+		cursorRotate.set(uniformStrength * 8); // Uniform rotation for all shapes
 	}, [
 		currentX,
 		currentY,
-		currentStrength,
+		uniformStrength,
 		cursorOffsetX,
 		cursorOffsetY,
 		cursorRotate,
 	]);
 
-	// Extract Icon if it's an icon type
-	const Icon = shape.type === "icon" ? shape.Icon : null;
+	// Extract Icon
+	const Icon = shape.Icon;
 
 	return (
 		<motion.div
@@ -115,157 +129,14 @@ function FloatingShape({
 				ease: "easeInOut",
 			}}
 		>
-			{shape.type === "icon" && Icon ? (
-				<Icon className="text-primary/30" size={Math.round(shape.size * 0.5)} />
-			) : shape.type === "geometric" && shape.shapeType ? (
-				<GeometricShape type={shape.shapeType} size={shape.size} />
-			) : null}
+			{Icon && (
+				<Icon
+					style={{ color: shape.color }}
+					size={Math.round(shape.size * 0.5)}
+				/>
+			)}
 		</motion.div>
 	);
-}
-
-// Geometric Shape Component
-function GeometricShape({ type, size }: { type: string; size: number }) {
-	const baseStyle = {
-		width: size,
-		height: size,
-		border: `2px solid #0249A7`,
-		opacity: 0.08,
-	};
-
-	switch (type) {
-		case "circle":
-			return (
-				<div
-					style={{
-						...baseStyle,
-						borderRadius: "50%",
-					}}
-				/>
-			);
-		case "square":
-			return (
-				<div
-					style={{
-						...baseStyle,
-						borderRadius: "4px",
-					}}
-				/>
-			);
-		case "triangle":
-			return (
-				<svg
-					width={size}
-					height={size}
-					viewBox={`0 0 ${size} ${size}`}
-					style={{ opacity: 0.08 }}
-				>
-					<polygon
-						points={`
-						${size / 2},${size * 0.1}
-						${size * 0.1},${size * 0.9}
-						${size * 0.9},${size * 0.9}
-					`}
-						fill="none"
-						stroke="#0249A7"
-						strokeWidth="2"
-					/>
-				</svg>
-			);
-		case "hexagon":
-			const hexSize = size / 2;
-			return (
-				<svg
-					width={size}
-					height={size}
-					viewBox={`0 0 ${size} ${size}`}
-					style={{ opacity: 0.08 }}
-				>
-					<polygon
-						points={`
-						${size / 2},${size * 0.1}
-						${size * 0.9},${size * 0.3}
-						${size * 0.9},${size * 0.7}
-						${size / 2},${size * 0.9}
-						${size * 0.1},${size * 0.7}
-						${size * 0.1},${size * 0.3}
-					`}
-						fill="none"
-						stroke="#0249A7"
-						strokeWidth="2"
-					/>
-				</svg>
-			);
-		case "diamond":
-			return (
-				<div
-					style={{
-						width: size,
-						height: size,
-						border: `2px solid #0249A7`,
-						opacity: 0.08,
-						transform: "rotate(45deg)",
-						borderRadius: "4px",
-					}}
-				/>
-			);
-		case "cylinder":
-			return (
-				<svg
-					width={size}
-					height={size}
-					viewBox={`0 0 ${size} ${size}`}
-					style={{ opacity: 0.08 }}
-				>
-					{/* Top ellipse */}
-					<ellipse
-						cx={size / 2}
-						cy={size * 0.2}
-						rx={size * 0.3}
-						ry={size * 0.1}
-						fill="none"
-						stroke="#0249A7"
-						strokeWidth="2"
-					/>
-					{/* Side lines */}
-					<line
-						x1={size * 0.2}
-						y1={size * 0.2}
-						x2={size * 0.2}
-						y2={size * 0.8}
-						stroke="#0249A7"
-						strokeWidth="2"
-					/>
-					<line
-						x1={size * 0.8}
-						y1={size * 0.2}
-						x2={size * 0.8}
-						y2={size * 0.8}
-						stroke="#0249A7"
-						strokeWidth="2"
-					/>
-					{/* Bottom ellipse */}
-					<ellipse
-						cx={size / 2}
-						cy={size * 0.8}
-						rx={size * 0.3}
-						ry={size * 0.1}
-						fill="none"
-						stroke="#0249A7"
-						strokeWidth="2"
-					/>
-				</svg>
-			);
-		default:
-			return (
-				<div
-					style={{
-						...baseStyle,
-						borderRadius: "50%",
-					}}
-				/>
-			);
-	}
 }
 
 function Hero() {
@@ -367,7 +238,7 @@ function Hero() {
 							x: currentMousePos.x, // Use viewport coordinates for fixed positioning
 							y: currentMousePos.y,
 							radius: 0,
-							opacity: 0.6,
+							opacity: 0.5,
 							timestamp: Date.now(),
 						},
 					]);
@@ -386,7 +257,7 @@ function Hero() {
 					setCursorCurrent({
 						x: cursorDx,
 						y: cursorDy,
-						strength: Math.min(cursorVelocity / 8, 1.5), // Increased sensitivity and max strength
+						strength: Math.min(cursorVelocity / 5, 2.5), // Increased sensitivity and max strength
 					});
 
 					// Update relative mouse position (throttled)
@@ -474,32 +345,62 @@ function Hero() {
 		}
 	}, [mousePosition, headingX, headingY, headingScale]);
 
-	// Static shapes that react to cursor
+	// Static shapes that react to cursor - only service-based icons
 	const staticShapes = useMemo(() => {
 		if (sectionSize.width === 0 || sectionSize.height === 0) return [];
 
-		const icons = [
-			Car,
-			Bed,
-			Droplet,
-			Plane,
-			UtensilsCrossed,
-			MapPin,
+		// Vibrant color palette for icons
+		const iconColors = [
+			"#0249A7", // Primary blue
+			"#4ECDC4", // Teal
+			"#FF6B6B", // Coral red
+			"#FFE66D", // Yellow
+			"#95E1D3", // Mint green
+			"#F38181", // Pink coral
+			"#AA96DA", // Purple
+			"#FCBAD3", // Light pink
+			"#FFA07A", // Light salmon
+			"#20B2AA", // Light sea green
+			"#FFD700", // Gold
+			"#87CEEB", // Sky blue
+			"#DDA0DD", // Plum
+			"#98D8C8", // Turquoise
+			"#F7DC6F", // Light yellow
+			"#BB8FCE", // Lavender
+		];
+
+		// Service-based icons representing our services
+		const serviceIcons = [
+			// Core services (more frequent)
+			TrendingUp, // Revenue Management
+			Network, // Distribution Management
+			Brain, // Business Intelligence
+			Share2, // Digital Marketing
+			Star, // Reputation Management
+			MapPin, // Travel Experiences
+			// Supporting icons
 			Hotel,
-			Hotel, // Add Hotel twice for more frequency
-			Luggage,
-			Building2,
-			ConciergeBell,
+			BarChart3, // Analytics
+			Search, // SEO
+			Megaphone, // Marketing
+			Users, // Customer Management
+			Target, // Strategy
+			Zap, // Performance
+			Globe, // Global Reach
+			Briefcase, // Business Solutions
+			Camera, // Content Creation
+			MessageSquare, // Communication
+			Rocket, // Growth
+			ChartLine, // Data Analytics
+			Database, // Data Solutions
+			Settings, // Technology Integration
+			Sparkles, // Brand Experience
+			Plane, // Travel
+			Luggage, // Travel Services
 		];
-		const geometricShapes = [
-			"circle",
-			"square",
-			"triangle",
-			"hexagon",
-			"diamond",
-			"cylinder",
-		];
-		const shapeCount = 35; // Mix of icons and geometric shapes - increased for more shapes
+
+		// Increase icon count for more prominent display
+		const shapeCount = 60; // Increased from 35 to show more service icons
 		const shapesArray = [];
 
 		// Create a grid-based distribution system for even spacing
@@ -508,11 +409,10 @@ function Hero() {
 		const cellWidth = 100 / gridCols;
 		const cellHeight = 100 / gridRows;
 
-		// Shuffle arrays to randomize which shapes/icons appear where
-		const shuffledIcons = [...icons].sort(() => Math.random() - 0.5);
-		const shuffledGeometricShapes = [...geometricShapes].sort(
-			() => Math.random() - 0.5
-		);
+		// Shuffle icons array to randomize which icons appear where
+		const shuffledIcons = [...serviceIcons].sort(() => Math.random() - 0.5);
+		// Shuffle colors array
+		const shuffledColors = [...iconColors].sort(() => Math.random() - 0.5);
 
 		// Create array of positions and shuffle them
 		const positions: Array<{ x: number; y: number }> = [];
@@ -534,66 +434,114 @@ function Hero() {
 		// Shuffle positions to avoid patterns
 		positions.sort(() => Math.random() - 0.5);
 
+		// Create only icon-based shapes with colors
 		for (let i = 0; i < shapeCount; i++) {
-			const isGeometric = i % 2 === 0; // Alternate between geometric and icons
 			const position = positions[i];
 			const xPercent = position.x;
 			const yPercent = position.y;
 			const size = 40 + Math.random() * 40; // 40-80px
 
-			if (isGeometric) {
-				const shapeType =
-					shuffledGeometricShapes[i % shuffledGeometricShapes.length];
-				shapesArray.push({
-					id: `shape-${i}`,
-					type: "geometric",
-					shapeType,
-					xPercent,
-					yPercent,
-					size,
-				});
-			} else {
-				const Icon = shuffledIcons[i % shuffledIcons.length];
-				shapesArray.push({
-					id: `shape-${i}`,
-					type: "icon",
-					Icon,
-					xPercent,
-					yPercent,
-					size,
-				});
-			}
+			const Icon = shuffledIcons[i % shuffledIcons.length];
+			// Assign a color with varying opacity for visual depth
+			const baseColor = shuffledColors[i % shuffledColors.length];
+			const opacity = 0.5 + Math.random() * 0.3; // Opacity between 0.5 and 0.8
+
+			// Convert hex to rgba
+			const hex = baseColor.replace("#", "");
+			// Handle both 3-digit and 6-digit hex codes
+			const r =
+				hex.length === 3
+					? parseInt(hex[0] + hex[0], 16)
+					: parseInt(hex.substring(0, 2), 16);
+			const g =
+				hex.length === 3
+					? parseInt(hex[1] + hex[1], 16)
+					: parseInt(hex.substring(2, 4), 16);
+			const b =
+				hex.length === 3
+					? parseInt(hex[2] + hex[2], 16)
+					: parseInt(hex.substring(4, 6), 16);
+			const color = `rgba(${r}, ${g}, ${b}, ${opacity})`;
+
+			shapesArray.push({
+				id: `shape-${i}`,
+				type: "icon",
+				Icon,
+				xPercent,
+				yPercent,
+				size,
+				color,
+			});
 		}
 
 		return shapesArray;
 	}, [sectionSize.width, sectionSize.height]);
 
-	// Colorful particles that trail the cursor
-	const [particles, setParticles] = useState<
+	// Service icons for cursor shapes
+	const serviceIconsForCursor = [
+		TrendingUp,
+		Network,
+		Brain,
+		Share2,
+		Star,
+		MapPin,
+		Hotel,
+		BarChart3,
+		Search,
+		Megaphone,
+		Users,
+		Target,
+		Zap,
+		Globe,
+		Briefcase,
+		Camera,
+		MessageSquare,
+		Rocket,
+		ChartLine,
+		Database,
+		Settings,
+		Sparkles,
+		Plane,
+		Luggage,
+	];
+
+	// Vibrant color palette for cursor shapes
+	const cursorShapeColors = [
+		"#0249A7", // Primary blue
+		"#4ECDC4", // Teal
+		"#FF6B6B", // Coral red
+		"#FFE66D", // Yellow
+		"#95E1D3", // Mint green
+		"#F38181", // Pink coral
+		"#AA96DA", // Purple
+		"#FCBAD3", // Light pink
+		"#FFA07A", // Light salmon
+		"#20B2AA", // Light sea green
+		"#FFD700", // Gold
+		"#87CEEB", // Sky blue
+		"#DDA0DD", // Plum
+		"#98D8C8", // Turquoise
+		"#F7DC6F", // Light yellow
+		"#BB8FCE", // Lavender
+	];
+
+	// Cursor shapes that spawn from cursor and grow
+	const [cursorShapes, setCursorShapes] = useState<
 		Array<{
 			id: string;
 			x: number;
 			y: number;
-			vx: number;
-			vy: number;
-			color: string;
+			size: number;
 			opacity: number;
+			Icon: typeof TrendingUp;
+			color: string;
 		}>
 	>([]);
 
-	const colors = [
-		"#0249A7", // primary blue
-		"#FF6B6B", // red
-		"#4ECDC4", // teal
-		"#FFE66D", // yellow
-		"#95E1D3", // mint
-		"#F38181", // coral
-		"#AA96DA", // purple
-		"#FCBAD3", // pink
-	];
+	// Track last spawn time to throttle shape creation
+	const lastSpawnTimeRef = useRef<number>(0);
 
-	// Create particles that trail the cursor
-	// Use mousePosition directly since particles are in a fixed viewport div
+	// Create shapes that spawn from cursor
 	useEffect(() => {
 		if (!sectionRef.current || mousePosition.x === 0 || mousePosition.y === 0)
 			return;
@@ -608,55 +556,89 @@ function Hero() {
 		)
 			return;
 
-		// Add a new particle at cursor position (viewport coordinates for fixed div)
-		const angle = Math.random() * Math.PI * 2;
-		const speed = 0.5 + Math.random() * 1.5; // 0.5 to 2 px per frame
+		// Throttle shape creation - spawn at most once every 200ms
+		const now = Date.now();
+		const timeSinceLastSpawn = now - lastSpawnTimeRef.current;
+		if (timeSinceLastSpawn < 200) return;
 
-		const newParticle = {
-			id: `particle-${Date.now()}-${Math.random()}`,
+		// Increased spawn chance - 20% chance when throttled
+		const shouldCreateShape = Math.random() > 0.8; // 20% chance
+		if (!shouldCreateShape) return;
+
+		lastSpawnTimeRef.current = now;
+
+		// Select random icon and color
+		const Icon =
+			serviceIconsForCursor[
+				Math.floor(Math.random() * serviceIconsForCursor.length)
+			];
+		const baseColor =
+			cursorShapeColors[Math.floor(Math.random() * cursorShapeColors.length)];
+
+		// Convert hex to rgba with opacity
+		const hex = baseColor.replace("#", "");
+		const r =
+			hex.length === 3
+				? parseInt(hex[0] + hex[0], 16)
+				: parseInt(hex.substring(0, 2), 16);
+		const g =
+			hex.length === 3
+				? parseInt(hex[1] + hex[1], 16)
+				: parseInt(hex.substring(2, 4), 16);
+		const b =
+			hex.length === 3
+				? parseInt(hex[2] + hex[2], 16)
+				: parseInt(hex.substring(4, 6), 16);
+		const opacity = 0.85 + Math.random() * 0.15; // Opacity between 0.85 and 1.0
+		const color = `rgba(${r}, ${g}, ${b}, ${opacity})`;
+
+		const newShape = {
+			id: `cursor-shape-${Date.now()}-${Math.random()}`,
 			x: mousePosition.x, // Use viewport coordinates for fixed positioning
 			y: mousePosition.y,
-			vx: Math.cos(angle) * speed,
-			vy: Math.sin(angle) * speed,
-			color: colors[Math.floor(Math.random() * colors.length)],
+			size: 5, // Start small
 			opacity: 1,
+			Icon,
+			color,
 		};
 
-		setParticles((prev) => {
-			const updated = [newParticle, ...prev];
-			// Keep only last 100 particles for performance
-			return updated.slice(0, 100);
+		setCursorShapes((prev) => {
+			const updated = [newShape, ...prev];
+			// Keep only last 25 shapes
+			return updated.slice(0, 25);
 		});
 	}, [mousePosition, sectionRef]);
 
-	// Update particle positions and fade them out
+	// Update cursor shapes - grow them and fade them out
 	useEffect(() => {
-		const updateParticles = () => {
+		const updateCursorShapes = () => {
 			if (!sectionRef.current) return;
 			const rect = sectionRef.current.getBoundingClientRect();
+			const maxSize = 50; // Maximum size
 
-			setParticles((prev) =>
+			setCursorShapes((prev) =>
 				prev
-					.map((particle) => ({
-						...particle,
-						x: particle.x + particle.vx,
-						y: particle.y + particle.vy,
-						opacity: particle.opacity - 0.015, // Fade out gradually
-						vx: particle.vx * 0.98, // Slight friction
-						vy: particle.vy * 0.98,
+					.map((shape) => ({
+						...shape,
+						size: Math.min(shape.size + 1.5, maxSize), // Grow to 50px
+						opacity:
+							shape.size < maxSize
+								? 1 - (shape.size / maxSize) * 0.3 // Fade less as it grows (from 1.0 to 0.7)
+								: shape.opacity - 0.015, // Slower fade after max size
 					}))
 					.filter(
-						(particle) =>
-							particle.opacity > 0 &&
-							particle.x > rect.left - 100 &&
-							particle.x < rect.right + 100 &&
-							particle.y > rect.top - 100 &&
-							particle.y < rect.bottom + 100
+						(shape) =>
+							shape.opacity > 0 &&
+							shape.size > 0 &&
+							shape.x > rect.left - 200 &&
+							shape.x < rect.right + 200 &&
+							shape.y > rect.top - 200 &&
+							shape.y < rect.bottom + 200
 					)
 			);
 		};
 
-		const interval = setInterval(updateParticles, 16); // ~60fps
+		const interval = setInterval(updateCursorShapes, 16); // ~60fps
 		return () => clearInterval(interval);
 	}, [sectionRef]);
 
@@ -682,26 +664,31 @@ function Hero() {
 					/>
 				))}
 
-				{/* Colorful particles trailing cursor */}
-				{particles.map((particle) => {
+				{/* Cursor shapes that spawn and grow from cursor */}
+				{cursorShapes.map((shape) => {
+					const Icon = shape.Icon;
 					return (
 						<motion.div
-							key={particle.id}
-							className="absolute pointer-events-none rounded-full"
+							key={shape.id}
+							className="absolute pointer-events-none"
 							style={{
-								left: particle.x,
-								top: particle.y,
-								width: 5,
-								height: 5,
+								left: shape.x,
+								top: shape.y,
+								width: shape.size,
+								height: shape.size,
 								transform: "translate(-50%, -50%)",
-								backgroundColor: particle.color,
-								opacity: particle.opacity,
+								opacity: shape.opacity,
 								zIndex: 2,
 							}}
 							initial={{ scale: 0 }}
 							animate={{ scale: 1 }}
-							transition={{ duration: 0.1 }}
-						/>
+							transition={{ duration: 0.2 }}
+						>
+							<Icon
+								style={{ color: shape.color }}
+								size={Math.round(shape.size * 0.6)}
+							/>
+						</motion.div>
 					);
 				})}
 
@@ -716,7 +703,7 @@ function Hero() {
 							width: ripple.radius * 2,
 							height: ripple.radius * 2,
 							transform: "translate(-50%, -50%)",
-							border: `1px solid rgba(2, 73, 167, ${ripple.opacity * 0.15})`,
+							border: `1px solid rgba(2, 73, 167, ${ripple.opacity * 0.25})`,
 							borderRadius: "50%",
 							zIndex: 0,
 						}}

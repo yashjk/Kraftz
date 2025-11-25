@@ -136,7 +136,7 @@
   }
   body {
     @apply bg-background text-foreground;
-    font-family: var(--font-jost), sans-serif;
+    font-family: sans-serif;
   }
 }
 
@@ -147,16 +147,16 @@
 @layer utilities {
   /* Typography utilities */
   .font-heading {
-    font-family: var(--font-playfair), serif;
+    font-family: sans-serif;
     text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.15), 0 0 8px rgba(0, 0, 0, 0.1);
   }
 
   .font-body {
-    font-family: var(--font-jost), sans-serif;
+    font-family: sans-serif;
   }
 
   .font-display {
-    font-family: var(--font-gilda), serif;
+    font-family: sans-serif;
   }
 
   /* Decorative heading with before/after SVG elements */
@@ -253,7 +253,7 @@
     }
     100% {
       transform: scale(4);
-      opacity: 0;
+      opacity: 0.2;
     }
   }
 
@@ -326,7 +326,7 @@
     width: 0;
     height: 0;
     border-radius: 50%;
-    background: rgba(255, 255, 255, 0.5);
+    background: rgba(255, 255, 255, 0.8);
     transform: translate(-50%, -50%);
     transition: width 0.6s, height 0.6s;
   }

@@ -18,7 +18,7 @@ function ServiceOverview({
 		<section
 			id={id}
 			className="relative px-6 md:px-10 lg:px-20 pt-12 pb-16 md:pb-20 md:pt-16 bg-background overflow-hidden scroll-mt-24
-		 rounded-t-4xl -mt-10 shadow-[0_-4px_20px_rgba(0,0,0,0.15)]"
+		 rounded-t-4xl -mt-10 shadow-[0_-10px_20px_rgba(0,0,0,0.35)]"
 		>
 			{/* Top gradient line separator */}
 			<FadeInUp delay={0.1} triggerOnce={true}>
@@ -49,7 +49,7 @@ function ServiceOverview({
 					<FadeInUp triggerOnce={true}>
 						<h2
 							className={cn(
-								"font-heading mb-8 text-4xl md:text-5xl lg:text-5xl font-bold text-[#0249A7]",
+								"font-heading mb-8 text-3xl md:text-4xl font-bold text-[#0249A7]",
 								"flex items-center justify-center gap-2 px-2"
 							)}
 						>
