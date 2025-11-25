@@ -12,7 +12,7 @@ function Overview() {
 	return (
 		<section
 			id="overview"
-			className="relative pt-8 md:pt-12 pb-10 bg-background rounded-t-4xl shadow-[0_-4px_20px_rgba(0,0,0,0.15)]"
+			className="relative pt-8 md:pt-12 pb-10 bg-background rounded-t-4xl shadow-[0_-20px_20px_rgba(0,0,0,0.35)]"
 		>
 			<div className="mx-auto w-full">
 				<div className="flex flex-col items-center text-center px-8 md:px-28 ">
