@@ -100,7 +100,7 @@ function ConnectCTA({
 								"0 8px 25px rgba(2, 73, 167, 0.25), 0 4px 10px rgba(2, 73, 167, 0.15)",
 						}}
 						whileTap={{ scale: 0.98 }}
-						className="group relative inline-flex items-center justify-center px-8 py-2.5 border border-[#0249A7] bg-transparent text-[#0249A7] font-semibold text-base tracking-wide rounded-lg transition-all duration-300 hover:bg-[#0249A7] hover:text-white shadow-[0_4px_12px_rgba(2,73,167,0.15),0_2px_4px_rgba(2,73,167,0.1)] hover:shadow-[0_8px_25px_rgba(2,73,167,0.25),0_4px_10px_rgba(2,73,167,0.15)]"
+						className="group relative inline-flex items-center justify-center px-8 py-2.5 border border-[#0249A7] bg-[#0249A7] text-white font-semibold text-base tracking-wide rounded-lg transition-all duration-300 hover:bg-[#022ba7] hover:text-white shadow-[0_4px_12px_rgba(2,73,167,0.15),0_2px_4px_rgba(2,73,167,0.1)] hover:shadow-[0_8px_25px_rgba(2,73,167,0.25),0_4px_10px_rgba(2,73,167,0.15)]"
 					>
 						{/* Elegant underline effect */}
 						<motion.div

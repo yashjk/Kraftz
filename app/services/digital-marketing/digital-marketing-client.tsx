@@ -14,12 +14,28 @@ function DigitalMarketingPageClient() {
 				imageSrc="/digital-marketing-hero.jpg"
 				description="Kraftz Digital Marketing Solutions transforms how brands are seen, searched, and remembered. We blend strategy, storytelling, and smart technology to help mid-size, large, and new-age businesses dominate the digital landscape. Every campaign we create aligns with the client's vision, mission, and OKRs — ensuring marketing delivers measurable business impact, not just impressions."
 				highlights={[
+					{
+						label: "Digital Strategy & Consulting",
+						id: "digital-strategy-consulting",
+					},
 					{ label: "Search Engine Optimization (SEO)", id: "seo-search" },
-					{ label: "Performance Marketing (PPC & Media Buying)", id: "performance-marketing" },
-					{ label: "Social Media Strategy & Management", id: "social-media" },
+					{
+						label: "Performance Marketing (PPC & Media Buying)",
+						id: "performance-marketing",
+					},
+					{
+						label: "Social Media Strategy & Management",
+						id: "social-media",
+					},
 					{ label: "Content Strategy & Creation", id: "content-strategy" },
+					{ label: "Website & Experience Design", id: "website-experience-design" },
 					{ label: "AI Marketing & Automation", id: "ai-marketing" },
-					{ label: "Analytics & Performance Insights", id: "analytics-insights" }
+					{ label: "Analytics & Performance Insights", id: "analytics-insights" },
+					{
+						label: "Brand Reputation & Communication",
+						id: "brand-reputation-communication",
+					},
+					{ label: "Influencer Marketing", id: "influencer-marketing" },
 				]}
 			/>
 
@@ -68,9 +84,7 @@ function DigitalMarketingPageClient() {
 					className="text-muted-foreground leading-relaxed text-[18px] md:text-lg"
 				/>
 			</ServiceOverview>
-			<ServiceOverview
-				title="Website & Experience Design"
-			>
+			<ServiceOverview id="website-experience-design" title="Website & Experience Design">
 				<AnimatedParagraph
 					text="Your website is your digital first impression — we make it unforgettable. Kraftz designs and develops sleek, fast, and conversion-optimized websites that balance creativity with clarity. Every design reflects your brand ethos while driving measurable action."
 					className="text-muted-foreground leading-relaxed text-[18px] md:text-lg"
@@ -95,6 +109,7 @@ function DigitalMarketingPageClient() {
 				/>
 			</ServiceOverview>
 			<ServiceOverview
+				id="brand-reputation-communication"
 				title="Brand Reputation & Communication"
 			>
 				<AnimatedParagraph
@@ -102,9 +117,7 @@ function DigitalMarketingPageClient() {
 					className="text-muted-foreground leading-relaxed text-[18px] md:text-lg"
 				/>
 			</ServiceOverview>
-			<ServiceOverview
-				title="Influencer Marketing"
-			>
+			<ServiceOverview id="influencer-marketing" title="Influencer Marketing">
 				<AnimatedParagraph
 					text="At Kraftz, we help brands to expand their reach and engagement through strategic influencer partnerships. From our extensive network of influencers we select the right influencers, creating compelling content, and tracking performance, we drive brand awareness, trust, and conversions — ensuring measurable results and meaningful audience connections"
 					className="text-muted-foreground leading-relaxed text-[18px] md:text-lg"

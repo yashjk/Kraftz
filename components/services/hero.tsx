@@ -68,9 +68,9 @@ function ServicesHero({
 			<div className="absolute inset-0 bg-[#2a1f1a]/60 z-0" />
 
 			{/* Background decorations - matching main hero style */}
-			<div className="absolute inset-0 overflow-hidden z-[1]">
+			<div className="absolute inset-0 overflow-hidden z-1">
 				<motion.div
-					className="absolute top-0 right-0 w-96 h-96 bg-gradient-to-br from-accent/20 to-transparent rounded-full blur-3xl"
+					className="absolute top-0 right-0 w-96 h-96 bg-linear-to-br from-accent/20 to-transparent rounded-full blur-3xl"
 					animate={{
 						x: [0, 30, 0],
 						y: [0, -30, 0],
@@ -83,7 +83,7 @@ function ServicesHero({
 					}}
 				/>
 				<motion.div
-					className="absolute bottom-20 left-0 w-80 h-80 bg-gradient-to-tr from-primary/15 to-transparent rounded-full blur-3xl"
+					className="absolute bottom-20 left-0 w-80 h-80 bg-linear-to-tr from-primary/15 to-transparent rounded-full blur-3xl"
 					animate={{
 						x: [0, -20, 0],
 						y: [0, 20, 0],
@@ -96,7 +96,7 @@ function ServicesHero({
 					}}
 				/>
 				<motion.div
-					className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-96 h-96 bg-gradient-to-br from-secondary/10 to-transparent rounded-full blur-3xl"
+					className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-96 h-96 bg-linear-to-br from-secondary/10 to-transparent rounded-full blur-3xl"
 					animate={{
 						scale: [1, 1.2, 1],
 						opacity: [0.3, 0.5, 0.3],
@@ -164,10 +164,10 @@ function ServicesHero({
 								</p>
 							</FadeInUp>
 
-							{/* Highlights as Tags */}
+							{/* Highlights */}
 							{highlights.length > 0 && (
 								<FadeInUp delay={0.4} triggerOnce={true}>
-									<div className="relative z-10 flex flex-wrap justify-center lg:justify-start gap-3 pt-4">
+									<div className="relative z-10 flex flex-wrap justify-center lg:justify-start gap-2 pt-4 text-[16px] md:text-[18px] font-semibold text-white/90">
 										{highlights.map((highlight, index) => {
 											const label =
 												typeof highlight === "string"
@@ -180,33 +180,39 @@ function ServicesHero({
 													  highlight.id ||
 													  textToId(highlight.label);
 
+											const isLast = index === highlights.length - 1;
+
 											return (
-												<motion.button
-													key={index}
-													type="button"
-													onClick={(e) => {
-														e.preventDefault();
-														scrollToSection(hrefOrId);
-													}}
-													initial={{ opacity: 0, scale: 0.8, y: 10 }}
-													animate={{ opacity: 1, scale: 1, y: 0 }}
-													transition={{
-														delay: 0.5 + index * 0.1,
-														duration: 0.4,
-														ease: [0.4, 0, 0.2, 1] as [
-															number,
-															number,
-															number,
-															number
-														],
-													}}
-													className="relative z-10 px-4 py-2 text-[16px] md:text-[18px] font-medium text-white bg-white/10 backdrop-blur-sm border border-white/20 rounded-full hover:bg-white/20 hover:border-white/30 transition-all duration-300 shadow-[0_2px_8px_rgba(0,0,0,0.2)] hover:shadow-[0_4px_12px_rgba(0,0,0,0.3)] cursor-pointer"
-													whileHover={{ scale: 1.05, y: -2 }}
-													whileTap={{ scale: 0.95 }}
-													style={{ pointerEvents: "auto" }}
-												>
-													{label}
-												</motion.button>
+												<div key={index} className="flex items-center">
+													<motion.button
+														type="button"
+														onClick={(e) => {
+															e.preventDefault();
+															scrollToSection(hrefOrId);
+														}}
+														initial={{ opacity: 0, y: 10 }}
+														animate={{ opacity: 1, y: 0 }}
+														transition={{
+															delay: 0.5 + index * 0.05,
+															duration: 0.4,
+															ease: [0.4, 0, 0.2, 1] as [
+																number,
+																number,
+																number,
+																number
+															],
+														}}
+														className="group relative text-left text-white/90 transition-colors duration-300 hover:text-white focus:outline-none focus-visible:text-white"
+														whileHover={{ y: -2 }}
+														style={{ pointerEvents: "auto" }}
+													>
+														<span>{label}</span>
+														<span className="pointer-events-none absolute left-0 bottom-0 h-px w-full origin-left scale-x-0 bg-linear-to-r from-white/0 via-white/80 to-white/0 transition-transform duration-300 group-hover:scale-x-100 group-focus-visible:scale-x-100" />
+													</motion.button>
+													{!isLast && (
+														<span className="mx-2 text-white/50">·</span>
+													)}
+												</div>
 											);
 										})}
 									</div>

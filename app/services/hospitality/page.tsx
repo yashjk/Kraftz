@@ -4,7 +4,7 @@ import type { Metadata } from "next";
 export const metadata: Metadata = {
 	title: "Hospitality Consulting Services",
 	description:
-		"KRAFTz Hospitality Consulting delivers comprehensive, end-to-end consulting services for hotels, resorts, villas, and accommodation providers. We specialize in revenue optimization, brand positioning, technology integration, and reputation management.",
+		"Kraftz Hospitality Consulting delivers comprehensive, end-to-end consulting services for hotels, resorts, villas, and accommodation providers. We specialize in revenue optimization, brand positioning, technology integration, and reputation management.",
 	keywords: [
 		"hospitality consulting",
 		"hotel consulting",
@@ -17,13 +17,13 @@ export const metadata: Metadata = {
 		"hotel brand positioning",
 	],
 	openGraph: {
-		title: "Hospitality Consulting Services | KRAFTz",
+		title: "Hospitality Consulting Services | Kraftz",
 		description:
 			"Comprehensive hospitality consulting services for hotels, resorts, and accommodation providers. Revenue optimization, brand positioning, and technology integration.",
 		url: "/services/hospitality",
 	},
 	twitter: {
-		title: "Hospitality Consulting Services | KRAFTz",
+		title: "Hospitality Consulting Services | Kraftz",
 		description:
 			"Comprehensive hospitality consulting services for hotels, resorts, and accommodation providers.",
 	},
