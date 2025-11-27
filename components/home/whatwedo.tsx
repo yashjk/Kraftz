@@ -67,35 +67,7 @@ function WhatWeDo() {
 	return (
 		<div className="relative">
 			{/* Hero Section */}
-			<section className="relative px-8 md:px-16 lg:px-28 pt-12 md:pt-16 lg:pt-20 pb-6 bg-gradient-to-b from-background via-background to-accent/5 overflow-hidden">
-				{/* Animated background elements */}
-				<motion.div
-					className="absolute top-0 right-0 w-96 h-96 bg-gradient-to-br from-primary/10 to-transparent rounded-full blur-3xl"
-					animate={{
-						x: [0, 30, 0],
-						y: [0, -30, 0],
-						scale: [1, 1.1, 1],
-					}}
-					transition={{
-						duration: 20,
-						repeat: Infinity,
-						ease: "easeInOut",
-					}}
-				/>
-				<motion.div
-					className="absolute bottom-0 left-0 w-80 h-80 bg-gradient-to-tr from-accent/15 to-transparent rounded-full blur-3xl"
-					animate={{
-						x: [0, -20, 0],
-						y: [0, 20, 0],
-						scale: [1, 1.15, 1],
-					}}
-					transition={{
-						duration: 25,
-						repeat: Infinity,
-						ease: "easeInOut",
-					}}
-				/>
-
+			<section className="relative px-8 md:px-16 lg:px-24 pt-8 md:pt-12 lg:pt-16 pb-4 bg-background overflow-hidden">
 				<div className="relative text-center px-8 md:px-28">
 					<FadeInUp delay={0.2} triggerOnce={true}>
 						<h2 className="font-heading text-4xl md:text-5xl lg:text-5xl font-bold mb-6 text-[#0249A7]">
@@ -106,7 +78,7 @@ function WhatWeDo() {
 			</section>
 
 			{/* Services Grid */}
-			<div className="px-8 md:px-16 lg:px-28 pt-6 pb-12 md:pb-20 bg-background">
+			<div className="px-8 md:px-16 lg:px-24 pt-4 pb-10 md:pb-14 bg-background">
 				<div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-2 md:gap-3">
 					{services.map((service, index) => {
 						const IconComponent = service.icon;

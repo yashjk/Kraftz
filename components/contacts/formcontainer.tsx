@@ -50,11 +50,6 @@ function FormContainer() {
 							<h1 className="font-heading text-4xl md:text-5xl lg:text-6xl font-bold mb-3 text-[#0249A7]">
 								Contact Us
 							</h1>
-							<p className="text-[18px] md:text-lg leading-relaxed text-muted-foreground max-w-2xl mx-auto">
-								Reach out to us for digital marketing services, hospitality
-								consulting, or luxury travel experiences. We&apos;re here to
-								help your business grow intelligently.
-							</p>
 						</div>
 					</FadeInUp>
 
@@ -175,18 +170,18 @@ function FormContainer() {
 										</div>
 										<div className="space-y-1.5">
 											<motion.a
-												href={`tel:${contactInfo.phone_ind_1}`}
-												className="block text-[18px] font-medium text-foreground hover:text-primary transition-colors"
-												whileHover={{ x: 4 }}
-											>
-												{contactInfo.phone_ind_1}
-											</motion.a>
-											<motion.a
 												href={`tel:${contactInfo.phone_ind_2}`}
 												className="block text-[18px] font-medium text-foreground hover:text-primary transition-colors"
 												whileHover={{ x: 4 }}
 											>
 												{contactInfo.phone_ind_2}
+											</motion.a>
+											<motion.a
+												href={`tel:${contactInfo.phone_ind_1}`}
+												className="block text-[18px] font-medium text-foreground hover:text-primary transition-colors"
+												whileHover={{ x: 4 }}
+											>
+												{contactInfo.phone_ind_1}
 											</motion.a>
 										</div>
 									</div>
@@ -261,7 +256,7 @@ function FormContainer() {
 														Business Office
 													</div>
 													<p className="text-muted-foreground text-[18px] md:text-lg leading-relaxed">
-														{contactInfo.address_uae_business}
+														{contactInfo.address_uae_business_full}
 													</p>
 												</div>
 												<div>

@@ -207,7 +207,7 @@ function ServicesHero({
 														style={{ pointerEvents: "auto" }}
 													>
 														<span>{label}</span>
-														<span className="pointer-events-none absolute left-0 bottom-0 h-px w-full origin-left scale-x-0 bg-linear-to-r from-white/0 via-white/80 to-white/0 transition-transform duration-300 group-hover:scale-x-100 group-focus-visible:scale-x-100" />
+														<span className="pointer-events-none absolute left-0 bottom-0 h-0.5 w-full rounded-full bg-linear-to-r from-white/25 via-white/70 to-white/25 opacity-80 transition-all duration-300 group-hover:opacity-100 group-hover:from-[#FF7A18]/0 group-hover:via-[#FF7A18] group-hover:to-[#FF7A18]/0 group-hover:shadow-[0_0_18px_rgba(255,122,24,0.55)]" />
 													</motion.button>
 													{!isLast && (
 														<span className="mx-2 text-white/50">·</span>

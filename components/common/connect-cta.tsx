@@ -12,50 +12,7 @@ function ConnectCTA({
 	message = "Every hotel has untapped potential. Let's unlock yours - with strategy, precision, and imagination.",
 }: ConnectCTAProps) {
 	return (
-		<section className="relative px-8 md:px-16 lg:px-28 py-6 md:py-8 bg-gradient-to-b from-background via-accent/5 to-background text-center overflow-hidden">
-			{/* Background animation */}
-			<FadeInUp triggerOnce={true}>
-				<div className="absolute inset-0 pointer-events-none">
-					<motion.div
-						className="absolute top-0 left-0 w-96 h-96 bg-primary/10 rounded-full blur-3xl"
-						animate={{
-							x: [0, 50, 0],
-							y: [0, -50, 0],
-							scale: [1, 1.2, 1],
-						}}
-						transition={{
-							duration: 15,
-							repeat: Infinity,
-							ease: "easeInOut",
-						}}
-					/>
-					<motion.div
-						className="absolute bottom-0 right-0 w-96 h-96 bg-secondary/10 rounded-full blur-3xl"
-						animate={{
-							x: [0, -50, 0],
-							y: [0, 50, 0],
-							scale: [1, 1.2, 1],
-						}}
-						transition={{
-							duration: 18,
-							repeat: Infinity,
-							ease: "easeInOut",
-						}}
-					/>
-					<motion.div
-						className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-80 h-80 bg-accent/10 rounded-full blur-3xl"
-						animate={{
-							scale: [1, 1.15, 1],
-							opacity: [0.3, 0.5, 0.3],
-						}}
-						transition={{
-							duration: 12,
-							repeat: Infinity,
-							ease: "easeInOut",
-						}}
-					/>
-				</div>
-			</FadeInUp>
+		<section className="relative px-8 md:px-16 lg:px-28 py-4 md:py-6 bg-background text-center">
 
 			<FadeInUp delay={0.2} className="relative z-10" triggerOnce={true}>
 				<div className="max-w-3xl mx-auto mb-4">
@@ -97,10 +54,10 @@ function ConnectCTA({
 						whileHover={{
 							scale: 1.02,
 							boxShadow:
-								"0 8px 25px rgba(2, 73, 167, 0.25), 0 4px 10px rgba(2, 73, 167, 0.15)",
+								"0 8px 25px rgba(255, 122, 24, 0.35), 0 4px 10px rgba(255, 122, 24, 0.2)",
 						}}
 						whileTap={{ scale: 0.98 }}
-						className="group relative inline-flex items-center justify-center px-8 py-2.5 border border-[#0249A7] bg-[#0249A7] text-white font-semibold text-base tracking-wide rounded-lg transition-all duration-300 hover:bg-[#022ba7] hover:text-white shadow-[0_4px_12px_rgba(2,73,167,0.15),0_2px_4px_rgba(2,73,167,0.1)] hover:shadow-[0_8px_25px_rgba(2,73,167,0.25),0_4px_10px_rgba(2,73,167,0.15)]"
+						className="group relative inline-flex items-center justify-center px-8 py-2.5 border border-[#FF7A18] bg-[#FF7A18] text-white font-semibold text-base tracking-wide rounded-lg transition-all duration-300 hover:bg-[#e56a0f] hover:text-white shadow-[0_4px_12px_rgba(255,122,24,0.25),0_2px_4px_rgba(255,122,24,0.15)] hover:shadow-[0_8px_25px_rgba(255,122,24,0.35),0_4px_10px_rgba(255,122,24,0.2)]"
 					>
 						{/* Elegant underline effect */}
 						<motion.div

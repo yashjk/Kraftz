@@ -13,6 +13,8 @@ import {
 	DropdownMenuTrigger,
 } from "@/components/ui/dropdown-menu";
 
+const MotionLink = motion(Link);
+
 type NavLink =
 	| {
 			href: string;
@@ -27,6 +29,9 @@ type NavLink =
 function Header() {
 	const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
 	const [scrolled, setScrolled] = useState(false);
+	const [openServiceDropdown, setOpenServiceDropdown] = useState<string | null>(
+		null
+	);
 	const pathname = usePathname();
 
 	const serviceNavs = [
@@ -49,6 +54,14 @@ function Header() {
 				{
 					href: "/services/hospitality#business-intelligence",
 					label: "Business Intelligence",
+				},
+				{
+					href: "/services/hospitality#data-analytics",
+					label: "Data & Analytics",
+				},
+				{
+					href: "/services/hospitality#ota-management",
+					label: "OTA Management",
 				},
 				{
 					href: "/services/hospitality#reputation-management-orm",
@@ -82,12 +95,24 @@ function Header() {
 					label: "Content Strategy",
 				},
 				{
+					href: "/services/digital-marketing#website-experience-design",
+					label: "Website & Experience Design",
+				},
+				{
 					href: "/services/digital-marketing#ai-marketing",
 					label: "AI Marketing & Automation",
 				},
 				{
 					href: "/services/digital-marketing#analytics-insights",
 					label: "Analytics & Insights",
+				},
+				{
+					href: "/services/digital-marketing#brand-reputation-communication",
+					label: "Brand Reputation & Communication",
+				},
+				{
+					href: "/services/digital-marketing#influencer-marketing",
+					label: "Influencer Marketing",
 				},
 			],
 		},
@@ -160,8 +185,8 @@ function Header() {
 				transition={{ duration: 0.5 }}
 				className={`px-8 md:px-16 lg:px-28 flex justify-between items-center border-b border-border sticky top-0 z-50 transition-all duration-300 ${
 					scrolled
-						? "bg-white backdrop-blur-lg shadow-sm"
-						: "bg-white backdrop-blur-md"
+						? "bg-[#faf7f3] backdrop-blur-lg shadow-sm"
+						: "bg-[#faf7f3] backdrop-blur-md"
 				}`}
 			>
 				<Logo className="cursor-pointer" />
@@ -173,58 +198,72 @@ function Header() {
 							(isServiceLink(link) && pathname?.startsWith(link.href));
 
 						if (isServiceLink(link)) {
+							const isDropdownOpen = openServiceDropdown === link.href;
+
 							return (
-								<DropdownMenu key={link.href}>
-									<DropdownMenuTrigger asChild>
-										<motion.button
-											whileHover={{ y: -2 }}
-											className="relative font-medium transition-colors duration-300 hover:text-brand flex items-center gap-1"
-										>
-											{link.label}
-											<ChevronDown className="w-4 h-4" />
-											{isActive && (
-												<motion.span
-													layoutId="activeIndicator"
-													className="absolute bottom-0 left-0 right-0 h-0.5 bg-brand rounded-full"
-													initial={false}
-													transition={{
-														type: "spring",
-														stiffness: 380,
-														damping: 30,
-													}}
-												/>
-											)}
-										</motion.button>
-									</DropdownMenuTrigger>
-									<DropdownMenuContent align="start" className="min-w-[220px]">
-										<DropdownMenuItem asChild>
-											<Link
+								<div
+									key={link.href}
+									onMouseLeave={() => {
+										setOpenServiceDropdown((current) =>
+											current === link.href ? null : current
+										);
+									}}
+								>
+									<DropdownMenu
+										modal={false}
+										open={isDropdownOpen}
+										onOpenChange={(isOpen) =>
+											setOpenServiceDropdown(isOpen ? link.href : null)
+										}
+									>
+										<DropdownMenuTrigger asChild>
+											<MotionLink
 												href={link.href}
-												className={`w-full ${
-													matchesPath(link.href)
-														? "text-brand font-semibold"
-														: ""
-												}`}
+												onClick={(e) => handleSmoothScroll(e, link.href)}
+												onMouseEnter={() => setOpenServiceDropdown(link.href)}
+												onFocus={() => setOpenServiceDropdown(link.href)}
+												className="relative font-medium transition-colors duration-300 hover:text-brand flex items-center gap-1"
+												whileHover={{ y: -2 }}
 											>
-												View All
-											</Link>
-										</DropdownMenuItem>
-										{link.items.map((item) => (
-											<DropdownMenuItem key={item.href} asChild>
-												<Link
-													href={item.href}
-													className={`w-full ${
-														matchesPath(item.href)
-															? "text-brand font-semibold"
-															: ""
-													}`}
-												>
-													{item.label}
-												</Link>
-											</DropdownMenuItem>
-										))}
-									</DropdownMenuContent>
-								</DropdownMenu>
+												<span>{link.label}</span>
+												<ChevronDown className="w-4 h-4" />
+												{isActive && (
+													<motion.span
+														layoutId="activeIndicator"
+														className="absolute bottom-0 left-0 right-0 h-0.5 bg-brand rounded-full"
+														initial={false}
+														transition={{
+															type: "spring",
+															stiffness: 380,
+															damping: 30,
+														}}
+													/>
+												)}
+											</MotionLink>
+										</DropdownMenuTrigger>
+										<DropdownMenuContent
+											align="start"
+											className="min-w-[220px]"
+											onMouseEnter={() => setOpenServiceDropdown(link.href)}
+											onMouseLeave={() => setOpenServiceDropdown(null)}
+										>
+											{link.items.map((item) => (
+												<DropdownMenuItem key={item.href} asChild>
+													<Link
+														href={item.href}
+														className={`w-full ${
+															matchesPath(item.href)
+																? "text-brand font-semibold"
+																: ""
+														}`}
+													>
+														{item.label}
+													</Link>
+												</DropdownMenuItem>
+											))}
+										</DropdownMenuContent>
+									</DropdownMenu>
+								</div>
 							);
 						}
 
@@ -296,7 +335,7 @@ function Header() {
 						animate={{ opacity: 1, y: 0 }}
 						exit={{ opacity: 0, y: -20 }}
 						transition={{ duration: 0.3 }}
-						className="md:hidden fixed inset-0 top-20 bg-background/95 backdrop-blur-lg border-b border-border z-40"
+						className="md:hidden fixed inset-x-0 top-20 bottom-0 bg-background/95 backdrop-blur-lg border-b border-border z-40 overflow-y-auto overscroll-contain"
 					>
 						<nav className="flex flex-col gap-1 p-4">
 							{navLinks.map((link, index) => {
