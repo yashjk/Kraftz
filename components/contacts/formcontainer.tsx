@@ -47,7 +47,7 @@ function FormContainer() {
 				<div className="relative max-w-7xl mx-auto">
 					<FadeInUp triggerOnce={true}>
 						<div className="text-center mb-6">
-							<h1 className="font-heading text-4xl md:text-5xl lg:text-6xl font-bold mb-3 text-[#0249A7]">
+							<h1 className="typ-page-title mb-3 text-[#0249A7]">
 								Contact Us
 							</h1>
 						</div>
@@ -55,40 +55,46 @@ function FormContainer() {
 
 					{/* Contact Information - Modern Horizontal Layout */}
 					<FadeInUp triggerOnce={true}>
-						<div className="bg-gradient-to-br from-card via-card to-primary/5 border border-border rounded-3xl p-5 md:p-6 mb-8 shadow-lg">
+						<div className="bg-linear-to-br from-[#010918] via-[#03183a] to-[#042a5c] border border-border rounded-3xl p-5 md:p-6 mb-8 shadow-lg">
 							<div className="grid grid-cols-1 lg:grid-cols-3 gap-6 lg:gap-8">
 								{/* Email */}
 								<motion.a
 									href={`mailto:${contactInfo.email}`}
-									className="group flex items-start gap-3 p-3 rounded-2xl hover:bg-primary/5 transition-all duration-300"
+									className="group flex items-start gap-3 p-3 rounded-2xl transition-all duration-300"
 									whileHover={{ scale: 1.02 }}
 									whileTap={{ scale: 0.98 }}
 								>
-									<div className="flex-shrink-0 w-12 h-12 bg-gradient-to-br from-primary/20 to-primary/10 rounded-xl flex items-center justify-center group-hover:from-primary/30 group-hover:to-primary/20 transition-all">
-										<svg
-											className="w-6 h-6 text-primary"
-											fill="none"
-											stroke="currentColor"
-											viewBox="0 0 24 24"
-										>
-											<path
-												strokeLinecap="round"
-												strokeLinejoin="round"
-												strokeWidth={2}
-												d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"
-											/>
-										</svg>
-									</div>
+									<motion.div
+										className="mb-0"
+										whileHover={{ scale: 1.1, rotate: 5 }}
+										transition={{ type: "spring", stiffness: 300 }}
+									>
+										<div className="inline-flex items-center justify-center w-16 h-16 rounded-xl bg-white/10 group-hover:bg-white/20 transition-all duration-300 shadow-sm group-hover:shadow-md">
+											<svg
+												className="w-8 h-8 group-hover:text-white text-[#FF7A18] transition-colors duration-300"
+												fill="none"
+												stroke="currentColor"
+												viewBox="0 0 24 24"
+											>
+												<path
+													strokeLinecap="round"
+													strokeLinejoin="round"
+													strokeWidth={2}
+													d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"
+												/>
+											</svg>
+										</div>
+									</motion.div>
 									<div className="flex-1 min-w-0">
-										<div className="font-heading text-[18px] font-semibold text-muted-foreground uppercase tracking-wider mb-1">
+										<div className="typ-body font-semibold text-white uppercase tracking-wider mb-1">
 											Email
 										</div>
-										<div className="text-[18px] font-medium text-foreground group-hover:text-primary transition-colors break-all">
+										<div className="typ-body font-medium text-white group-hover:text-[#FF7A18] transition-colors duration-300 break-all">
 											{contactInfo.email}
 										</div>
 									</div>
 									<svg
-										className="w-5 h-5 text-muted-foreground group-hover:text-primary group-hover:translate-x-1 transition-all flex-shrink-0 mt-1"
+										className="w-5 h-5 text-white group-hover:text-[#FF7A18] group-hover:translate-x-1 transition-all flex-shrink-0 mt-1"
 										fill="none"
 										stroke="currentColor"
 										viewBox="0 0 24 24"
@@ -105,35 +111,41 @@ function FormContainer() {
 								{/* UAE Phone */}
 								<motion.a
 									href={`tel:${contactInfo.phone_uae}`}
-									className="group flex items-start gap-3 p-3 rounded-2xl hover:bg-primary/5 transition-all duration-300"
+									className="group flex items-start gap-3 p-3 rounded-2xl transition-all duration-300"
 									whileHover={{ scale: 1.02 }}
 									whileTap={{ scale: 0.98 }}
 								>
-									<div className="flex-shrink-0 w-12 h-12 bg-gradient-to-br from-primary/20 to-primary/10 rounded-xl flex items-center justify-center group-hover:from-primary/30 group-hover:to-primary/20 transition-all">
-										<svg
-											className="w-6 h-6 text-primary"
-											fill="none"
-											stroke="currentColor"
-											viewBox="0 0 24 24"
-										>
-											<path
-												strokeLinecap="round"
-												strokeLinejoin="round"
-												strokeWidth={2}
-												d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z"
-											/>
-										</svg>
-									</div>
+									<motion.div
+										className="mb-0"
+										whileHover={{ scale: 1.1, rotate: 5 }}
+										transition={{ type: "spring", stiffness: 300 }}
+									>
+										<div className="inline-flex items-center justify-center w-16 h-16 rounded-xl bg-white/10 group-hover:bg-white/20 transition-all duration-300 shadow-sm group-hover:shadow-md">
+											<svg
+												className="w-8 h-8 group-hover:text-white text-[#FF7A18] transition-colors duration-300"
+												fill="none"
+												stroke="currentColor"
+												viewBox="0 0 24 24"
+											>
+												<path
+													strokeLinecap="round"
+													strokeLinejoin="round"
+													strokeWidth={2}
+													d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z"
+												/>
+											</svg>
+										</div>
+									</motion.div>
 									<div className="flex-1 min-w-0">
-										<div className="font-heading text-[18px] font-semibold text-muted-foreground uppercase tracking-wider mb-1">
+										<div className="typ-body font-semibold text-white uppercase tracking-wider mb-1">
 											UAE
 										</div>
-										<div className="text-[18px] font-medium text-foreground group-hover:text-primary transition-colors">
+										<div className="typ-body font-medium text-white group-hover:text-[#FF7A18] transition-colors duration-300">
 											{contactInfo.phone_uae}
 										</div>
 									</div>
 									<svg
-										className="w-5 h-5 text-muted-foreground group-hover:text-primary group-hover:translate-x-1 transition-all flex-shrink-0 mt-1"
+										className="w-5 h-5 text-white group-hover:text-[#FF7A18] group-hover:translate-x-1 transition-all flex-shrink-0 mt-1"
 										fill="none"
 										stroke="currentColor"
 										viewBox="0 0 24 24"
@@ -148,37 +160,43 @@ function FormContainer() {
 								</motion.a>
 
 								{/* India Phone */}
-								<div className="group flex items-start gap-3 p-3 rounded-2xl hover:bg-primary/5 transition-all duration-300">
-									<div className="flex-shrink-0 w-12 h-12 bg-gradient-to-br from-primary/20 to-primary/10 rounded-xl flex items-center justify-center group-hover:from-primary/30 group-hover:to-primary/20 transition-all">
-										<svg
-											className="w-6 h-6 text-primary"
-											fill="none"
-											stroke="currentColor"
-											viewBox="0 0 24 24"
-										>
-											<path
-												strokeLinecap="round"
-												strokeLinejoin="round"
-												strokeWidth={2}
-												d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z"
-											/>
-										</svg>
-									</div>
+								<div className="group flex items-start gap-3 p-3 rounded-2xl transition-all duration-300">
+									<motion.div
+										className="mb-0"
+										whileHover={{ scale: 1.1, rotate: 5 }}
+										transition={{ type: "spring", stiffness: 300 }}
+									>
+										<div className="inline-flex items-center justify-center w-16 h-16 rounded-xl bg-white/10 group-hover:bg-white/20 transition-all duration-300 shadow-sm group-hover:shadow-md">
+											<svg
+												className="w-8 h-8 group-hover:text-white text-[#FF7A18] transition-colors duration-300"
+												fill="none"
+												stroke="currentColor"
+												viewBox="0 0 24 24"
+											>
+												<path
+													strokeLinecap="round"
+													strokeLinejoin="round"
+													strokeWidth={2}
+													d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z"
+												/>
+											</svg>
+										</div>
+									</motion.div>
 									<div className="flex-1 min-w-0">
-										<div className="font-heading text-[18px] font-semibold text-muted-foreground uppercase tracking-wider mb-1.5">
+										<div className="typ-body font-semibold text-white uppercase tracking-wider mb-2">
 											India
 										</div>
-										<div className="space-y-1.5">
+										<div className="flex flex-col space-y-2">
 											<motion.a
 												href={`tel:${contactInfo.phone_ind_2}`}
-												className="block text-[18px] font-medium text-foreground hover:text-primary transition-colors"
+												className="block typ-body font-medium text-white hover:text-[#FF7A18] transition-colors duration-300"
 												whileHover={{ x: 4 }}
 											>
 												{contactInfo.phone_ind_2}
 											</motion.a>
 											<motion.a
 												href={`tel:${contactInfo.phone_ind_1}`}
-												className="block text-[18px] font-medium text-foreground hover:text-primary transition-colors"
+												className="block typ-body font-medium text-white hover:text-[#FF7A18] transition-colors duration-300"
 												whileHover={{ x: 4 }}
 											>
 												{contactInfo.phone_ind_1}
@@ -193,14 +211,11 @@ function FormContainer() {
 			</section>
 
 			{/* Office Locations with Maps */}
-			<section className="relative px-8 md:px-16 lg:px-28 py-8 md:py-12 bg-background">
+			<section className="relative px-8 md:px-16 lg:px-28 pt-4 pb-8 md:pb-12 bg-background">
 				<div className="relative max-w-7xl mx-auto">
 					<FadeInUp triggerOnce={true}>
-						<div className="text-center mb-6">
-							<span className="text-primary text-[18px] font-semibold tracking-widest uppercase mb-2 block">
-								Our Offices
-							</span>
-							<h2 className="font-heading text-4xl md:text-5xl lg:text-5xl font-bold mb-3 text-[#0249A7]">
+						<div className="text-center mb-4">
+							<h2 className="typ-page-title mb-3 text-[#0249A7]">
 								Visit Us
 							</h2>
 						</div>
@@ -209,7 +224,7 @@ function FormContainer() {
 					{/* UAE Office */}
 					<div className="mb-8">
 						<SlideInLeft triggerOnce={true}>
-							<div className="bg-card border border-border rounded-3xl overflow-hidden shadow-lg">
+							<div className="bg-linear-to-br from-[#010918] via-[#03183a] to-[#042a5c] border border-border rounded-3xl overflow-hidden shadow-lg">
 								<div className="grid grid-cols-1 lg:grid-cols-2">
 									{/* Map */}
 									<div className="h-64 lg:h-auto">
@@ -224,46 +239,52 @@ function FormContainer() {
 										></iframe>
 									</div>
 									{/* Address Info */}
-									<div className="p-5 md:p-6 flex flex-col justify-center">
+									<div className="p-5 md:p-6 flex flex-col justify-center group">
 										<div>
-											<div className="w-12 h-12 bg-primary/10 rounded-xl flex items-center justify-center mb-3">
-												<svg
-													className="w-7 h-7 text-primary"
-													fill="none"
-													stroke="currentColor"
-													viewBox="0 0 24 24"
-												>
-													<path
-														strokeLinecap="round"
-														strokeLinejoin="round"
-														strokeWidth={2}
-														d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"
-													/>
-													<path
-														strokeLinecap="round"
-														strokeLinejoin="round"
-														strokeWidth={2}
-														d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"
-													/>
-												</svg>
-											</div>
-											<h3 className="font-heading text-lg md:text-xl font-bold mb-3 text-[#0249A7]">
+											<motion.div
+												className="mb-3"
+												whileHover={{ scale: 1.1, rotate: 5 }}
+												transition={{ type: "spring", stiffness: 300 }}
+											>
+												<div className="inline-flex items-center justify-center w-16 h-16 rounded-xl bg-white/10 group-hover:bg-white/20 transition-all duration-300 shadow-sm group-hover:shadow-md">
+													<svg
+														className="w-8 h-8 text-[#FF7A18] group-hover:text-white transition-colors duration-300"
+														fill="none"
+														stroke="currentColor"
+														viewBox="0 0 24 24"
+													>
+														<path
+															strokeLinecap="round"
+															strokeLinejoin="round"
+															strokeWidth={2}
+															d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"
+														/>
+														<path
+															strokeLinecap="round"
+															strokeLinejoin="round"
+															strokeWidth={2}
+															d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"
+														/>
+													</svg>
+												</div>
+											</motion.div>
+											<h3 className="typ-section-title mb-3 text-white">
 												UAE Offices
 											</h3>
 											<div className="space-y-3 mb-4">
 												<div>
-													<div className="text-[18px] font-semibold text-foreground mb-0.5">
+													<div className="typ-body font-semibold text-white mb-0.5">
 														Business Office
 													</div>
-													<p className="text-muted-foreground text-[18px] md:text-lg leading-relaxed">
+													<p className="typ-body text-white">
 														{contactInfo.address_uae_business_full}
 													</p>
 												</div>
 												<div>
-													<div className="text-[18px] font-semibold text-foreground mb-0.5">
+													<div className="typ-body font-semibold text-white mb-0.5">
 														Registered Office
 													</div>
-													<p className="text-muted-foreground text-[18px] md:text-lg leading-relaxed">
+													<p className="typ-body text-white">
 														{contactInfo.address_uae_registered}
 													</p>
 												</div>
@@ -274,7 +295,7 @@ function FormContainer() {
 												)}`}
 												target="_blank"
 												rel="noopener noreferrer"
-												className="inline-flex items-center text-primary hover:text-primary/80 transition-colors font-medium text-[18px]"
+												className="inline-flex items-center text-[#FF7A18] hover:text-white transition-colors font-medium typ-body"
 											>
 												View Business Office on Google Maps
 												<svg
@@ -301,36 +322,42 @@ function FormContainer() {
 					{/* India Office */}
 					<div>
 						<SlideInRight triggerOnce={true}>
-							<div className="bg-card border border-border rounded-3xl overflow-hidden shadow-lg">
+							<div className="bg-linear-to-br from-[#010918] via-[#03183a] to-[#042a5c] border border-border rounded-3xl overflow-hidden shadow-lg">
 								<div className="grid grid-cols-1 lg:grid-cols-2">
 									{/* Address Info */}
-									<div className="p-5 md:p-6 flex flex-col justify-center order-2 lg:order-1">
+									<div className="p-5 md:p-6 flex flex-col justify-center order-2 lg:order-1 group">
 										<div>
-											<div className="w-12 h-12 bg-primary/10 rounded-xl flex items-center justify-center mb-3">
-												<svg
-													className="w-7 h-7 text-primary"
-													fill="none"
-													stroke="currentColor"
-													viewBox="0 0 24 24"
-												>
-													<path
-														strokeLinecap="round"
-														strokeLinejoin="round"
-														strokeWidth={2}
-														d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"
-													/>
-													<path
-														strokeLinecap="round"
-														strokeLinejoin="round"
-														strokeWidth={2}
-														d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"
-													/>
-												</svg>
-											</div>
-											<h3 className="font-heading text-lg md:text-xl font-bold mb-3 text-[#0249A7]">
+											<motion.div
+												className="mb-3"
+												whileHover={{ scale: 1.1, rotate: 5 }}
+												transition={{ type: "spring", stiffness: 300 }}
+											>
+												<div className="inline-flex items-center justify-center w-16 h-16 rounded-xl bg-white/10 group-hover:bg-white/20 transition-all duration-300 shadow-sm group-hover:shadow-md">
+													<svg
+														className="w-8 h-8 text-[#FF7A18] group-hover:text-white transition-colors duration-300"
+														fill="none"
+														stroke="currentColor"
+														viewBox="0 0 24 24"
+													>
+														<path
+															strokeLinecap="round"
+															strokeLinejoin="round"
+															strokeWidth={2}
+															d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"
+														/>
+														<path
+															strokeLinecap="round"
+															strokeLinejoin="round"
+															strokeWidth={2}
+															d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"
+														/>
+													</svg>
+												</div>
+											</motion.div>
+											<h3 className="typ-section-title mb-3 text-white">
 												India Office
 											</h3>
-											<p className="text-[18px] md:text-lg leading-relaxed text-muted-foreground mb-4">
+											<p className="typ-body text-white mb-4">
 												{contactInfo.address_ind}
 											</p>
 											<a
@@ -339,7 +366,7 @@ function FormContainer() {
 												)}`}
 												target="_blank"
 												rel="noopener noreferrer"
-												className="inline-flex items-center text-primary hover:text-primary/80 transition-colors font-medium text-[18px]"
+												className="inline-flex items-center text-[#FF7A18] hover:text-white transition-colors font-medium typ-body"
 											>
 												View on Google Maps
 												<svg

@@ -49,7 +49,7 @@ function ServiceOverview({
 					<FadeInUp triggerOnce={true}>
 						<h2
 							className={cn(
-								"font-heading mb-8 text-3xl md:text-4xl font-bold text-[#0249A7]",
+								"typ-section-title mb-8 text-[#0249A7]",
 								"flex items-center justify-center gap-2 px-2"
 							)}
 						>

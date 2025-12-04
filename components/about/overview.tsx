@@ -43,7 +43,7 @@ function Overview() {
 				<header className="space-y-6">
 					<h2
 						className={cn(
-							"font-heading text-4xl md:text-5xl lg:text-6xl font-bold leading-tight",
+							"typ-page-title",
 							"flex items-center justify-center gap-2"
 						)}
 					>
@@ -61,7 +61,7 @@ function Overview() {
 							aria-hidden="true"
 						/>
 					</h2>
-					<p className="mx-auto max-w-5xl text-lg leading-relaxed text-white/85">
+					<p className="mx-auto max-w-5xl typ-body text-white/85">
 						{heroIntro}
 					</p>
 				</header>
@@ -70,7 +70,7 @@ function Overview() {
 					{supportingCopy.map((text, index) => (
 						<div key={text} className="space-y-4">
 							<div className="h-px w-20 mx-auto bg-white/20" />
-							<p className="text-base md:text-lg leading-relaxed text-white/80">
+							<p className="typ-body text-white/80">
 								{text}
 							</p>
 						</div>

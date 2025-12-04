@@ -60,16 +60,42 @@ function Header() {
 					label: "Data & Analytics",
 				},
 				{
-					href: "/services/hospitality#ota-management",
-					label: "OTA Management",
-				},
-				{
 					href: "/services/hospitality#reputation-management-orm",
 					label: "Reputation Management / ORM",
 				},
 				{
 					href: "/services/hospitality#content-management",
 					label: "Content Management",
+				},
+			],
+		},
+		{
+			href: "/services/ota-management",
+			label: "OTA Management",
+			items: [
+				{
+					href: "/services/ota-management#ota-channel-setup",
+					label: "OTA Channel Setup & Audit",
+				},
+				{
+					href: "/services/ota-management#rate-parity-management",
+					label: "Rate Parity Management",
+				},
+				{
+					href: "/services/ota-management#content-optimization",
+					label: "Content Optimization",
+				},
+				{
+					href: "/services/ota-management#performance-tracking",
+					label: "Performance Tracking & Analytics",
+				},
+				{
+					href: "/services/ota-management#commission-optimization",
+					label: "Commission Optimization",
+				},
+				{
+					href: "/services/ota-management#multi-channel-distribution",
+					label: "Multi-Channel Distribution",
 				},
 			],
 		},
@@ -183,7 +209,7 @@ function Header() {
 				initial={{ y: -100, opacity: 0 }}
 				animate={{ y: 0, opacity: 1 }}
 				transition={{ duration: 0.5 }}
-				className={`px-8 md:px-16 lg:px-28 flex justify-between items-center border-b border-border sticky top-0 z-50 transition-all duration-300 ${
+				className={`px-6 md:px-12 lg:px-20 flex justify-between items-center border-b border-border sticky top-0 z-50 transition-all duration-300 ${
 					scrolled
 						? "bg-[#faf7f3] backdrop-blur-lg shadow-sm"
 						: "bg-[#faf7f3] backdrop-blur-md"
@@ -222,7 +248,7 @@ function Header() {
 												onClick={(e) => handleSmoothScroll(e, link.href)}
 												onMouseEnter={() => setOpenServiceDropdown(link.href)}
 												onFocus={() => setOpenServiceDropdown(link.href)}
-												className="relative font-medium transition-colors duration-300 hover:text-brand flex items-center gap-1"
+												className="relative text-base font-bold transition-colors duration-300 hover:text-brand flex items-center gap-1"
 												whileHover={{ y: -2 }}
 											>
 												<span>{link.label}</span>
@@ -251,7 +277,7 @@ function Header() {
 												<DropdownMenuItem key={item.href} asChild>
 													<Link
 														href={item.href}
-														className={`w-full ${
+														className={`w-full typ-body ${
 															matchesPath(item.href)
 																? "text-brand font-semibold"
 																: ""
@@ -275,7 +301,7 @@ function Header() {
 							>
 								<motion.p
 									whileHover={{ y: -2 }}
-									className="relative font-medium transition-colors duration-300 hover:text-brand"
+									className="relative text-base font-bold transition-colors duration-300 hover:text-brand"
 								>
 									{link.label}
 									{isActive && (
@@ -355,9 +381,9 @@ function Header() {
 											<Link
 												href={link.href}
 												onClick={() => setMobileMenuOpen(false)}
-												className={`block px-4 py-3 rounded-lg transition-colors text-foreground font-semibold ${
-													isActive ? "text-brand" : ""
-												}`}
+											className={`block px-4 py-3 rounded-lg transition-colors typ-body text-foreground font-bold ${
+												isActive ? "text-brand" : ""
+											}`}
 											>
 												{link.label}
 											</Link>
@@ -374,7 +400,7 @@ function Header() {
 														<Link
 															href={item.href}
 															onClick={() => setMobileMenuOpen(false)}
-															className={`block px-3 py-2 rounded-md text-sm font-medium text-foreground/80 hover:bg-accent/20 ${
+															className={`block px-3 py-2 rounded-md typ-body font-medium text-foreground/80 hover:bg-accent/20 ${
 																matchesPath(item.href) ? "text-brand" : ""
 															}`}
 														>
@@ -397,7 +423,7 @@ function Header() {
 										<Link
 											href={link.href}
 											onClick={() => setMobileMenuOpen(false)}
-											className={`block px-4 py-3 rounded-lg hover:bg-accent/10 transition-colors text-foreground font-medium ${
+											className={`block px-4 py-3 rounded-lg hover:bg-accent/10 transition-colors typ-body text-foreground font-bold ${
 												isActive ? "bg-accent/10 text-brand" : ""
 											}`}
 										>

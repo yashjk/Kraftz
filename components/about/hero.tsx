@@ -39,7 +39,7 @@ function Hero() {
 					initial={{ opacity: 0, y: 50, scale: 0.9 }}
 					animate={{ opacity: 1, y: 0, scale: 1 }}
 					transition={{ duration: 1, ease: [0.4, 0, 0.2, 1] }}
-					className="font-heading text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold tracking-tight"
+					className="typ-page-title tracking-tight"
 				>
 					About Us
 				</motion.h2>

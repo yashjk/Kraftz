@@ -15,7 +15,7 @@ function Culture() {
 				<header className="space-y-4">
 					<h2
 						className={cn(
-							"font-heading text-4xl md:text-5xl font-bold",
+							"typ-section-title",
 							"flex items-center justify-center gap-2"
 						)}
 					>
@@ -35,7 +35,7 @@ function Culture() {
 					</h2>
 					<div className="flex items-center justify-center gap-3 text-white/70">
 						<span className="h-px w-12 bg-white/30" aria-hidden="true" />
-						<span className="text-xs uppercase tracking-[0.4em]">
+						<span className="typ-body uppercase tracking-[0.4em]">
 							Mindset &amp; Practice
 						</span>
 						<span className="h-px w-12 bg-white/30" aria-hidden="true" />
@@ -43,9 +43,9 @@ function Culture() {
 				</header>
 
 				<div className="grid gap-8 lg:grid-cols-[0.6fr_0.4fr]">
-					<p className="text-base md:text-lg leading-relaxed text-white/85">{cultureParagraphs[0]}</p>
+					<p className="typ-body text-white/85">{cultureParagraphs[0]}</p>
 
-					<p className="text-base md:text-lg leading-relaxed text-white/80 italic">{cultureParagraphs[1]}</p>
+					<p className="typ-body text-white/80 italic">{cultureParagraphs[1]}</p>
 				</div>
 			</div>
 		</section>

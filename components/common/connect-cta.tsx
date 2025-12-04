@@ -30,7 +30,7 @@ function ConnectCTA({
 						</motion.svg>
 					</div>
 
-					<p className="text-[18px] md:text-xl leading-relaxed text-foreground/80 font-light italic max-w-2xl mx-auto relative">
+					<p className="typ-body text-foreground/80 font-light italic max-w-2xl mx-auto relative">
 						<AnimatedText
 							text={message}
 							delay={0.3}
@@ -57,7 +57,7 @@ function ConnectCTA({
 								"0 8px 25px rgba(255, 122, 24, 0.35), 0 4px 10px rgba(255, 122, 24, 0.2)",
 						}}
 						whileTap={{ scale: 0.98 }}
-						className="group relative inline-flex items-center justify-center px-8 py-2.5 border border-[#FF7A18] bg-[#FF7A18] text-white font-semibold text-base tracking-wide rounded-lg transition-all duration-300 hover:bg-[#e56a0f] hover:text-white shadow-[0_4px_12px_rgba(255,122,24,0.25),0_2px_4px_rgba(255,122,24,0.15)] hover:shadow-[0_8px_25px_rgba(255,122,24,0.35),0_4px_10px_rgba(255,122,24,0.2)]"
+						className="group relative inline-flex items-center justify-center px-8 py-2.5 border border-[#FF7A18] bg-[#FF7A18] text-white font-semibold typ-body tracking-wide rounded-lg transition-all duration-300 hover:bg-[#e56a0f] hover:text-white shadow-[0_4px_12px_rgba(255,122,24,0.25),0_2px_4px_rgba(255,122,24,0.15)] hover:shadow-[0_8px_25px_rgba(255,122,24,0.35),0_4px_10px_rgba(255,122,24,0.2)]"
 					>
 						{/* Elegant underline effect */}
 						<motion.div

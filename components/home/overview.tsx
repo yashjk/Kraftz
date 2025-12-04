@@ -21,12 +21,12 @@ function Overview() {
 						triggerOnce={true}
 					>
 						<FadeInUp triggerOnce={true}>
-							<h2 className="font-heading text-4xl md:text-5xl lg:text-5xl font-bold leading-tight text-[#0249A7]">
+							<h2 className="typ-section-title text-[#0249A7]">
 								Welcome To Kraftz
 							</h2>
 						</FadeInUp>
 
-						<p className="text-muted-foreground text-[18px] md:text-lg leading-relaxed w-full">
+						<p className="typ-body text-muted-foreground w-full">
 							<AnimatedText
 								text="At Kraftz we redefine hospitality through Revenue Management, distribution channel, Artificial InteIligence, Data & Analytics, Business intelligence and digital marketing to create intelligent growth systems for hotels. In today’s dynamic market where demand shifts rapidly and competition intensifies, we help hotels not just fill rooms but to maximize every opportunity. Kraftz empowers hotels with smart, data-driven strategies that drive occupancy, optimize pricing and distribution, and elevate guest experiences. By combining deep hospitality expertise, strategic revenue management, data-driven insights, and innovative technology, we help hotels and travel businesses achieve sustainable, measurable growth and long-term commercial success"
 								delay={0.1}
@@ -39,7 +39,7 @@ function Overview() {
 							initial={{ opacity: 0, y: 10 }}
 							whileInView={{ opacity: 1, y: 0 }}
 							viewport={{ once: true }}
-							className="group relative inline-flex items-center justify-center px-8 py-2.5 border border-[#FF7A18] bg-[#FF7A18] text-white font-semibold text-base tracking-wide rounded-lg transition-all duration-300 hover:bg-[#e56a0f] hover:text-white shadow-[0_4px_12px_rgba(255,122,24,0.25),0_2px_4px_rgba(255,122,24,0.15)] hover:shadow-[0_8px_25px_rgba(255,122,24,0.35),0_4px_10px_rgba(255,122,24,0.2)] mt-4"
+							className="group relative inline-flex items-center justify-center px-8 py-2.5 border border-[#FF7A18] bg-[#FF7A18] text-white font-semibold typ-body tracking-wide rounded-lg transition-all duration-300 hover:bg-[#e56a0f] hover:text-white shadow-[0_4px_12px_rgba(255,122,24,0.25),0_2px_4px_rgba(255,122,24,0.15)] hover:shadow-[0_8px_25px_rgba(255,122,24,0.35),0_4px_10px_rgba(255,122,24,0.2)] mt-4"
 						>
 							<span className="relative z-10 flex items-center gap-2.5">
 								Connect With Kraftz

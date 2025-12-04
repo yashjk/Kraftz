@@ -37,17 +37,17 @@ export const scaleIn = {
 
 // Animation transition defaults
 export const defaultTransition: Transition = {
-	duration: 0.6,
+	duration: 0.4,
 	ease: [0.4, 0, 0.2, 1] as [number, number, number, number],
 };
 
 export const fastTransition: Transition = {
-	duration: 0.3,
+	duration: 0.2,
 	ease: [0.4, 0, 0.2, 1] as [number, number, number, number],
 };
 
 export const slowTransition: Transition = {
-	duration: 0.8,
+	duration: 0.5,
 	ease: [0.4, 0, 0.2, 1] as [number, number, number, number],
 };
 
@@ -86,39 +86,18 @@ export function FadeInUp({
 	triggerOnce?: boolean;
 	usePositionDelay?: boolean;
 }) {
-	const elementRef = useRef<HTMLDivElement>(null);
-	const [calculatedDelay, setCalculatedDelay] = useState(delay);
-
 	const [ref, inView] = useInView({
 		triggerOnce,
-		threshold: 0.25, // 25% viewport threshold
+		rootMargin: "0px 0px -25% 0px", // Trigger when element reaches 75% of viewport height
 	});
-
-	useEffect(() => {
-		if (usePositionDelay && elementRef.current) {
-			const posDelay = calculatePositionDelay(elementRef, delay);
-			setCalculatedDelay(posDelay);
-		} else {
-			setCalculatedDelay(delay);
-		}
-	}, [delay, usePositionDelay]);
 
 	return (
 		<motion.div
-			ref={(node) => {
-				ref(node);
-				if (node) {
-					(
-						elementRef as React.MutableRefObject<HTMLDivElement | null>
-					).current = node;
-				}
-			}}
+			ref={ref}
 			initial="hidden"
 			animate={inView ? "visible" : "hidden"}
 			variants={fadeInUp}
-			transition={
-				{ ...defaultTransition, delay: calculatedDelay } as Transition
-			}
+			transition={defaultTransition}
 			className={className}
 		>
 			{children}
@@ -139,39 +118,18 @@ export function FadeIn({
 	triggerOnce?: boolean;
 	usePositionDelay?: boolean;
 }) {
-	const elementRef = useRef<HTMLDivElement>(null);
-	const [calculatedDelay, setCalculatedDelay] = useState(delay);
-
 	const [ref, inView] = useInView({
 		triggerOnce,
-		threshold: 0.25,
+		rootMargin: "0px 0px -25% 0px", // Trigger when element reaches 75% of viewport height
 	});
-
-	useEffect(() => {
-		if (usePositionDelay && elementRef.current) {
-			const posDelay = calculatePositionDelay(elementRef, delay);
-			setCalculatedDelay(posDelay);
-		} else {
-			setCalculatedDelay(delay);
-		}
-	}, [delay, usePositionDelay]);
 
 	return (
 		<motion.div
-			ref={(node) => {
-				ref(node);
-				if (node) {
-					(
-						elementRef as React.MutableRefObject<HTMLDivElement | null>
-					).current = node;
-				}
-			}}
+			ref={ref}
 			initial="hidden"
 			animate={inView ? "visible" : "hidden"}
 			variants={fadeIn}
-			transition={
-				{ ...defaultTransition, delay: calculatedDelay } as Transition
-			}
+			transition={defaultTransition}
 			className={className}
 		>
 			{children}
@@ -192,39 +150,18 @@ export function SlideInLeft({
 	triggerOnce?: boolean;
 	usePositionDelay?: boolean;
 }) {
-	const elementRef = useRef<HTMLDivElement>(null);
-	const [calculatedDelay, setCalculatedDelay] = useState(delay);
-
 	const [ref, inView] = useInView({
 		triggerOnce,
-		threshold: 0.25,
+		rootMargin: "0px 0px -25% 0px", // Trigger when element reaches 75% of viewport height
 	});
-
-	useEffect(() => {
-		if (usePositionDelay && elementRef.current) {
-			const posDelay = calculatePositionDelay(elementRef, delay);
-			setCalculatedDelay(posDelay);
-		} else {
-			setCalculatedDelay(delay);
-		}
-	}, [delay, usePositionDelay]);
 
 	return (
 		<motion.div
-			ref={(node) => {
-				ref(node);
-				if (node) {
-					(
-						elementRef as React.MutableRefObject<HTMLDivElement | null>
-					).current = node;
-				}
-			}}
+			ref={ref}
 			initial="hidden"
 			animate={inView ? "visible" : "hidden"}
 			variants={slideInLeft}
-			transition={
-				{ ...defaultTransition, delay: calculatedDelay } as Transition
-			}
+			transition={defaultTransition}
 			className={className}
 		>
 			{children}
@@ -245,39 +182,18 @@ export function SlideInRight({
 	triggerOnce?: boolean;
 	usePositionDelay?: boolean;
 }) {
-	const elementRef = useRef<HTMLDivElement>(null);
-	const [calculatedDelay, setCalculatedDelay] = useState(delay);
-
 	const [ref, inView] = useInView({
 		triggerOnce,
-		threshold: 0.25,
+		rootMargin: "0px 0px -25% 0px", // Trigger when element reaches 75% of viewport height
 	});
-
-	useEffect(() => {
-		if (usePositionDelay && elementRef.current) {
-			const posDelay = calculatePositionDelay(elementRef, delay);
-			setCalculatedDelay(posDelay);
-		} else {
-			setCalculatedDelay(delay);
-		}
-	}, [delay, usePositionDelay]);
 
 	return (
 		<motion.div
-			ref={(node) => {
-				ref(node);
-				if (node) {
-					(
-						elementRef as React.MutableRefObject<HTMLDivElement | null>
-					).current = node;
-				}
-			}}
+			ref={ref}
 			initial="hidden"
 			animate={inView ? "visible" : "hidden"}
 			variants={slideInRight}
-			transition={
-				{ ...defaultTransition, delay: calculatedDelay } as Transition
-			}
+			transition={defaultTransition}
 			className={className}
 		>
 			{children}
@@ -298,39 +214,18 @@ export function ScaleIn({
 	triggerOnce?: boolean;
 	usePositionDelay?: boolean;
 }) {
-	const elementRef = useRef<HTMLDivElement>(null);
-	const [calculatedDelay, setCalculatedDelay] = useState(delay);
-
 	const [ref, inView] = useInView({
 		triggerOnce,
-		threshold: 0.25,
+		rootMargin: "0px 0px -25% 0px", // Trigger when element reaches 75% of viewport height
 	});
-
-	useEffect(() => {
-		if (usePositionDelay && elementRef.current) {
-			const posDelay = calculatePositionDelay(elementRef, delay);
-			setCalculatedDelay(posDelay);
-		} else {
-			setCalculatedDelay(delay);
-		}
-	}, [delay, usePositionDelay]);
 
 	return (
 		<motion.div
-			ref={(node) => {
-				ref(node);
-				if (node) {
-					(
-						elementRef as React.MutableRefObject<HTMLDivElement | null>
-					).current = node;
-				}
-			}}
+			ref={ref}
 			initial="hidden"
 			animate={inView ? "visible" : "hidden"}
 			variants={scaleIn}
-			transition={
-				{ ...defaultTransition, delay: calculatedDelay } as Transition
-			}
+			transition={defaultTransition}
 			className={className}
 		>
 			{children}
@@ -349,7 +244,7 @@ export function StaggerContainer({
 }) {
 	const [ref, inView] = useInView({
 		triggerOnce,
-		threshold: 0.25,
+		rootMargin: "0px 0px -25% 0px", // Trigger when element reaches 75% of viewport height
 	});
 
 	const containerVariants = {
@@ -375,7 +270,7 @@ export function StaggerContainer({
 	);
 }
 
-// Enhanced AnimatedText with line-by-line sequential animation
+// Simplified AnimatedText - displays text immediately without animation
 export function AnimatedText({
 	text,
 	className = "",
@@ -391,177 +286,11 @@ export function AnimatedText({
 	threshold?: number;
 	triggerOnce?: boolean;
 }) {
-	const [ref, inView] = useInView({
-		triggerOnce,
-		threshold,
-	});
-
-	// Split text into paragraphs (by \n\n), then each paragraph into lines (by \n)
-	// For paragraphs without explicit breaks, we'll treat the whole text as one paragraph
-	// First, normalize the text - handle both actual newlines and literal \n characters
-	// In JavaScript strings, \n is already a newline, but if it's written as literal characters, we need to convert them
+	// Normalize text - handle both actual newlines and literal \n characters
 	let normalizedText = text;
-	// Replace literal backslash-n sequences (the actual characters \ and n) with actual newlines
-	// This handles cases where \n\n appears as literal text in the string
-	// In a regex, \\ matches a literal backslash, so \\n matches \n (backslash followed by n)
-	// First, replace any literal \n\n sequences (backslash-n-backslash-n) with actual newline pairs
 	normalizedText = normalizedText.replace(/\\n\\n/g, "\n\n");
-	// Then replace any remaining literal \n (backslash-n) with actual newlines
 	normalizedText = normalizedText.replace(/\\n/g, "\n");
-	// Clean up any extra whitespace around paragraph breaks (spaces before/after \n\n)
 	normalizedText = normalizedText.replace(/\s*\n\n\s*/g, "\n\n");
-	// Now split by actual newline pairs for paragraphs
-	const hasParagraphBreaks = normalizedText.includes("\n\n");
-	const paragraphs = hasParagraphBreaks
-		? normalizedText
-				.split("\n\n")
-				.map((para) => para.trim())
-				.filter((para) => para.length > 0)
-		: [normalizedText.trim()];
 
-	// Process each paragraph: split into lines, then lines into words
-	const paragraphLines = paragraphs.map((paragraph) => {
-		const hasLineBreaks = paragraph.includes("\n");
-		return hasLineBreaks
-			? paragraph.split("\n").filter((line) => line.trim().length > 0)
-			: [paragraph];
-	});
-
-	const paragraphLineWords = paragraphLines.map((lines) =>
-		lines.map((line) => {
-			// Split by whitespace, but filter out any remaining literal \n characters
-			// that might have been missed in normalization
-			return line
-				.replace(/\\n/g, " ") // Replace any remaining literal \n with space
-				.split(/(\s+)/)
-				.filter((word) => word.length > 0 && !word.match(/^\\n+$/)); // Filter out literal \n sequences
-		})
-	);
-
-	const wordDuration = 0.5; // Duration of each word animation
-
-	// Calculate when each line should start (after previous line's last word completes)
-	// Now we need to track across paragraphs and lines within paragraphs
-	const getLineStartDelay = (
-		paragraphIndex: number,
-		lineIndex: number
-	): number => {
-		if (paragraphIndex === 0 && lineIndex === 0) return delay;
-
-		let totalDelay = delay;
-
-		// Calculate delay from all previous paragraphs
-		for (let p = 0; p < paragraphIndex; p++) {
-			const linesInParagraph = paragraphLineWords[p];
-			for (let l = 0; l < linesInParagraph.length; l++) {
-				const wordsInLine = linesInParagraph[l].filter(
-					(w) => w.trim().length > 0
-				).length;
-				const previousLineDelay =
-					p === 0 && l === 0 ? delay : getLineStartDelay(p, l);
-				const previousLineDuration =
-					wordsInLine > 0 ? (wordsInLine - 1) * wordDelay + wordDuration : 0;
-				totalDelay = previousLineDelay + previousLineDuration;
-			}
-			// Add a small delay between paragraphs (for visual spacing)
-			totalDelay += 0.2;
-		}
-
-		// Calculate delay from previous lines in current paragraph
-		for (let l = 0; l < lineIndex; l++) {
-			const wordsInLine = paragraphLineWords[paragraphIndex][l].filter(
-				(w) => w.trim().length > 0
-			).length;
-			const previousLineDelay =
-				paragraphIndex === 0 && l === 0
-					? delay
-					: getLineStartDelay(paragraphIndex, l);
-			const previousLineDuration =
-				wordsInLine > 0 ? (wordsInLine - 1) * wordDelay + wordDuration : 0;
-			totalDelay = previousLineDelay + previousLineDuration;
-		}
-
-		return totalDelay;
-	};
-
-	return (
-		<motion.span
-			ref={ref}
-			initial="hidden"
-			animate={inView ? "visible" : "hidden"}
-			className={className}
-		>
-			{paragraphs.map((paragraph, paragraphIndex) => {
-				const lines = paragraphLines[paragraphIndex];
-				const lineWords = paragraphLineWords[paragraphIndex];
-
-				return (
-					<span key={paragraphIndex} style={{ display: "block" }}>
-						{lines.map((line, lineIndex) => {
-							const lineStartDelay = getLineStartDelay(
-								paragraphIndex,
-								lineIndex
-							);
-							const words = lineWords[lineIndex];
-
-							return (
-								<span
-									key={`${paragraphIndex}-${lineIndex}`}
-									style={{ display: "block" }}
-								>
-									{words.map((word, wordIndex) => {
-										if (word.trim().length === 0) {
-											return (
-												<span
-													key={`${paragraphIndex}-${lineIndex}-${wordIndex}`}
-												>
-													{word}
-												</span>
-											);
-										}
-
-										// Calculate delay for this word: line start delay + (word index * word delay)
-										const wordDelayValue =
-											lineStartDelay + wordIndex * wordDelay;
-
-										return (
-											<motion.span
-												key={`${paragraphIndex}-${lineIndex}-${wordIndex}`}
-												initial={{ opacity: 0, y: 20 }}
-												animate={
-													inView
-														? {
-																opacity: 1,
-																y: 0,
-																transition: {
-																	delay: wordDelayValue,
-																	duration: wordDuration,
-																	ease: [0.4, 0, 0.2, 1] as [
-																		number,
-																		number,
-																		number,
-																		number
-																	],
-																},
-														  }
-														: { opacity: 0, y: 20 }
-												}
-												style={{ display: "inline-block", whiteSpace: "pre" }}
-											>
-												{word}
-											</motion.span>
-										);
-									})}
-									{lineIndex < lines.length - 1 && <br />}
-								</span>
-							);
-						})}
-						{paragraphIndex < paragraphs.length - 1 && (
-							<span style={{ display: "block", height: "1.5em" }} />
-						)}
-					</span>
-				);
-			})}
-		</motion.span>
-	);
+	return <span className={className}>{normalizedText}</span>;
 }

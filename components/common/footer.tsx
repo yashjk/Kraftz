@@ -23,6 +23,7 @@ function Footer() {
 
 	const services = [
 		{ href: "/services/hospitality", label: "Hospitality Solutions" },
+		{ href: "/services/ota-management", label: "OTA Management" },
 		{ href: "/services/digital-marketing", label: "Digital Marketing" },
 		{ href: "/services/travel", label: "Travel" },
 	];
@@ -32,11 +33,11 @@ function Footer() {
 			<footer className="bg-background">
 				<div className="mx-auto flex max-w-5xl flex-col items-center gap-5 px-4 py-7 text-center sm:px-6">
 					<Logo />
-					<p className="text-[0.78rem] text-muted-foreground max-w-md">
+					<p className="typ-body text-muted-foreground max-w-md">
 						Krafting growth intelligently across hospitality, digital marketing,
 						and travel.
 					</p>
-					<div className="flex flex-wrap justify-center gap-8 text-[0.7rem] uppercase tracking-[0.3em] text-muted-foreground">
+					<div className="flex flex-wrap justify-center gap-12 typ-body uppercase tracking-[0.3em] text-muted-foreground">
 						{services.map((service) => (
 							<Link
 								key={service.href}
@@ -47,7 +48,7 @@ function Footer() {
 							</Link>
 						))}
 					</div>
-					<div className="space-y-1 text-[0.78rem] text-muted-foreground">
+					<div className="space-y-1 typ-body text-muted-foreground">
 						<a
 							href={`mailto:${contactInfo.email}`}
 							className="block hover:text-[#0249A7] transition-colors"
@@ -70,7 +71,7 @@ function Footer() {
 					</div>
 				</div>
 
-				<div className="border-t border-border px-4 py-3 text-center text-[0.72rem] text-muted-foreground sm:px-6">
+				<div className="border-t border-border px-4 py-3 text-center typ-body text-muted-foreground sm:px-6">
 					<div className="mx-auto flex max-w-5xl flex-col items-center gap-2 sm:flex-row sm:justify-between">
 						<p>
 							© {new Date().getFullYear()} KRAFTz Hospitality and Travel

@@ -28,7 +28,7 @@ function TravelPageClient() {
 			>
 				<AnimatedParagraph
 					text="We believe travel should evoke emotion, create connection, and leave an imprint. Kraftz doesn't sell packages — we design experiences. Each journey reflects the traveler's individuality and aspirations, merging culture, comfort, and creativity into unforgettable moments."
-					className="text-muted-foreground leading-relaxed text-[18px] md:text-lg"
+					className="typ-body text-muted-foreground"
 				/>
 			</ServiceOverview>
 			<ServiceOverview
@@ -37,7 +37,7 @@ function TravelPageClient() {
 			>
 				<AnimatedParagraph
 					text="From hidden retreats to desert escapes, Kraftz designs meaningful journeys for individuals and families. We handle every detail — from private villas and personalized itineraries to Michelin-star dining and immersive cultural touchpoints — ensuring every journey feels like a once-in-a-lifetime story."
-					className="text-muted-foreground leading-relaxed text-[18px] md:text-lg"
+					className="typ-body text-muted-foreground"
 				/>
 			</ServiceOverview>
 			<ServiceOverview
@@ -46,7 +46,7 @@ function TravelPageClient() {
 			>
 				<AnimatedParagraph
 					text="For enterprises and executives, Kraftz curates travel experiences that balance efficiency with elegance. We offer executive retreats, leadership off-sites, and corporate travel management designed for productivity, comfort, and prestige."
-					className="text-muted-foreground leading-relaxed text-[18px] md:text-lg"
+					className="typ-body text-muted-foreground"
 				/>
 			</ServiceOverview>
 			<ServiceOverview
@@ -55,7 +55,7 @@ function TravelPageClient() {
 			>
 				<AnimatedParagraph
 					text="We open doors to the extraordinary — private jets, yacht charters, island buyouts, and world-class hospitality experiences. Kraftz partners with global luxury brands to provide bespoke lifestyle experiences that redefine exclusivity for HNIs and UHNWIs."
-					className="text-muted-foreground leading-relaxed text-[18px] md:text-lg"
+					className="typ-body text-muted-foreground"
 				/>
 			</ServiceOverview>
 
@@ -65,12 +65,12 @@ function TravelPageClient() {
 			>
 				<AnimatedParagraph
 					text="Travel is transformation. Our cultural journeys connect travelers with local traditions, gastronomy, art, and heritage. Whether it's a tea ceremony in Kyoto, desert safari in Abu Dhabi, or vineyard retreat in Tuscany, Kraftz turns every destination into a living story."
-					className="text-muted-foreground leading-relaxed text-[18px] md:text-lg"
+					className="typ-body text-muted-foreground"
 				/>
 				<div className="mt-8">
 					<AnimatedParagraph
 						text="We don't just plan travel — we orchestrate experiences that define lifestyles. For those who expect the extraordinary, Kraftz is not just a service provider; we're your silent partner in crafting journeys that speak the language of luxury."
-						className="text-muted-foreground leading-relaxed text-[18px] md:text-lg"
+						className="typ-body text-muted-foreground"
 					/>
 				</div>
 			</ServiceOverview>

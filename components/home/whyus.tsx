@@ -66,7 +66,7 @@ function Whyus() {
 					</FadeInUp>
 					<div className="relative text-center px-8 md:px-28">
 						<FadeInUp delay={0.2} triggerOnce={true}>
-							<h2 className="font-heading text-4xl md:text-5xl lg:text-5xl font-bold mb-6 text-[#0249A7]">
+							<h2 className="typ-section-title mb-6 text-[#0249A7]">
 								Why Choose Kraftz?
 							</h2>
 						</FadeInUp>
@@ -88,7 +88,7 @@ function Whyus() {
 									className="h-full"
 								>
 									<motion.div
-										className="group relative h-full flex flex-col rounded-lg bg-white border border-border/60 hover:border-primary/40 transition-all duration-300 hover:shadow-lg overflow-hidden"
+										className="group relative h-full flex flex-col rounded-lg bg-white border border-primary/60 transition-all duration-300 shadow-lg overflow-hidden"
 										whileHover={{ y: -4 }}
 									>
 										{/* Top accent bar */}
@@ -111,12 +111,12 @@ function Whyus() {
 										{/* Text Content with Padding */}
 										<div className="p-4 md:p-6 flex flex-col flex-grow">
 											{/* Title */}
-											<h3 className="font-heading text-xl md:text-2xl font-bold mb-3 text-[#0249A7] group-hover:text-primary transition-colors duration-300">
+											<h3 className="typ-section-title mb-3 text-[#0249A7] group-hover:text-primary transition-colors duration-300">
 												{feature.title}
 											</h3>
 
 											{/* Description */}
-											<p className="text-[18px] md:text-lg leading-relaxed text-muted-foreground flex-grow">
+											<p className="typ-body text-muted-foreground flex-grow">
 												<AnimatedText
 													text={feature.description}
 													wordDelay={0.02}

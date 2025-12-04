@@ -30,7 +30,7 @@ function Team() {
 					<div className="text-center space-y-4">
 						<h2
 							className={cn(
-								"font-heading text-4xl md:text-5xl font-bold text-[#0249A7]",
+								"typ-section-title text-[#0249A7]",
 								"flex items-center justify-center gap-2"
 							)}
 						>
@@ -50,7 +50,7 @@ function Team() {
 						</h2>
 						<div className="flex items-center justify-center gap-4 text-[#0249A7]/70">
 							<span className="h-px w-16 bg-current/40" aria-hidden="true" />
-							<span className="text-xs uppercase tracking-[0.4em]">
+							<span className="typ-body uppercase tracking-[0.4em]">
 								Collective Expertise
 							</span>
 							<span className="h-px w-16 bg-current/40" aria-hidden="true" />
@@ -61,16 +61,23 @@ function Team() {
 				<div className="grid gap-10">
 					{teamParagraphs.map((text, index) => (
 						<FadeInUp key={text} delay={0.1 * index} triggerOnce>
-							<div className="space-y-4 text-base md:text-lg leading-relaxed text-slate-700">
+							<div className="space-y-4 typ-body text-slate-700">
 								<div className="flex items-center justify-center gap-3 text-[#0249A7]/70">
-									<span className="text-sm uppercase tracking-[0.35em]">
+									<div
+										className="h-px w-24 bg-[#0249A7]/20"
+										aria-hidden="true"
+									/>
+									<span className="typ-body uppercase tracking-[0.35em]">
 										{index === 0
 											? "Leadership"
 											: index === 1
 											? "Reach"
 											: "Values"}
 									</span>
-									<div className="h-px w-24 bg-[#0249A7]/20" aria-hidden="true" />
+									<div
+										className="h-px w-24 bg-[#0249A7]/20"
+										aria-hidden="true"
+									/>
 								</div>
 								<p className="text-center">{text}</p>
 							</div>

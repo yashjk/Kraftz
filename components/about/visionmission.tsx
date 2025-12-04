@@ -23,7 +23,7 @@ function VisionMission() {
 				<div>
 					<h2
 						className={cn(
-							"font-heading text-4xl md:text-5xl font-bold text-[#0249A7]",
+							"typ-section-title text-[#0249A7]",
 							"flex items-center justify-center gap-2"
 						)}
 					>
@@ -45,14 +45,11 @@ function VisionMission() {
 
 				<div className="grid gap-12 lg:grid-cols-2">
 					{visionMission.map((item) => (
-						<div
-							key={item.title}
-							className="space-y-4 px-6"
-						>
-							<p className="text-sm uppercase tracking-[0.4em] text-[#FF7A18]">
+						<div key={item.title} className="space-y-4 px-6">
+							<p className="typ-body uppercase tracking-[0.4em] text-[#FF7A18]">
 								{item.title}
 							</p>
-							<p className="text-base md:text-lg leading-relaxed text-slate-700">
+							<p className="typ-body text-slate-700">
 								{item.description}
 							</p>
 						</div>

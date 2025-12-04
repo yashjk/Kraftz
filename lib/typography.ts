@@ -13,13 +13,14 @@ export const typography = {
 	h4: "font-heading text-lg md:text-xl font-semibold leading-tight",
 
 	// Body text - Jost (default sans-serif)
-	body: "text-[18px] md:text-lg leading-relaxed",
-	bodySmall: "text-[18px] md:text-lg leading-relaxed",
-	bodyLarge: "text-[18px] md:text-lg leading-relaxed",
+	body: "text-xl md:text-2xl leading-relaxed",
+	bodySmall: "text-lg md:text-xl leading-relaxed",
+	bodyLarge: "text-2xl md:text-3xl leading-relaxed",
 
 	// Special cases
 	hero: "font-heading text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-bold leading-tight",
-	sectionTitle: "font-heading text-4xl md:text-5xl lg:text-5xl font-bold leading-tight",
+	sectionTitle:
+		"font-heading text-4xl md:text-5xl lg:text-5xl font-bold leading-tight",
 	cardTitle: "font-heading text-xl md:text-2xl font-semibold leading-tight",
 
 	// Colors

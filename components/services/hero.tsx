@@ -20,6 +20,7 @@ interface ServicesHeroProps {
 	category?: string;
 	children?: ReactNode;
 	imageSrc?: string;
+	backgroundPosition?: string;
 }
 
 // Helper function to convert text to kebab-case ID
@@ -53,6 +54,7 @@ function ServicesHero({
 	category,
 	children,
 	imageSrc = "/hero1.jpg",
+	backgroundPosition = "right top",
 }: ServicesHeroProps) {
 	return (
 		<section
@@ -60,7 +62,7 @@ function ServicesHero({
 			style={{
 				backgroundImage: `url('${imageSrc}')`,
 				backgroundColor: "#0a0a0a",
-				backgroundPosition: "right top",
+				backgroundPosition: backgroundPosition,
 				backgroundAttachment: "fixed",
 			}}
 		>
@@ -122,7 +124,7 @@ function ServicesHero({
 								<FadeInUp delay={0.2} triggerOnce={true}>
 									<h1
 										className={cn(
-											"font-heading text-4xl md:text-5xl lg:text-6xl font-bold leading-tight text-white text-center",
+											"typ-page-title text-white text-center",
 											"flex items-center justify-center gap-2 px-2"
 										)}
 										style={{
@@ -150,7 +152,7 @@ function ServicesHero({
 							{/* Description with AnimatedText */}
 							<FadeInUp delay={0.3} triggerOnce={true}>
 								<p
-									className="text-[18px] md:text-lg leading-relaxed text-white"
+									className="typ-body text-white"
 									style={{
 										textShadow:
 											"1px 1px 4px rgba(0, 0, 0, 0.5), 0 0 10px rgba(0, 0, 0, 0.3)",
@@ -167,7 +169,7 @@ function ServicesHero({
 							{/* Highlights */}
 							{highlights.length > 0 && (
 								<FadeInUp delay={0.4} triggerOnce={true}>
-									<div className="relative z-10 flex flex-wrap justify-center lg:justify-start gap-2 pt-4 text-[16px] md:text-[18px] font-semibold text-white/90">
+									<div className="relative z-10 flex flex-wrap justify-center items-center gap-2 pt-4 typ-body font-semibold text-white/90">
 										{highlights.map((highlight, index) => {
 											const label =
 												typeof highlight === "string"
@@ -202,7 +204,7 @@ function ServicesHero({
 																number
 															],
 														}}
-														className="group relative text-left text-white/90 transition-colors duration-300 hover:text-white focus:outline-none focus-visible:text-white"
+														className="group relative text-left text-white/90 transition-colors duration-300 hover:text-white focus:outline-none focus-visible:text-white italic"
 														whileHover={{ y: -2 }}
 														style={{ pointerEvents: "auto" }}
 													>

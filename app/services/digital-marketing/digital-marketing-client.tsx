@@ -45,7 +45,7 @@ function DigitalMarketingPageClient() {
 			>
 				<AnimatedParagraph
 					text="Kraftz We start by decoding your business DNA — understanding your market, goals, and audience. Kraftz builds tailored digital strategies that connect every dot between brand, content, and conversion. From marketing roadmaps to digital transformation blueprints, our consulting ensures every rupee and dirham invested drives tangible ROI."
-					className="text-muted-foreground leading-relaxed text-[18px] md:text-lg"
+					className="typ-body text-muted-foreground"
 				/>
 			</ServiceOverview>
 			<ServiceOverview
@@ -54,7 +54,7 @@ function DigitalMarketingPageClient() {
 			>
 				<AnimatedParagraph
 					text="Visibility begins with discoverability. Kraftz develops SEO ecosystems that go beyond keywords — we focus on intent, authority, and experience. Our team ensures your brand ranks high across Google, Bing, and AI-driven platforms like ChatGPT and Copilot by optimizing on-page, off-page, and technical SEO with precision."
-					className="text-muted-foreground leading-relaxed text-[18px] md:text-lg"
+					className="typ-body text-muted-foreground"
 				/>
 			</ServiceOverview>
 			<ServiceOverview
@@ -63,7 +63,7 @@ function DigitalMarketingPageClient() {
 			>
 				<AnimatedParagraph
 					text="We deliver measurable growth through targeted paid campaigns across Google Ads, Meta, LinkedIn, and programmatic platforms. Kraftz's performance marketing team designs campaigns rooted in audience insights, creative excellence, and continuous optimization — ensuring maximum visibility and ROI."
-					className="text-muted-foreground leading-relaxed text-[18px] md:text-lg"
+					className="typ-body text-muted-foreground"
 				/>
 			</ServiceOverview>
 			<ServiceOverview
@@ -72,7 +72,7 @@ function DigitalMarketingPageClient() {
 			>
 				<AnimatedParagraph
 					text="We turn brands into communities. Kraftz creates and manages high-impact social media ecosystems that drive engagement, advocacy, and loyalty. Our approach blends trend intelligence with brand storytelling, ensuring every post adds measurable value."
-					className="text-muted-foreground leading-relaxed text-[18px] md:text-lg"
+					className="typ-body text-muted-foreground"
 				/>
 			</ServiceOverview>
 			<ServiceOverview
@@ -81,13 +81,13 @@ function DigitalMarketingPageClient() {
 			>
 				<AnimatedParagraph
 					text="Great brands tell better stories. Kraftz creates compelling digital content — from brand films, blogs, and influencer collaborations to thought leadership and interactive campaigns. Each piece is optimized for storytelling, search, and shareability."
-					className="text-muted-foreground leading-relaxed text-[18px] md:text-lg"
+					className="typ-body text-muted-foreground"
 				/>
 			</ServiceOverview>
 			<ServiceOverview id="website-experience-design" title="Website & Experience Design">
 				<AnimatedParagraph
 					text="Your website is your digital first impression — we make it unforgettable. Kraftz designs and develops sleek, fast, and conversion-optimized websites that balance creativity with clarity. Every design reflects your brand ethos while driving measurable action."
-					className="text-muted-foreground leading-relaxed text-[18px] md:text-lg"
+					className="typ-body text-muted-foreground"
 				/>
 			</ServiceOverview>
 			<ServiceOverview
@@ -96,7 +96,7 @@ function DigitalMarketingPageClient() {
 			>
 				<AnimatedParagraph
 					text="Kraftz leverages AI to deliver marketing that thinks ahead. From predictive analytics and chatbots to personalized campaigns and automation flows, we integrate intelligent systems that amplify performance and efficiency."
-					className="text-muted-foreground leading-relaxed text-[18px] md:text-lg"
+					className="typ-body text-muted-foreground"
 				/>
 			</ServiceOverview>
 			<ServiceOverview
@@ -105,7 +105,7 @@ function DigitalMarketingPageClient() {
 			>
 				<AnimatedParagraph
 					text="We measure what matters. Kraftz deploys advanced analytics frameworks to track campaign performance, user behavior, and conversion patterns. Every insight fuels smarter decisions and stronger outcomes."
-					className="text-muted-foreground leading-relaxed text-[18px] md:text-lg"
+					className="typ-body text-muted-foreground"
 				/>
 			</ServiceOverview>
 			<ServiceOverview
@@ -114,18 +114,18 @@ function DigitalMarketingPageClient() {
 			>
 				<AnimatedParagraph
 					text="Beyond metrics, Kraftz builds perception. Our communication strategies align brand voice with customer emotion, ensuring consistency across touchpoints — from social posts to PR releases and leadership positioning."
-					className="text-muted-foreground leading-relaxed text-[18px] md:text-lg"
+					className="typ-body text-muted-foreground"
 				/>
 			</ServiceOverview>
 			<ServiceOverview id="influencer-marketing" title="Influencer Marketing">
 				<AnimatedParagraph
 					text="At Kraftz, we help brands to expand their reach and engagement through strategic influencer partnerships. From our extensive network of influencers we select the right influencers, creating compelling content, and tracking performance, we drive brand awareness, trust, and conversions — ensuring measurable results and meaningful audience connections"
-					className="text-muted-foreground leading-relaxed text-[18px] md:text-lg"
+					className="typ-body text-muted-foreground"
 				/>
 				<div className="mt-6">
 					<AnimatedParagraph
 						text="Digital transformation is no longer optional — it's essential. Kraftz empowers brands to not only adapt but to lead in the age of AI and experience-driven marketing. Whether you're a startup or a global enterprise, we'll craft your digital story with precision and purpose."
-						className="text-muted-foreground leading-relaxed text-[18px] md:text-lg"
+						className="typ-body text-muted-foreground"
 					/>
 				</div>
 			</ServiceOverview>

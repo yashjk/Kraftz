@@ -1,6 +1,12 @@
 import type React from "react";
 import type { Metadata } from "next";
-import { Gilda_Display, Jost, Playfair_Display } from "next/font/google";
+import {
+	Gilda_Display,
+	Jost,
+	Playfair_Display,
+	PT_Serif,
+	Libre_Baskerville,
+} from "next/font/google";
 import Script from "next/script";
 import "./globals.css";
 import Header from "@/components/common/header";
@@ -16,6 +22,16 @@ const playfair = Playfair_Display({
 	subsets: ["latin"],
 	weight: ["400", "500", "600", "700"],
 	variable: "--font-playfair",
+});
+const ptSerif = PT_Serif({
+	subsets: ["latin"],
+	weight: ["400", "700"],
+	variable: "--font-pt",
+});
+const libreBaskerville = Libre_Baskerville({
+	subsets: ["latin"],
+	weight: ["400", "700"],
+	variable: "--font-baskerville",
 });
 
 export const metadata: Metadata = {
@@ -146,7 +162,7 @@ export default function RootLayout({
 	return (
 		<html lang="en">
 			<body
-				className={`${gilda.variable} ${jost.variable} ${playfair.variable} antialiased bg-white`}
+				className={`${gilda.variable} ${jost.variable} ${playfair.variable} ${ptSerif.variable} ${libreBaskerville.variable} antialiased bg-white`}
 			>
 				<Script
 					id="organization-schema"
