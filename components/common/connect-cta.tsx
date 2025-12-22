@@ -2,7 +2,6 @@
 
 import Link from "next/link";
 import { motion } from "framer-motion";
-import { FadeInUp, AnimatedText } from "@/lib/animations";
 
 interface ConnectCTAProps {
 	message?: string;
@@ -13,42 +12,28 @@ function ConnectCTA({
 }: ConnectCTAProps) {
 	return (
 		<section className="relative px-8 md:px-16 lg:px-28 py-4 md:py-6 bg-background text-center">
-
-			<FadeInUp delay={0.2} className="relative z-10" triggerOnce={true}>
+			<div className="relative z-10">
 				<div className="max-w-3xl mx-auto mb-4">
 					{/* Decorative quotation marks */}
 					<div className="flex items-start justify-center mb-2">
-						<motion.svg
+						<svg
 							className="w-2 h-2 md:w-4 md:h-4 text-primary/20"
 							fill="currentColor"
 							viewBox="0 0 24 24"
-							initial={{ opacity: 0, scale: 0.8 }}
-							animate={{ opacity: 1, scale: 1 }}
-							transition={{ delay: 0.4, duration: 0.5 }}
 						>
 							<path d="M14.017 21v-7.391c0-5.704 3.731-9.57 8.983-10.609l.996 2.151c-2.432.917-3.995 3.638-3.995 5.849h4v10h-9.984zm-14.017 0v-7.391c0-5.704 3.748-9.57 9-10.609l.996 2.151c-2.433.917-3.996 3.638-3.996 5.849h3.983v10h-9.983z" />
-						</motion.svg>
+						</svg>
 					</div>
 
 					<p className="typ-body text-foreground/80 font-light italic max-w-2xl mx-auto relative">
-						<AnimatedText
-							text={message}
-							delay={0.3}
-							wordDelay={0.03}
-							triggerOnce={true}
-						/>
+						{message}
 					</p>
 
 					{/* Decorative line */}
-					<motion.div
-						className="mt-3 mx-auto w-16 h-[1px] bg-gradient-to-r from-transparent via-primary/40 to-transparent"
-						initial={{ scaleX: 0 }}
-						animate={{ scaleX: 1 }}
-						transition={{ delay: 0.6, duration: 0.8, ease: "easeOut" }}
-					/>
+					<div className="mt-3 mx-auto w-16 h-[1px] bg-gradient-to-r from-transparent via-primary/40 to-transparent" />
 				</div>
-			</FadeInUp>
-			<FadeInUp delay={0.4} className="relative z-10" triggerOnce={true}>
+			</div>
+			<div className="relative z-10">
 				<Link href="/contacts">
 					<motion.button
 						whileHover={{
@@ -89,7 +74,7 @@ function ConnectCTA({
 						</span>
 					</motion.button>
 				</Link>
-			</FadeInUp>
+			</div>
 		</section>
 	);
 }

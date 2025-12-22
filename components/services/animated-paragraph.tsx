@@ -1,7 +1,3 @@
-"use client";
-
-import { AnimatedText } from "@/lib/animations";
-
 interface AnimatedParagraphProps {
 	text: string;
 	className?: string;
@@ -13,21 +9,8 @@ interface AnimatedParagraphProps {
 function AnimatedParagraph({
 	text,
 	className = "typ-body text-muted-foreground",
-	wordDelay = 0.03,
-	delay = 0,
-	threshold = 0.25,
 }: AnimatedParagraphProps) {
-	return (
-		<p className={className}>
-			<AnimatedText
-				text={text}
-				wordDelay={wordDelay}
-				delay={delay}
-				threshold={threshold}
-				triggerOnce={true}
-			/>
-		</p>
-	);
+	return <p className={className}>{text}</p>;
 }
 
 export default AnimatedParagraph;

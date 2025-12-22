@@ -2,78 +2,15 @@
 
 import Link from "next/link";
 import { motion } from "framer-motion";
-import {
-	TrendingUpIcon,
-	NetworkIcon,
-	BrainIcon,
-	Share2Icon,
-	StarIcon,
-	MapPinIcon,
-} from "lucide-react";
-import { FadeInUp, StaggerContainer, AnimatedText } from "@/lib/animations";
+import { services } from "@/lib/config/services";
 
 function WhatWeDo() {
-	const services = [
-		{
-			id: 1,
-			icon: TrendingUpIcon,
-			title: "Revenue Management",
-			description:
-				"We create rate architecture, demand modeling, channel mix optimization that results stronger RevPAR, higher ADR, and sustainable profitability.",
-			href: "/services/hospitality#revenue-management",
-		},
-		{
-			id: 2,
-			icon: NetworkIcon,
-			title: "Distribution Management",
-			description:
-				"Maximize your hotels reach with seamless multi-platform distribution. KRAFTz connects your inventory across leading channels, ensuring real-time updates across all platforms.",
-			href: "/services/hospitality#distribution-channel-management",
-		},
-		{
-			id: 3,
-			icon: BrainIcon,
-			title: "Business Intelligence & Data Solutions",
-			description:
-				"We turn hotel data into a competitive advantage with power of data to uncover revenue opportunities, leverage right tech ecosystem - RMS, PMS, AI, automation, and analytics to enhance efficiency.",
-			href: "/services/hospitality#business-intelligence",
-		},
-		{
-			id: 4,
-			icon: Share2Icon,
-			title: "Digital Marketing & Brand Experience",
-			description:
-				"Your digital presence should work as hard as your front line. We blend storytelling, design, and analytics to make your brand visible, desirable, and discoverable across search, social, and web.",
-			href: "/services/digital-marketing",
-		},
-		{
-			id: 5,
-			icon: StarIcon,
-			title: "Online Reputation & Guest Insights",
-			description:
-				"We help you manage guest sentiments and elevate your online credibility with precision turning feedback into loyalty and performance. Every review shapes your revenue.",
-			href: "/services/hospitality#reputation-management-orm",
-		},
-		{
-			id: 6,
-			icon: MapPinIcon,
-			title: "Travel Experiences",
-			description:
-				"Travel, tailored to excellence. For all age travellers personal or business, we curate global stays, journeys, and partnerships that define modern luxury.",
-			href: "/services/travel",
-		},
-	];
-
 	return (
 		<div className="relative">
 			{/* Hero Section */}
 			<section className="relative px-8 md:px-16 lg:px-24 pt-8 md:pt-12 lg:pt-16 pb-4 bg-background overflow-hidden">
 				<div className="relative text-center px-8 md:px-28">
-					<FadeInUp delay={0.2} triggerOnce={true}>
-						<h2 className="typ-section-title mb-6 text-[#0249A7]">
-							What We Do
-						</h2>
-					</FadeInUp>
+					<h2 className="typ-section-title mb-6 text-[#0249A7]">What We Do</h2>
 				</div>
 			</section>
 
@@ -82,17 +19,8 @@ function WhatWeDo() {
 				<div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-2 md:gap-3">
 					{services.map((service, index) => {
 						const IconComponent = service.icon;
-						// Calculate delay: each item waits for previous item to complete
-						// Item duration is 0.6s, so delay = index * 0.6
-						const itemDelay = index * 0.6;
 						return (
-							<FadeInUp
-								key={service.id}
-								delay={itemDelay}
-								triggerOnce={true}
-								usePositionDelay={false}
-								className="h-full"
-							>
+							<div key={service.id} className="h-full">
 								<Link href={service.href} className="h-full block">
 									<motion.div
 										className="service-card group relative p-8 cursor-pointer h-full flex flex-col bg-linear-to-br from-[#010918] via-[#03183a] to-[#042a5c]"
@@ -153,15 +81,10 @@ function WhatWeDo() {
 										</div>
 
 										{/* Bottom accent line */}
-										<motion.div
-											className="absolute bottom-0 left-8 right-8 h-px bg-linear-to-r from-transparent via-white/20 to-transparent group-hover:via-[#FF7A18]/60 transition-all duration-300"
-											initial={{ scaleX: 0 }}
-											animate={{ scaleX: 1 }}
-											transition={{ duration: 0.6, delay: itemDelay + 0.3 }}
-										/>
+										<div className="absolute bottom-0 left-8 right-8 h-px bg-linear-to-r from-transparent via-white/20 to-transparent group-hover:via-[#FF7A18]/60 transition-all duration-300" />
 									</motion.div>
 								</Link>
-							</FadeInUp>
+							</div>
 						);
 					})}
 				</div>
