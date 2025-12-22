@@ -1,12 +1,7 @@
 "use client";
 
 import { motion } from "framer-motion";
-import {
-	SlideInLeft,
-	SlideInRight,
-	FadeInUp,
-	AnimatedText,
-} from "@/lib/animations";
+import { welcomeContent } from "@/lib/config/homepage";
 
 function Overview() {
 	return (
@@ -16,33 +11,22 @@ function Overview() {
 		>
 			<div className="mx-auto w-full">
 				<div className="flex flex-col items-center text-center px-6 md:px-20 ">
-					<SlideInRight
-						className="flex flex-col gap-4 items-center w-full"
-						triggerOnce={true}
-					>
-						<FadeInUp triggerOnce={true}>
-							<h2 className="typ-section-title text-[#0249A7]">
-								Welcome To Kraftz
-							</h2>
-						</FadeInUp>
+					<div className="flex flex-col gap-4 items-center w-full">
+						<h2 className="typ-section-title text-[#0249A7]">
+							{welcomeContent.title}
+						</h2>
 
-						<p className="typ-body text-muted-foreground w-full">
-							<AnimatedText
-								text="At Kraftz we redefine hospitality through Revenue Management, distribution channel, Artificial InteIligence, Data & Analytics, Business intelligence and digital marketing to create intelligent growth systems for hotels. In today’s dynamic market where demand shifts rapidly and competition intensifies, we help hotels not just fill rooms but to maximize every opportunity. Kraftz empowers hotels with smart, data-driven strategies that drive occupancy, optimize pricing and distribution, and elevate guest experiences. By combining deep hospitality expertise, strategic revenue management, data-driven insights, and innovative technology, we help hotels and travel businesses achieve sustainable, measurable growth and long-term commercial success"
-								delay={0.1}
-								wordDelay={0.02}
-								triggerOnce={true}
-							/>
-						</p>
+						<div className="typ-body text-muted-foreground w-full space-y-4">
+							{welcomeContent.paragraphs.map((paragraph, index) => (
+								<p key={index}>{paragraph}</p>
+							))}
+						</div>
 						<motion.a
-							href="/contacts"
-							initial={{ opacity: 0, y: 10 }}
-							whileInView={{ opacity: 1, y: 0 }}
-							viewport={{ once: true }}
+							href={welcomeContent.ctaHref}
 							className="group relative inline-flex items-center justify-center px-8 py-2.5 border border-[#FF7A18] bg-[#FF7A18] text-white font-semibold typ-body tracking-wide rounded-lg transition-all duration-300 hover:bg-[#e56a0f] hover:text-white shadow-[0_4px_12px_rgba(255,122,24,0.25),0_2px_4px_rgba(255,122,24,0.15)] hover:shadow-[0_8px_25px_rgba(255,122,24,0.35),0_4px_10px_rgba(255,122,24,0.2)] mt-4"
 						>
 							<span className="relative z-10 flex items-center gap-2.5">
-								Connect With Kraftz
+								{welcomeContent.ctaText}
 								<motion.svg
 									className="w-4 h-4"
 									fill="none"
@@ -61,17 +45,10 @@ function Overview() {
 								</motion.svg>
 							</span>
 						</motion.a>
-					</SlideInRight>
+					</div>
 				</div>
 			</div>
-			<FadeInUp delay={0.5} triggerOnce={true}>
-				<motion.div
-					className="absolute bottom-0 left-0 right-0 h-1 bg-gradient-to-r from-transparent via-accent to-transparent opacity-30"
-					initial={{ scaleX: 0 }}
-					animate={{ scaleX: 1 }}
-					transition={{ duration: 1 }}
-				/>
-			</FadeInUp>
+			<div className="absolute bottom-0 left-0 right-0 h-1 bg-gradient-to-r from-transparent via-accent to-transparent opacity-30" />
 		</section>
 	);
 }

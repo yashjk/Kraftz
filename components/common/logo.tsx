@@ -10,9 +10,6 @@ function Logo({ className = "" }: { className?: string }) {
 				whileHover={{ scale: 1.05 }}
 				whileTap={{ scale: 0.95 }}
 				className="relative"
-				initial={{ opacity: 0, scale: 0.8 }}
-				animate={{ opacity: 1, scale: 1 }}
-				transition={{ duration: 0.5, ease: [0.4, 0, 0.2, 1] }}
 			>
 				{/* Logo icon from image */}
 				<img

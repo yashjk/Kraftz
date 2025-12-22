@@ -2,7 +2,6 @@
 
 import { motion } from "framer-motion";
 import { contactInfo } from "@/lib/data";
-import { FadeInUp, SlideInLeft, SlideInRight } from "@/lib/animations";
 
 function FormContainer() {
 	// Google Maps embed URLs using the search query format (no API key required)
@@ -18,43 +17,16 @@ function FormContainer() {
 			{/* Hero Section */}
 			<section className="relative px-8 md:px-16 lg:px-28 py-8 md:py-12 bg-gradient-to-b from-background via-primary/5 to-background overflow-hidden">
 				{/* Background decoration */}
-				<motion.div
-					className="absolute top-0 right-0 w-96 h-96 bg-primary/5 rounded-full blur-3xl"
-					animate={{
-						scale: [1, 1.2, 1],
-						opacity: [0.3, 0.5, 0.3],
-					}}
-					transition={{
-						duration: 8,
-						repeat: Infinity,
-						ease: "easeInOut",
-					}}
-				/>
-				<motion.div
-					className="absolute bottom-0 left-0 w-96 h-96 bg-accent/5 rounded-full blur-3xl"
-					animate={{
-						scale: [1, 1.2, 1],
-						opacity: [0.3, 0.5, 0.3],
-					}}
-					transition={{
-						duration: 8,
-						repeat: Infinity,
-						ease: "easeInOut",
-						delay: 2,
-					}}
-				/>
+				<div className="absolute top-0 right-0 w-96 h-96 bg-primary/5 rounded-full blur-3xl" />
+				<div className="absolute bottom-0 left-0 w-96 h-96 bg-accent/5 rounded-full blur-3xl" />
 
 				<div className="relative max-w-7xl mx-auto">
-					<FadeInUp triggerOnce={true}>
-						<div className="text-center mb-6">
-							<h1 className="typ-page-title mb-3 text-[#0249A7]">
-								Contact Us
-							</h1>
-						</div>
-					</FadeInUp>
+					<div className="text-center mb-6">
+						<h1 className="typ-page-title mb-3 text-[#0249A7]">Contact Us</h1>
+					</div>
 
 					{/* Contact Information - Modern Horizontal Layout */}
-					<FadeInUp triggerOnce={true}>
+					<div>
 						<div className="bg-linear-to-br from-[#010918] via-[#03183a] to-[#042a5c] border border-border rounded-3xl p-5 md:p-6 mb-8 shadow-lg">
 							<div className="grid grid-cols-1 lg:grid-cols-3 gap-6 lg:gap-8">
 								{/* Email */}
@@ -206,24 +178,20 @@ function FormContainer() {
 								</div>
 							</div>
 						</div>
-					</FadeInUp>
+					</div>
 				</div>
 			</section>
 
 			{/* Office Locations with Maps */}
 			<section className="relative px-8 md:px-16 lg:px-28 pt-4 pb-8 md:pb-12 bg-background">
 				<div className="relative max-w-7xl mx-auto">
-					<FadeInUp triggerOnce={true}>
-						<div className="text-center mb-4">
-							<h2 className="typ-page-title mb-3 text-[#0249A7]">
-								Visit Us
-							</h2>
-						</div>
-					</FadeInUp>
+					<div className="text-center mb-4">
+						<h2 className="typ-page-title mb-3 text-[#0249A7]">Visit Us</h2>
+					</div>
 
 					{/* UAE Office */}
 					<div className="mb-8">
-						<SlideInLeft triggerOnce={true}>
+						<div>
 							<div className="bg-linear-to-br from-[#010918] via-[#03183a] to-[#042a5c] border border-border rounded-3xl overflow-hidden shadow-lg">
 								<div className="grid grid-cols-1 lg:grid-cols-2">
 									{/* Map */}
@@ -316,12 +284,12 @@ function FormContainer() {
 									</div>
 								</div>
 							</div>
-						</SlideInLeft>
+						</div>
 					</div>
 
 					{/* India Office */}
 					<div>
-						<SlideInRight triggerOnce={true}>
+						<div>
 							<div className="bg-linear-to-br from-[#010918] via-[#03183a] to-[#042a5c] border border-border rounded-3xl overflow-hidden shadow-lg">
 								<div className="grid grid-cols-1 lg:grid-cols-2">
 									{/* Address Info */}
@@ -399,7 +367,7 @@ function FormContainer() {
 									</div>
 								</div>
 							</div>
-						</SlideInRight>
+						</div>
 					</div>
 				</div>
 			</section>

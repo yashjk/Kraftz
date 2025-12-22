@@ -3,7 +3,7 @@
 import Link from "next/link";
 import { useState, useEffect } from "react";
 import { usePathname } from "next/navigation";
-import { motion, AnimatePresence } from "framer-motion";
+import { motion } from "framer-motion";
 import { ChevronDown } from "lucide-react";
 import Logo from "./logo";
 import {
@@ -12,19 +12,14 @@ import {
 	DropdownMenuItem,
 	DropdownMenuTrigger,
 } from "@/components/ui/dropdown-menu";
+import {
+	navLinks,
+	serviceNavs,
+	type NavLink,
+	type ServiceNavLink,
+} from "@/lib/config/navigation";
 
 const MotionLink = motion(Link);
-
-type NavLink =
-	| {
-			href: string;
-			label: string;
-	  }
-	| {
-			href: string;
-			label: string;
-			items: Array<{ href: string; label: string }>;
-	  };
 
 function Header() {
 	const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
@@ -34,147 +29,7 @@ function Header() {
 	);
 	const pathname = usePathname();
 
-	const serviceNavs = [
-		{
-			href: "/services/hospitality",
-			label: "Hospitality Solutions",
-			items: [
-				{
-					href: "/services/hospitality#revenue-management",
-					label: "Revenue Management",
-				},
-				{
-					href: "/services/hospitality#distribution-channel-management",
-					label: "Distribution Channel Management",
-				},
-				{
-					href: "/services/hospitality#revenue-management-system-rms",
-					label: "Revenue Management System (RMS)",
-				},
-				{
-					href: "/services/hospitality#business-intelligence",
-					label: "Business Intelligence",
-				},
-				{
-					href: "/services/hospitality#data-analytics",
-					label: "Data & Analytics",
-				},
-				{
-					href: "/services/hospitality#reputation-management-orm",
-					label: "Reputation Management / ORM",
-				},
-				{
-					href: "/services/hospitality#content-management",
-					label: "Content Management",
-				},
-			],
-		},
-		{
-			href: "/services/ota-management",
-			label: "OTA Management",
-			items: [
-				{
-					href: "/services/ota-management#ota-channel-setup",
-					label: "OTA Channel Setup & Audit",
-				},
-				{
-					href: "/services/ota-management#rate-parity-management",
-					label: "Rate Parity Management",
-				},
-				{
-					href: "/services/ota-management#content-optimization",
-					label: "Content Optimization",
-				},
-				{
-					href: "/services/ota-management#performance-tracking",
-					label: "Performance Tracking & Analytics",
-				},
-				{
-					href: "/services/ota-management#commission-optimization",
-					label: "Commission Optimization",
-				},
-				{
-					href: "/services/ota-management#multi-channel-distribution",
-					label: "Multi-Channel Distribution",
-				},
-			],
-		},
-		{
-			href: "/services/digital-marketing",
-			label: "Digital Marketing",
-			items: [
-				{
-					href: "/services/digital-marketing#digital-strategy-consulting",
-					label: "Digital Strategy & Consulting",
-				},
-				{ href: "/services/digital-marketing#seo-search", label: "SEO" },
-				{
-					href: "/services/digital-marketing#performance-marketing",
-					label: "Performance Marketing",
-				},
-				{
-					href: "/services/digital-marketing#social-media",
-					label: "Social Media",
-				},
-				{
-					href: "/services/digital-marketing#content-strategy",
-					label: "Content Strategy",
-				},
-				{
-					href: "/services/digital-marketing#website-experience-design",
-					label: "Website & Experience Design",
-				},
-				{
-					href: "/services/digital-marketing#ai-marketing",
-					label: "AI Marketing & Automation",
-				},
-				{
-					href: "/services/digital-marketing#analytics-insights",
-					label: "Analytics & Insights",
-				},
-				{
-					href: "/services/digital-marketing#brand-reputation-communication",
-					label: "Brand Reputation & Communication",
-				},
-				{
-					href: "/services/digital-marketing#influencer-marketing",
-					label: "Influencer Marketing",
-				},
-			],
-		},
-		{
-			href: "/services/travel",
-			label: "Travel",
-			items: [
-				{
-					href: "/services/travel#personal-family-travel",
-					label: "Personal & Family Travel",
-				},
-				{
-					href: "/services/travel#corporate-business-travel",
-					label: "Corporate & Business Travel",
-				},
-				{
-					href: "/services/travel#ultra-luxury-lifestyle",
-					label: "Ultra-Luxury & Lifestyle",
-				},
-				{
-					href: "/services/travel#cultural-experiential-journeys",
-					label: "Cultural & Experiential Journeys",
-				},
-				{ href: "/services/travel#travel-experiences", label: "Philosophy" },
-			],
-		},
-	];
-
-	const navLinks: NavLink[] = [
-		{ href: "/", label: "Home" },
-		...serviceNavs,
-		{ href: "/about", label: "About" },
-		{ href: "/contacts", label: "Contact" },
-	];
-
-	const isServiceLink = (link: NavLink): link is (typeof serviceNavs)[number] =>
+	const isServiceLink = (link: NavLink): link is ServiceNavLink =>
 		"items" in link;
 
 	const matchesPath = (href: string) => {
@@ -205,10 +60,7 @@ function Header() {
 
 	return (
 		<>
-			<motion.header
-				initial={{ y: -100, opacity: 0 }}
-				animate={{ y: 0, opacity: 1 }}
-				transition={{ duration: 0.5 }}
+			<header
 				className={`px-6 md:px-12 lg:px-20 flex justify-between items-center border-b border-border sticky top-0 z-50 transition-all duration-300 ${
 					scrolled
 						? "bg-[#faf7f3] backdrop-blur-lg shadow-sm"
@@ -329,16 +181,16 @@ function Header() {
 						className="p-2 hover:bg-accent/10 rounded-lg transition-colors"
 						aria-label="Toggle menu"
 					>
-						<motion.svg
+						<svg
 							width="24"
 							height="24"
 							viewBox="0 0 24 24"
 							fill="none"
 							stroke="currentColor"
 							strokeWidth="2"
-							className="text-brand"
-							animate={mobileMenuOpen ? { rotate: 90 } : { rotate: 0 }}
-							transition={{ duration: 0.3 }}
+							className={`text-brand transition-transform duration-300 ${
+								mobileMenuOpen ? "rotate-90" : ""
+							}`}
 						>
 							{mobileMenuOpen ? (
 								<path d="M18 6L6 18M6 6l12 12" />
@@ -349,93 +201,67 @@ function Header() {
 									<line x1="4" y1="18" x2="20" y2="18"></line>
 								</>
 							)}
-						</motion.svg>
+						</svg>
 					</motion.button>
 				</div>
-			</motion.header>
+			</header>
 
-			<AnimatePresence>
-				{mobileMenuOpen && (
-					<motion.div
-						initial={{ opacity: 0, y: -20 }}
-						animate={{ opacity: 1, y: 0 }}
-						exit={{ opacity: 0, y: -20 }}
-						transition={{ duration: 0.3 }}
-						className="md:hidden fixed inset-x-0 top-20 bottom-0 bg-background/95 backdrop-blur-lg border-b border-border z-40 overflow-y-auto overscroll-contain"
-					>
-						<nav className="flex flex-col gap-1 p-4">
-							{navLinks.map((link, index) => {
-								const isActive =
-									matchesPath(link.href) ||
-									(isServiceLink(link) && pathname?.startsWith(link.href));
+			{mobileMenuOpen && (
+				<div className="md:hidden fixed inset-x-0 top-20 bottom-0 bg-background/95 backdrop-blur-lg border-b border-border z-40 overflow-y-auto overscroll-contain">
+					<nav className="flex flex-col gap-1 p-4">
+						{navLinks.map((link, index) => {
+							const isActive =
+								matchesPath(link.href) ||
+								(isServiceLink(link) && pathname?.startsWith(link.href));
 
-								if (isServiceLink(link)) {
-									return (
-										<motion.div
-											key={link.href}
-											initial={{ opacity: 0, x: -20 }}
-											animate={{ opacity: 1, x: 0 }}
-											transition={{ delay: index * 0.1 }}
-											className="rounded-lg bg-accent/5"
-										>
-											<Link
-												href={link.href}
-												onClick={() => setMobileMenuOpen(false)}
-											className={`block px-4 py-3 rounded-lg transition-colors typ-body text-foreground font-bold ${
-												isActive ? "text-brand" : ""
-											}`}
-											>
-												{link.label}
-											</Link>
-											<div className="px-4 pb-3 flex flex-col gap-1">
-												{link.items.map((item, subIndex) => (
-													<motion.div
-														key={item.href}
-														initial={{ opacity: 0, x: -20 }}
-														animate={{ opacity: 1, x: 0 }}
-														transition={{
-															delay: index * 0.1 + (subIndex + 1) * 0.05,
-														}}
-													>
-														<Link
-															href={item.href}
-															onClick={() => setMobileMenuOpen(false)}
-															className={`block px-3 py-2 rounded-md typ-body font-medium text-foreground/80 hover:bg-accent/20 ${
-																matchesPath(item.href) ? "text-brand" : ""
-															}`}
-														>
-															{item.label}
-														</Link>
-													</motion.div>
-												))}
-											</div>
-										</motion.div>
-									);
-								}
-
+							if (isServiceLink(link)) {
 								return (
-									<motion.div
-										key={link.href}
-										initial={{ opacity: 0, x: -20 }}
-										animate={{ opacity: 1, x: 0 }}
-										transition={{ delay: index * 0.1 }}
-									>
+									<div key={link.href} className="rounded-lg bg-accent/5">
 										<Link
 											href={link.href}
 											onClick={() => setMobileMenuOpen(false)}
-											className={`block px-4 py-3 rounded-lg hover:bg-accent/10 transition-colors typ-body text-foreground font-bold ${
-												isActive ? "bg-accent/10 text-brand" : ""
+											className={`block px-4 py-3 rounded-lg transition-colors typ-body text-foreground font-bold ${
+												isActive ? "text-brand" : ""
 											}`}
 										>
 											{link.label}
 										</Link>
-									</motion.div>
+										<div className="px-4 pb-3 flex flex-col gap-1">
+											{link.items.map((item, subIndex) => (
+												<div key={item.href}>
+													<Link
+														href={item.href}
+														onClick={() => setMobileMenuOpen(false)}
+														className={`block px-3 py-2 rounded-md typ-body font-medium text-foreground/80 hover:bg-accent/20 ${
+															matchesPath(item.href) ? "text-brand" : ""
+														}`}
+													>
+														{item.label}
+													</Link>
+												</div>
+											))}
+										</div>
+									</div>
 								);
-							})}
-						</nav>
-					</motion.div>
-				)}
-			</AnimatePresence>
+							}
+
+							return (
+								<div key={link.href}>
+									<Link
+										href={link.href}
+										onClick={() => setMobileMenuOpen(false)}
+										className={`block px-4 py-3 rounded-lg hover:bg-accent/10 transition-colors typ-body text-foreground font-bold ${
+											isActive ? "bg-accent/10 text-brand" : ""
+										}`}
+									>
+										{link.label}
+									</Link>
+								</div>
+							);
+						})}
+					</nav>
+				</div>
+			)}
 		</>
 	);
 }
