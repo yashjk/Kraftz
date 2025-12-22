@@ -25,20 +25,12 @@ export const serviceNavs: ServiceNavLink[] = [
 				label: "Distribution Channel Management",
 			},
 			{
-				href: "/services/hospitality#revenue-management-system-rms",
-				label: "Revenue Management System (RMS)",
-			},
-			{
-				href: "/services/hospitality#business-intelligence",
-				label: "Business Intelligence",
-			},
-			{
-				href: "/services/hospitality#data-analytics",
-				label: "Data & Analytics",
+				href: "/services/hospitality#data-business-intelligence",
+				label: "Data & Business Intelligence",
 			},
 			{
 				href: "/services/hospitality#reputation-management-orm",
-				label: "Reputation Management / ORM",
+				label: "Online Reputation Management",
 			},
 			{
 				href: "/services/hospitality#content-management",
@@ -52,21 +44,16 @@ export const serviceNavs: ServiceNavLink[] = [
 		label: "Digital Marketing",
 		items: [
 			{
-				href: "/services/digital-marketing#digital-strategy-consulting",
-				label: "Digital Strategy & Consulting",
+				href: "/services/digital-marketing#seo-search",
+				label: "Search Engine Optimization (SEO)",
 			},
-			{ href: "/services/digital-marketing#seo-search", label: "SEO" },
 			{
 				href: "/services/digital-marketing#performance-marketing",
-				label: "Performance Marketing",
+				label: "Performance Marketing (PPC & Media Buying)",
 			},
 			{
 				href: "/services/digital-marketing#social-media",
-				label: "Social Media",
-			},
-			{
-				href: "/services/digital-marketing#content-strategy",
-				label: "Content Strategy",
+				label: "Social Media Strategy & Management",
 			},
 			{
 				href: "/services/digital-marketing#website-experience-design",
@@ -75,14 +62,6 @@ export const serviceNavs: ServiceNavLink[] = [
 			{
 				href: "/services/digital-marketing#ai-marketing",
 				label: "AI Marketing & Automation",
-			},
-			{
-				href: "/services/digital-marketing#analytics-insights",
-				label: "Analytics & Insights",
-			},
-			{
-				href: "/services/digital-marketing#brand-reputation-communication",
-				label: "Brand Reputation & Communication",
 			},
 			{
 				href: "/services/digital-marketing#influencer-marketing",
