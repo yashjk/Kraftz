@@ -22,11 +22,7 @@ export type ServicePageData = {
 export const hospitalityPageData: ServicePageData = {
 	title: "Hospitality Solutions",
 	imageSrc: "/hospitality-hero.jpg",
-	description: `Kraftz Hospitality Consulting delivers comprehensive, end-to-end consulting services designed to help hotels, resorts, villas, serviced apartments and accommodation providers to unlock peak performance.
-
-Our expertise spans revenue optimization, brand positioning, technology integration, and guest experience transformation. We combine market intelligence, data-driven insights, and operational experience to deliver measurable results that elevate occupancy, profitability, and brand reputation.
-
-Whether you are looking to increase direct bookings, implement data analytics systems, or elevate your digital reputation, Kraftz is your strategic partner for measurable hotel transformation.`,
+	description: `Increase direct bookings, enhance channel performance and distribution…. Kraftz is your strategic partner for transformation.`,
 	highlights: [
 		{ label: "Revenue Management", id: "revenue-management" },
 		{
@@ -34,13 +30,11 @@ Whether you are looking to increase direct bookings, implement data analytics sy
 			id: "distribution-channel-management",
 		},
 		{
-			label: "Revenue Management System (RMS)",
-			id: "revenue-management-system-rms",
+			label: "Data & Business Intelligence",
+			id: "data-business-intelligence",
 		},
-		{ label: "Business Intelligence", id: "business-intelligence" },
-		{ label: "Data & Analytics", id: "data-analytics" },
 		{
-			label: "Reputation Management / ORM",
+			label: "Online Reputation Management",
 			id: "reputation-management-orm",
 		},
 		{ label: "Content Management", id: "content-management" },
@@ -50,50 +44,35 @@ Whether you are looking to increase direct bookings, implement data analytics sy
 			id: "revenue-management",
 			title: "Revenue Management",
 			content: [
-				"At Kraftz Hospitality, we see Revenue Management as the commercial heartbeat of every hotel. With years of experience across leading hospitality brands, we deliver strategies that optimize pricing, performance, and profitability for long-term success. We start with a detailed audit of your hotel's revenue ecosystem, analyzing pricing structures, demand patterns, and market positioning to identify revenue opportunities and enhance competitive advantage. \n\n Our team develops dynamic, data-driven pricing strategies tailored to seasonal trends, day-of-week variations, and special events, while optimizing rate hierarchies, rate fences, and market segmentation to maximize yield. Using advanced forecasting and scenario modeling, we anticipate demand shifts and guide proactive decisions on rates, inventory, and promotions. \n\n Custom revenue dashboards and benchmarking against competitors provide actionable insights to stay ahead of the market curve. To elevate operational efficiency, we implement and optimize Revenue Management Systems (RMS), integrating AI-based forecasting, dynamic pricing automation, and competitor rate intelligence. \n\n We help hotels select and fine-tune RMS tools to align with brand standards, scale, and commercial objectives, ensuring technology enhances human expertise and delivers measurable ROI.",
+				"At Kraftz Hospitality, we view revenue management as the commercial heartbeat of every hotel. We deliver strategies and develop revenue ecosystem that optimize performance and profitability. Many hotels fail to achieve their full revenue potential and consistently face revenue leakage, weak ADR & RevPAR and poor demand we help hotels overcome these challenges.",
 			],
 		},
 		{
 			id: "distribution-channel-management",
 			title: "Distribution Channel Management",
 			content: [
-				"At Kraftz Hospitality, we help hotels maximize reach, visibility, and revenue by strategically managing distribution across OTAs, GDS platforms, and direct booking channels. We evaluate your current channel mix, performance metrics, and market opportunities to design a tailored distribution strategy that balances demand, cost, and yield. Through continuous monitoring of channel performance, rate parity, and booking trends, we ensure your property captures the right guests at the right rates. By leveraging data-driven insights and best practices, Kraftz enables hotels to maintain optimized channel allocation, consistent pricing, and improved profitability — strengthening market presence and driving sustainable growth.",
-				"At Kraftz, our Revenue Management experts unlock new income streams and boost profitability through strategic rate planning, dynamic pricing models, and optimized channel distribution. \n\n We assess your property's market position, segment demand patterns, and develop tailor-made revenue systems that ensure maximum yield across OTAs, GDS, and direct channels. Our expert teams blend real-time analytics, competitor benchmarking, and inventory forecasting to achieve sustainable ADR growth and RevPAR improvement. \n\n Key Deliverables: Dynamic pricing algorithms customized for seasonalityRate parity and channel mix optimizationYield strategies backed by live market data Revenue reporting dashboards with BI integration",
+				"We help hotels maximize reach, visibility, and revenue by strategically managing distribution across channels. We evaluate your current channel mix, and market opportunities to design a tailored distribution strategy that balances demand, cost, and yield. We ensure your property captures the right guests at the right rates.",
 			],
 		},
 		{
-			id: "revenue-management-system-rms",
-			title: "Revenue Management System (RMS)",
+			id: "data-business-intelligence",
+			title: "Data & Business Intelligence",
 			content: [
-				"Kraftz offers Revenue Management System (RMS) implementation and optimization for hotels seeking automation and intelligence in pricing. \n\n Our RMS framework integrates AI-based forecasting, occupancy trend analysis, and competitor rate mapping, enabling real-time decisions that maximize yield. We help hotels select, customize, and deploy RMS tools that align with their market segment — from luxury resorts to mid-scale chains — ensuring transparency, scalability, and measurable ROI. \n\n Core Features: AI-driven rate optimizationChannel performance analyticsAutomated forecasting & demand segmentationSeamless PMS / CRS integration.",
-			],
-		},
-		{
-			id: "business-intelligence",
-			title: "Business Intelligence",
-			content: [
-				"In the age of data, Business Intelligence (BI) drives hospitality success. Kraftz enables hoteliers to leverage data through custom BI dashboards that consolidate performance metrics across bookings, occupancy, revenue, and guest behavior. \n\n Our BI framework transforms raw hotel data into actionable insights — empowering strategic decisions, identifying revenue leaks, and uncovering cross-selling opportunities. \n\n What We Offer: Interactive hotel performance dashboardsReal-time revenue & occupancy trackingForecasting with market trend overlaysCustomized KPI alerts for management teams",
-			],
-		},
-		{
-			id: "data-analytics",
-			title: "Data & Analytics",
-			content: [
-				"Data is the foundation of modern hotel performance. At Kraftz, we help hotels harness big data, AI insights, and predictive analytics to enhance guest experiences, forecast demand, and improve operational efficiency. \n\n Our consultants specialize in data mapping, segmentation, and reporting automation — ensuring that decision-makers have the right insights at the right time. \n\n Highlights: Predictive demand forecastingGuest segmentation and loyalty analyticsData visualization dashboardsAI-driven reporting and automation",
+				"Data is the foundation of modern hotel performance. We leverage data, insights, and predictive analytics to forecast demand, enable revenue opportunities and enhance guest experiences. Our BI framework transforms data into actionable insights empowering strategic decisions and identifying revenue leakage.",
 			],
 		},
 		{
 			id: "reputation-management-orm",
-			title: "Reputation Management / ORM",
+			title: "Online Reputation Management",
 			content: [
-				"Reputation defines your brand's success. Kraftz helps hotels monitor, manage, and elevate their online presence across platforms — from Google and TripAdvisor to OTA review channels. \n\n We deploy sentiment analysis, automated response systems, and review tracking tools that ensure brand perception aligns with guest experience. \n\n Our Approach: Comprehensive review monitoringResponse management and escalationSentiment trend reportingGuest feedback integration into CRM",
+				"Reputation defines your brand's success. Kraftz helps hotels with comprehensive review monitoring, response management, escalation, customer sentiment reporting to ensure brand perception aligns with guest experience across Google, TripAdvisor and OTAs (Booking.com, Expedia, MakeMyTrip and more).",
 			],
 		},
 		{
 			id: "content-management",
 			title: "Content Management",
 			content: [
-				"Great content sells experiences before the booking happens. Kraftz offers end-to-end content management for hotels, resorts, villas, serviced apartments and accommodation providers — including copywriting, photography, room descriptions, and OTA content curation. \n\n We ensure every property's digital presence is accurate, appealing, and conversion-oriented, aligned with brand tone and SEO best practices. \n\n Services Include: Website & OTA content audit Property listing descriptions & keyword optimizationVisual asset curation (photos/videos)Localization for regional markets",
+				"Great content sells experiences before the booking happens. Kraftz offers end-to-end content management including, photography, video content, blogs, storytelling, content curation and influencer collaboration. We ensure your digital presence is impactful, appealing, and aligned with SEO best practices",
 			],
 		},
 	],
@@ -104,12 +83,8 @@ export const digitalMarketingPageData: ServicePageData = {
 	category: "Services",
 	imageSrc: "/digital-marketing-hero.jpg",
 	description:
-		"Kraftz Digital Marketing Solutions transforms how brands are seen, searched, and remembered. We blend strategy, storytelling, and smart technology to help mid-size, large, and new-age businesses dominate the digital landscape. Every campaign we create aligns with the client's vision, mission, and OKRs — ensuring marketing delivers measurable business impact, not just impressions.",
+		"We Kraft digital strategies that make brands visible, memorable, engaging, and impactful… delivering clear ROI across all platforms.",
 	highlights: [
-		{
-			label: "Digital Strategy & Consulting",
-			id: "digital-strategy-consulting",
-		},
 		{ label: "Search Engine Optimization (SEO)", id: "seo-search" },
 		{
 			label: "Performance Marketing (PPC & Media Buying)",
@@ -119,57 +94,37 @@ export const digitalMarketingPageData: ServicePageData = {
 			label: "Social Media Strategy & Management",
 			id: "social-media",
 		},
-		{ label: "Content Strategy & Creation", id: "content-strategy" },
 		{ label: "Website & Experience Design", id: "website-experience-design" },
 		{ label: "AI Marketing & Automation", id: "ai-marketing" },
-		{ label: "Analytics & Performance Insights", id: "analytics-insights" },
-		{
-			label: "Brand Reputation & Communication",
-			id: "brand-reputation-communication",
-		},
 		{ label: "Influencer Marketing", id: "influencer-marketing" },
 	],
 	sections: [
 		{
-			id: "digital-strategy-consulting",
-			title: "Digital Strategy & Consulting",
-			content: [
-				"Kraftz We start by decoding your business DNA — understanding your market, goals, and audience. Kraftz builds tailored digital strategies that connect every dot between brand, content, and conversion. From marketing roadmaps to digital transformation blueprints, our consulting ensures every rupee and dirham invested drives tangible ROI.",
-			],
-		},
-		{
 			id: "seo-search",
 			title: "Search Engine Optimization (SEO)",
 			content: [
-				"Visibility begins with discoverability. Kraftz develops SEO ecosystems that go beyond keywords — we focus on intent, authority, and experience. Our team ensures your brand ranks high across Google, Bing, and AI-driven platforms like ChatGPT and Copilot by optimizing on-page, off-page, and technical SEO with precision.",
+				"Visibility begins with discoverability. Kraftz develops SEO ecosystems that go beyond keywords we focus on intent, reputation, and experience. We ensure your brand ranks high across Google and AI-driven platforms like ChatGPT, Gemini and more by optimizing on-page, off-page, and SEO.",
 			],
 		},
 		{
 			id: "performance-marketing",
 			title: "Performance Marketing (PPC & Media Buying)",
 			content: [
-				"We deliver measurable growth through targeted paid campaigns across Google Ads, Meta, LinkedIn, and programmatic platforms. Kraftz's performance marketing team designs campaigns rooted in audience insights, creative excellence, and continuous optimization — ensuring maximum visibility and ROI.",
+				"We deliver measurable growth through targeted paid campaigns across Google Ads, Meta, LinkedIn, and programmatic platforms. We design campaigns rooted in audience insights, creative excellence ensuring maximum visibility and ROI.",
 			],
 		},
 		{
 			id: "social-media",
 			title: "Social Media Strategy & Management",
 			content: [
-				"We turn brands into communities. Kraftz creates and manages high-impact social media ecosystems that drive engagement, advocacy, and loyalty. Our approach blends trend intelligence with brand storytelling, ensuring every post adds measurable value.",
-			],
-		},
-		{
-			id: "content-strategy",
-			title: "Content Strategy & Creation",
-			content: [
-				"Great brands tell better stories. Kraftz creates compelling digital content — from brand films, blogs, and influencer collaborations to thought leadership and interactive campaigns. Each piece is optimized for storytelling, search, and shareability.",
+				"We turn brands into communities. Kraftz creates and manages high-impact social media ecosystems that drive engagement, appeal and loyalty across Facebook, Instagram, YouTube and more. Our approach blends trend intelligence with brand storytelling, ensuring every post adds measurable value.",
 			],
 		},
 		{
 			id: "website-experience-design",
 			title: "Website & Experience Design",
 			content: [
-				"Your website is your digital first impression — we make it unforgettable. Kraftz designs and develops sleek, fast, and conversion-optimized websites that balance creativity with clarity. Every design reflects your brand ethos while driving measurable action.",
+				"Your website is your digital first impression. Kraftz designs and develops sleek, fast, and conversion-optimized websites that balance creativity with clarity.",
 			],
 		},
 		{
@@ -180,25 +135,10 @@ export const digitalMarketingPageData: ServicePageData = {
 			],
 		},
 		{
-			id: "analytics-insights",
-			title: "Analytics & Performance Insights",
-			content: [
-				"We measure what matters. Kraftz deploys advanced analytics frameworks to track campaign performance, user behavior, and conversion patterns. Every insight fuels smarter decisions and stronger outcomes.",
-			],
-		},
-		{
-			id: "brand-reputation-communication",
-			title: "Brand Reputation & Communication",
-			content: [
-				"Beyond metrics, Kraftz builds perception. Our communication strategies align brand voice with customer emotion, ensuring consistency across touchpoints — from social posts to PR releases and leadership positioning.",
-			],
-		},
-		{
 			id: "influencer-marketing",
 			title: "Influencer Marketing",
 			content: [
-				"At Kraftz, we help brands to expand their reach and engagement through strategic influencer partnerships. From our extensive network of influencers we select the right influencers, creating compelling content, and tracking performance, we drive brand awareness, trust, and conversions — ensuring measurable results and meaningful audience connections",
-				"Digital transformation is no longer optional — it's essential. Kraftz empowers brands to not only adapt but to lead in the age of AI and experience-driven marketing. Whether you're a startup or a global enterprise, we'll craft your digital story with precision and purpose.",
+				"We help brands to expand their reach and engagement through strategic influencer partnerships. From our extensive network of influencers, we select the right influencers, creating compelling content, drive brand awareness, and measurable results and meaningful audience connections.",
 			],
 		},
 	],
@@ -278,10 +218,10 @@ export const travelPageData: ServicePageData = {
 	category: "Services",
 	imageSrc: "/travel-hero.jpg",
 	description:
-		"Kraftz Travel Experiences curates journeys that transcend the ordinary. We cater to all age cohorts discerning travelers — seeking authentic, sophisticated, and seamless travel experiences for personal, family, and business needs. Every itinerary is crafted with precision, privacy, and perfection.",
+		"Every travel itinerary is krafted with precision and perfection for personal, family, and business needs we cater to all…",
 	highlights: [
 		{ label: "Personal & Family Travel", id: "personal-family-travel" },
-		{ label: "Corporate & Business Travel", id: "corporate-business-travel" },
+		{ label: "Corporate Travel", id: "corporate-travel" },
 		{
 			label: "Ultra-Luxury & Lifestyle Experiences",
 			id: "ultra-luxury-lifestyle",
@@ -290,35 +230,27 @@ export const travelPageData: ServicePageData = {
 			label: "Cultural & Experiential Journeys",
 			id: "cultural-experiential-journeys",
 		},
-		{ label: "Philosophy", id: "travel-experiences" },
 	],
 	sections: [
-		{
-			id: "travel-experiences",
-			title: "Philosophy",
-			content: [
-				"We believe travel should evoke emotion, create connection, and leave an imprint. Kraftz doesn't sell packages — we design experiences. Each journey reflects the traveler's individuality and aspirations, merging culture, comfort, and creativity into unforgettable moments.",
-			],
-		},
 		{
 			id: "personal-family-travel",
 			title: "Personal & Family Travel",
 			content: [
-				"From hidden retreats to desert escapes, Kraftz designs meaningful journeys for individuals and families. We handle every detail — from private villas and personalized itineraries to Michelin-star dining and immersive cultural touchpoints — ensuring every journey feels like a once-in-a-lifetime story.",
+				"From hidden retreats to desert escapes, Kraftz designs meaningful journeys for individuals and families. From private villas and personalized itineraries to immersive cultural touchpoints ensuring every journey feels like a once-in-a-lifetime story.",
 			],
 		},
 		{
-			id: "corporate-business-travel",
-			title: "Corporate & Business Travel",
+			id: "corporate-travel",
+			title: "Corporate Travel",
 			content: [
-				"For enterprises and executives, Kraftz curates travel experiences that balance efficiency with elegance. We offer executive retreats, leadership off-sites, and corporate travel management designed for productivity, comfort, and prestige.",
+				"For enterprises and executives, Kraftz curates travel experiences that balance efficiency with elegance. We offer corporate travel management, executive retreats, leadership off-sites designed for productivity, comfort, and prestige.",
 			],
 		},
 		{
 			id: "ultra-luxury-lifestyle",
 			title: "Ultra-Luxury & Lifestyle Experiences",
 			content: [
-				"We open doors to the extraordinary — private jets, yacht charters, island buyouts, and world-class hospitality experiences. Kraftz partners with global luxury brands to provide bespoke lifestyle experiences that redefine exclusivity for HNIs and UHNWIs.",
+				"We open doors to the extraordinary private jets, yacht charters, and world-class hospitality experiences. Kraftz partners with global luxury brands to provide bespoke lifestyle experiences that redefine exclusivity for HNIs.",
 			],
 		},
 		{
@@ -326,7 +258,6 @@ export const travelPageData: ServicePageData = {
 			title: "Cultural & Experiential Journeys",
 			content: [
 				"Travel is transformation. Our cultural journeys connect travelers with local traditions, gastronomy, art, and heritage. Whether it's a tea ceremony in Kyoto, desert safari in Abu Dhabi, or vineyard retreat in Tuscany, Kraftz turns every destination into a living story.",
-				"We don't just plan travel — we orchestrate experiences that define lifestyles. For those who expect the extraordinary, Kraftz is not just a service provider; we're your silent partner in crafting journeys that speak the language of luxury.",
 			],
 		},
 	],
