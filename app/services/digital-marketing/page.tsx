@@ -1,7 +1,6 @@
 import DigitalMarketingPageClient from "./digital-marketing-client";
-import type { Metadata } from "next";
 
-export const metadata: Metadata = {
+export const metadata = {
 	title: "Digital Marketing Services",
 	description:
 		"Kraftz Digital Marketing Solutions transforms how brands are seen, searched, and remembered. We offer SEO, PPC, social media management, content strategy, web design, AI marketing, and analytics services.",

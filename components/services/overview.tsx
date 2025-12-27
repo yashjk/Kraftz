@@ -27,30 +27,30 @@ function ServiceOverview({
 
 			<div className="relative mx-auto">
 				{title && (
-					<h2
-						className={cn(
-							"typ-section-title mb-8 text-[#0249A7]",
-							"flex items-center justify-center gap-2 px-2"
-						)}
-					>
-						<img
-							src="https://moonlit-nextjs.netlify.app/assets/images/shape/section__style__three-1.svg"
-							alt=""
-							className="h-5 md:h-6 lg:h-7 w-auto object-contain"
-							aria-hidden="true"
-						/>
-						<span>{title}</span>
-						<img
-							src="https://moonlit-nextjs.netlify.app/assets/images/shape/section__style__three-2.svg"
-							alt=""
-							className="h-5 md:h-6 lg:h-7 w-auto object-contain"
-							aria-hidden="true"
-						/>
-					</h2>
+						<h2
+							className={cn(
+								"typ-section-title mb-8 text-[#0249A7]",
+								"flex items-center justify-center gap-2 px-2"
+							)}
+						>
+							<img
+								src="https://moonlit-nextjs.netlify.app/assets/images/shape/section__style__three-1.svg"
+								alt=""
+								className="h-5 md:h-6 lg:h-7 w-auto object-contain"
+								aria-hidden="true"
+							/>
+							<span>{title}</span>
+							<img
+								src="https://moonlit-nextjs.netlify.app/assets/images/shape/section__style__three-2.svg"
+								alt=""
+								className="h-5 md:h-6 lg:h-7 w-auto object-contain"
+								aria-hidden="true"
+							/>
+						</h2>
 				)}
 
 				{/* Content Section - centered like homepage */}
-				<div className="max-w-6xl mx-auto space-y-4">{children}</div>
+					<div className="max-w-6xl mx-auto space-y-4">{children}</div>
 			</div>
 		</section>
 	);

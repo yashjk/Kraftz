@@ -4,52 +4,18 @@ import { ReactNode } from "react";
 import { motion } from "framer-motion";
 import { cn } from "@/lib/utils";
 
-interface HighlightItem {
-	label: string;
-	href?: string;
-	id?: string;
-}
-
-type Highlight = string | HighlightItem;
-
 interface ServicesHeroProps {
 	title?: string;
 	description: string;
-	highlights?: Highlight[];
 	category?: string;
 	children?: ReactNode;
 	imageSrc?: string;
 	backgroundPosition?: string;
 }
 
-// Helper function to convert text to kebab-case ID
-function textToId(text: string): string {
-	return text
-		.toLowerCase()
-		.replace(/[^a-z0-9]+/g, "-")
-		.replace(/^-+|-+$/g, "");
-}
-
-// Helper function to handle smooth scroll to section
-function scrollToSection(hrefOrId: string) {
-	const targetId = hrefOrId.startsWith("#") ? hrefOrId.slice(1) : hrefOrId;
-	const element = document.getElementById(targetId);
-	if (element) {
-		const offset = 96; // Account for header height
-		const elementPosition = element.getBoundingClientRect().top;
-		const offsetPosition = elementPosition + window.pageYOffset - offset;
-
-		window.scrollTo({
-			top: offsetPosition,
-			behavior: "smooth",
-		});
-	}
-}
-
 function ServicesHero({
 	title,
 	description,
-	highlights = [],
 	category,
 	children,
 	imageSrc = "/hero1.jpg",
@@ -63,6 +29,7 @@ function ServicesHero({
 				backgroundColor: "#0a0a0a",
 				backgroundPosition: backgroundPosition,
 				backgroundAttachment: "fixed",
+				height: "70vh",
 			}}
 		>
 			{/* Dark overlay */}
@@ -76,8 +43,8 @@ function ServicesHero({
 			</div>
 
 			{/* Content */}
-			<div className="relative px-6 md:px-10 lg:px-12 py-12 md:py-16 lg:py-20 z-10">
-				<div className="max-w-5xl mx-auto">
+			<div className="relative h-full px-6 md:px-10 lg:px-12 z-10 flex items-center">
+				<div className="max-w-5xl mx-auto w-full">
 					<div className="items-center">
 						{/* Text Content */}
 						<div className="text-center lg:text-left space-y-6">
@@ -121,47 +88,6 @@ function ServicesHero({
 							>
 								{description}
 							</p>
-
-							{/* Highlights */}
-							{highlights.length > 0 && (
-								<div className="relative z-10 flex flex-wrap justify-center items-center gap-2 pt-4 typ-body font-semibold text-white/90">
-									{highlights.map((highlight, index) => {
-										const label =
-											typeof highlight === "string"
-												? highlight
-												: highlight.label;
-										const hrefOrId =
-											typeof highlight === "string"
-												? textToId(highlight)
-												: highlight.href ||
-												  highlight.id ||
-												  textToId(highlight.label);
-
-										const isLast = index === highlights.length - 1;
-
-										return (
-											<div key={index} className="flex items-center">
-												<motion.button
-													type="button"
-													onClick={(e) => {
-														e.preventDefault();
-														scrollToSection(hrefOrId);
-													}}
-													className="group relative text-left text-white/90 transition-colors duration-300 hover:text-white focus:outline-none focus-visible:text-white italic"
-													whileHover={{ y: -2 }}
-													style={{ pointerEvents: "auto" }}
-												>
-													<span>{label}</span>
-													<span className="pointer-events-none absolute left-0 bottom-0 h-0.5 w-full rounded-full bg-linear-to-r from-white/25 via-white/70 to-white/25 opacity-80 transition-all duration-300 group-hover:opacity-100 group-hover:from-[#FF7A18]/0 group-hover:via-[#FF7A18] group-hover:to-[#FF7A18]/0 group-hover:shadow-[0_0_18px_rgba(255,122,24,0.55)]" />
-												</motion.button>
-												{!isLast && (
-													<span className="mx-2 text-white/50">·</span>
-												)}
-											</div>
-										);
-									})}
-								</div>
-							)}
 
 							{/* Custom Children Content */}
 							{children && <div>{children}</div>}

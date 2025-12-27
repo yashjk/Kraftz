@@ -1,7 +1,6 @@
 import OTAManagementPageClient from "./ota-management-client";
-import type { Metadata } from "next";
 
-export const metadata: Metadata = {
+export const metadata = {
 	title: "OTA Management Services",
 	description:
 		"Kraftz OTA Management delivers comprehensive online travel agency optimization services for hotels, resorts, and accommodation providers. We specialize in OTA channel setup, rate parity management, content optimization, and performance tracking to maximize bookings and revenue.",

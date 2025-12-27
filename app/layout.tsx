@@ -1,5 +1,4 @@
 import type React from "react";
-import type { Metadata } from "next";
 import {
 	Gilda_Display,
 	Jost,
@@ -11,6 +10,7 @@ import Script from "next/script";
 import "./globals.css";
 import Header from "@/components/common/header";
 import Footer from "@/components/common/footer";
+import { GetFreeAuditButton } from "@/components/common/get-free-audit-button";
 
 const gilda = Gilda_Display({
 	subsets: ["latin"],
@@ -34,7 +34,7 @@ const libreBaskerville = Libre_Baskerville({
 	variable: "--font-baskerville",
 });
 
-export const metadata: Metadata = {
+export const metadata = {
 	metadataBase: new URL(
 		process.env.NEXT_PUBLIC_SITE_URL || "https://kraftz.com"
 	),
@@ -174,6 +174,7 @@ export default function RootLayout({
 				<Header />
 				{children}
 				<Footer />
+				<GetFreeAuditButton />
 			</body>
 		</html>
 	);

@@ -1,15 +1,14 @@
 import { cn } from "@/lib/utils";
+import { visionText, missionText } from "@/lib/config/about";
 
 const visionMission = [
 	{
 		title: "Our Vision",
-		description:
-			"To be the most trusted growth partner of choice for hotels, accommodation providers and all age travellers. Driving success through intelligent strategy, data-driven insight and performance excellence",
+		description: visionText,
 	},
 	{
 		title: "Our Mission",
-		description:
-			"To deliver integrated hospitality, travel, and digital marketing solutions that drive growth, elevate guest experiences, and build stronger, future-ready brands",
+		description: missionText,
 	},
 ];
 
@@ -49,9 +48,7 @@ function VisionMission() {
 							<p className="typ-body uppercase tracking-[0.4em] text-[#FF7A18]">
 								{item.title}
 							</p>
-							<p className="typ-body text-slate-700">
-								{item.description}
-							</p>
+							<p className="typ-body text-foreground">{item.description}</p>
 						</div>
 					))}
 				</div>

@@ -1,26 +1,10 @@
 "use client";
 
 import Link from "next/link";
-import { motion } from "framer-motion";
-import { useState, useEffect } from "react";
 import { contactInfo } from "@/lib/data";
 import Logo from "./logo";
 
 function Footer() {
-	const [showScrollTop, setShowScrollTop] = useState(false);
-
-	useEffect(() => {
-		const handleScroll = () => {
-			setShowScrollTop(window.scrollY > 300);
-		};
-		window.addEventListener("scroll", handleScroll);
-		return () => window.removeEventListener("scroll", handleScroll);
-	}, []);
-
-	const scrollToTop = () => {
-		window.scrollTo({ top: 0, behavior: "smooth" });
-	};
-
 	const services = [
 		{ href: "/services/hospitality", label: "Hospitality Solutions" },
 		{ href: "/services/ota-management", label: "OTA Management" },
@@ -37,7 +21,7 @@ function Footer() {
 						Krafting growth intelligently across hospitality, digital marketing,
 						and travel.
 					</p>
-					<div className="flex flex-wrap justify-center gap-12 typ-body uppercase tracking-[0.3em] text-muted-foreground">
+					<div className="flex flex-wrap justify-center gap-12 text-xs md:text-sm uppercase tracking-[0.3em] text-muted-foreground">
 						{services.map((service) => (
 							<Link
 								key={service.href}
@@ -71,7 +55,7 @@ function Footer() {
 					</div>
 				</div>
 
-				<div className="border-t border-border px-4 py-3 text-center typ-body text-muted-foreground sm:px-6">
+				<div className="border-t border-border px-4 py-3 text-center text-xs md:text-sm text-muted-foreground sm:px-6">
 					<div className="mx-auto flex max-w-5xl flex-col items-center gap-2 sm:flex-row sm:justify-between">
 						<p>
 							© {new Date().getFullYear()} KRAFTz Hospitality and Travel
@@ -88,29 +72,6 @@ function Footer() {
 					</div>
 				</div>
 			</footer>
-
-			{showScrollTop && (
-				<motion.button
-					whileHover={{ scale: 1.05 }}
-					whileTap={{ scale: 0.95 }}
-					onClick={scrollToTop}
-					className="fixed bottom-5 right-5 z-50 flex h-10 w-10 items-center justify-center rounded-full border border-[#0249A7]/20 bg-[#0249A7] text-white shadow-lg"
-					aria-label="Scroll to top"
-				>
-					<svg
-						width="16"
-						height="16"
-						viewBox="0 0 24 24"
-						fill="none"
-						stroke="currentColor"
-						strokeWidth="2.5"
-						strokeLinecap="round"
-						strokeLinejoin="round"
-					>
-						<path d="M18 15l-6-6-6 6" />
-					</svg>
-				</motion.button>
-			)}
 		</>
 	);
 }

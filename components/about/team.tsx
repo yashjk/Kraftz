@@ -2,7 +2,7 @@
 
 import { motion } from "framer-motion";
 import { cn } from "@/lib/utils";
-import { teamParagraphs, teamSectionLabels } from "@/lib/config/about";
+import { teamParagraphs } from "@/lib/config/about";
 
 function Team() {
 	return (
@@ -43,14 +43,7 @@ function Team() {
 
 				<div className="grid gap-10">
 					{teamParagraphs.map((text, index) => (
-						<div key={text} className="space-y-4 typ-body text-slate-700">
-							<div className="flex items-center justify-center gap-3 text-[#0249A7]/70">
-								<div className="h-px w-24 bg-[#0249A7]/20" aria-hidden="true" />
-								<span className="typ-body uppercase tracking-[0.35em]">
-									{teamSectionLabels[index]}
-								</span>
-								<div className="h-px w-24 bg-[#0249A7]/20" aria-hidden="true" />
-							</div>
+						<div key={index} className="space-y-4 typ-body text-foreground">
 							<p className="text-center">{text}</p>
 						</div>
 					))}

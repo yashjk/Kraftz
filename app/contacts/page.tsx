@@ -1,7 +1,6 @@
 import FormContainer from "@/components/contacts/formcontainer";
-import type { Metadata } from "next";
 
-export const metadata: Metadata = {
+export const metadata = {
 	title: "Contact Us",
 	description:
 		"Get in touch with Kraftz. Contact us for digital marketing services, hospitality consulting, or luxury travel experiences. We're here to help your business grow intelligently.",

@@ -1,8 +1,7 @@
 "use client";
 
 import ServicesHero from "@/components/services/hero";
-import ServiceOverview from "@/components/services/overview";
-import AnimatedParagraph from "@/components/services/animated-paragraph";
+import { VisualSection } from "@/components/services/visual-section";
 import ConnectCTA from "@/components/common/connect-cta";
 import { digitalMarketingPageData } from "@/lib/config/services-pages";
 
@@ -14,19 +13,16 @@ function DigitalMarketingPageClient() {
 				category={digitalMarketingPageData.category}
 				imageSrc={digitalMarketingPageData.imageSrc}
 				description={digitalMarketingPageData.description}
-				highlights={digitalMarketingPageData.highlights}
 			/>
-			{digitalMarketingPageData.sections.map((section) => (
-				<ServiceOverview key={section.id} id={section.id} title={section.title}>
-					{section.content.map((text, index) => (
-						<div key={index} className={index > 0 ? "mt-6" : ""}>
-							<AnimatedParagraph
-								text={text}
-								className="typ-body text-muted-foreground"
-							/>
-						</div>
-					))}
-				</ServiceOverview>
+			{digitalMarketingPageData.sections.map((section, index) => (
+				<VisualSection
+					key={section.id}
+					id={section.id}
+					title={section.title}
+					content={section.content}
+					imageSrc={section.imageSrc}
+					index={index}
+				/>
 			))}
 			<ConnectCTA />
 		</>

@@ -2,12 +2,9 @@
 
 import { cn } from "@/lib/utils";
 import { motion } from "framer-motion";
-import { aboutOverviewParagraphs } from "@/lib/config/about";
+import { aboutOverviewParagraphs, cultureParagraph } from "@/lib/config/about";
 
 function Overview() {
-	const heroIntro = aboutOverviewParagraphs[0];
-	const supportingCopy = aboutOverviewParagraphs.slice(1);
-
 	return (
 		<section className="relative isolate overflow-hidden px-8 md:px-24 py-16 md:py-24">
 			<div className="absolute inset-0 bg-linear-to-br from-[#010918] via-[#03183a] to-[#042a5c]" />
@@ -15,7 +12,7 @@ function Overview() {
 			<div className="absolute inset-x-0 top-10 mx-auto h-40 w-[85%] rounded-full bg-[#0c5ed9]/25 blur-3xl" />
 			<div className="absolute inset-x-0 bottom-0 mx-auto h-64 w-[70%] rounded-full bg-[#FF7A18]/20 blur-[120px]" />
 
-			<div className="relative z-10 text-white space-y-12 text-center">
+			<div className="relative z-10 text-white space-y-8 text-center max-w-5xl mx-auto">
 				<header className="space-y-6">
 					<h2
 						className={cn(
@@ -37,18 +34,19 @@ function Overview() {
 							aria-hidden="true"
 						/>
 					</h2>
-					<p className="mx-auto max-w-5xl typ-body text-white/85">
-						{heroIntro}
-					</p>
 				</header>
 
-				<div className="grid gap-10 md:grid-cols-2">
-					{supportingCopy.map((text, index) => (
-						<div key={text} className="space-y-4">
-							<div className="h-px w-20 mx-auto bg-white/20" />
-							<p className="typ-body text-white/80">{text}</p>
-						</div>
+				<div className="space-y-8">
+					{aboutOverviewParagraphs.map((text, index) => (
+						<p key={index} className="typ-body text-white/85 text-center">
+							{text}
+						</p>
 					))}
+				</div>
+
+				<div className="space-y-4 pt-4">
+					<div className="h-px w-20 mx-auto bg-white/20" />
+					<p className="typ-body text-white/85 text-center">{cultureParagraph}</p>
 				</div>
 			</div>
 		</section>
