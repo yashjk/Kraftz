@@ -1,6 +1,5 @@
 "use client";
 
-import { motion } from "framer-motion";
 import { heroContent } from "@/lib/config/homepage";
 
 function Hero() {

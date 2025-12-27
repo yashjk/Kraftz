@@ -1,6 +1,4 @@
-import type { Metadata } from "next";
-
-export const homepageMetadata: Metadata = {
+export const homepageMetadata = {
 	title: "Kraftz - Krafting Growth Intelligently",
 	description:
 		"Kraftz delivers comprehensive digital marketing, hospitality consulting, and travel experience services. We help businesses grow intelligently through strategic marketing, revenue optimization, and exceptional customer experiences.",

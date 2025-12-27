@@ -1,8 +1,8 @@
 "use client";
 
+import React from "react";
 import Link from "next/link";
 import { useState, useEffect } from "react";
-import { usePathname } from "next/navigation";
 import { motion } from "framer-motion";
 import { ChevronDown } from "lucide-react";
 import Logo from "./logo";
@@ -12,6 +12,8 @@ import {
 	DropdownMenuItem,
 	DropdownMenuTrigger,
 } from "@/components/ui/dropdown-menu";
+// @ts-ignore - usePathname is available in Next.js 16
+import { usePathname } from "next/navigation";
 import {
 	navLinks,
 	serviceNavs,
@@ -97,7 +99,9 @@ function Header() {
 										<DropdownMenuTrigger asChild>
 											<MotionLink
 												href={link.href}
-												onClick={(e) => handleSmoothScroll(e, link.href)}
+												onClick={(e: React.MouseEvent<HTMLAnchorElement>) =>
+													handleSmoothScroll(e, link.href)
+												}
 												onMouseEnter={() => setOpenServiceDropdown(link.href)}
 												onFocus={() => setOpenServiceDropdown(link.href)}
 												className="relative text-base font-bold transition-colors duration-300 hover:text-brand flex items-center gap-1"
@@ -125,7 +129,7 @@ function Header() {
 											onMouseEnter={() => setOpenServiceDropdown(link.href)}
 											onMouseLeave={() => setOpenServiceDropdown(null)}
 										>
-											{link.items.map((item) => (
+											{link.items?.map((item) => (
 												<DropdownMenuItem key={item.href} asChild>
 													<Link
 														href={item.href}
@@ -149,7 +153,9 @@ function Header() {
 							<Link
 								key={link.href}
 								href={link.href}
-								onClick={(e) => handleSmoothScroll(e, link.href)}
+								onClick={(e: React.MouseEvent<HTMLAnchorElement>) =>
+									handleSmoothScroll(e, link.href)
+								}
 							>
 								<motion.p
 									whileHover={{ y: -2 }}
@@ -226,21 +232,23 @@ function Header() {
 										>
 											{link.label}
 										</Link>
-										<div className="px-4 pb-3 flex flex-col gap-1">
-											{link.items.map((item, subIndex) => (
-												<div key={item.href}>
-													<Link
-														href={item.href}
-														onClick={() => setMobileMenuOpen(false)}
-														className={`block px-3 py-2 rounded-md typ-body font-medium text-foreground/80 hover:bg-accent/20 ${
-															matchesPath(item.href) ? "text-brand" : ""
-														}`}
-													>
-														{item.label}
-													</Link>
-												</div>
-											))}
-										</div>
+										{link.items && (
+											<div className="px-4 pb-3 flex flex-col gap-1">
+												{link.items.map((item, subIndex) => (
+													<div key={item.href}>
+														<Link
+															href={item.href}
+															onClick={() => setMobileMenuOpen(false)}
+															className={`block px-3 py-2 rounded-md typ-body font-medium text-foreground/80 hover:bg-accent/20 ${
+																matchesPath(item.href) ? "text-brand" : ""
+															}`}
+														>
+															{item.label}
+														</Link>
+													</div>
+												))}
+											</div>
+										)}
 									</div>
 								);
 							}

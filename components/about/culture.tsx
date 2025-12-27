@@ -1,9 +1,5 @@
 import { cn } from "@/lib/utils";
-
-const cultureParagraphs = [
-	"Built on trust, collaboration, and measurable outcomes, our culture thrives on excellence and accountability. We don't just consult we collaborate, co-create, and deliver transformation.",
-	"Every partnership we undertake is guided by our commitment to clarity, creativity, and commercial success. At Kraftz, growth is not a metric — it's a mindset.",
-];
+import { cultureParagraph } from "@/lib/config/about";
 
 function Culture() {
 	return (
@@ -42,10 +38,8 @@ function Culture() {
 					</div>
 				</header>
 
-				<div className="grid gap-8 lg:grid-cols-[0.6fr_0.4fr]">
-					<p className="typ-body text-white/85">{cultureParagraphs[0]}</p>
-
-					<p className="typ-body text-white/80 italic">{cultureParagraphs[1]}</p>
+				<div className="max-w-4xl mx-auto">
+					<p className="typ-body text-white/85">{cultureParagraph}</p>
 				</div>
 			</div>
 		</section>

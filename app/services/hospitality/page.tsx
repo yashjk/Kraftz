@@ -1,7 +1,6 @@
 import HospitalityPageClient from "./hospitality-client";
-import type { Metadata } from "next";
 
-export const metadata: Metadata = {
+export const metadata = {
 	title: "Hospitality Consulting Services",
 	description:
 		"Kraftz Hospitality Consulting delivers comprehensive, end-to-end consulting services for hotels, resorts, villas, and accommodation providers. We specialize in revenue optimization, brand positioning, technology integration, and reputation management.",

@@ -1,9 +1,10 @@
 "use client";
 
 import ServicesHero from "@/components/services/hero";
-import ServiceOverview from "@/components/services/overview";
+import { OTAComparison } from "@/components/services/ota-comparison";
 import AnimatedParagraph from "@/components/services/animated-paragraph";
 import ConnectCTA from "@/components/common/connect-cta";
+import { motion } from "framer-motion";
 import { otaManagementPageData } from "@/lib/config/services-pages";
 
 function OTAManagementPageClient() {
@@ -13,17 +14,31 @@ function OTAManagementPageClient() {
 				title={otaManagementPageData.title}
 				imageSrc={otaManagementPageData.imageSrc}
 				backgroundPosition={otaManagementPageData.backgroundPosition}
-				description={otaManagementPageData.description}
-				highlights={otaManagementPageData.highlights}
-			/>
-			{otaManagementPageData.sections.map((section) => (
-				<ServiceOverview key={section.id} id={section.id} title={section.title}>
-					<AnimatedParagraph
-						text={section.content[0]}
-						className="typ-body text-muted-foreground"
-					/>
-				</ServiceOverview>
-			))}
+				description={otaManagementPageData.heroMessage || ""}
+			>
+				<motion.p
+					initial={{ opacity: 0, y: 20 }}
+					animate={{ opacity: 1, y: 0 }}
+					transition={{ duration: 0.6, delay: 0.3 }}
+					className="typ-body text-white mt-4"
+					style={{
+						textShadow:
+							"1px 1px 4px rgba(0, 0, 0, 0.5), 0 0 10px rgba(0, 0, 0, 0.3)",
+					}}
+				>
+					{otaManagementPageData.description}
+				</motion.p>
+			</ServicesHero>
+
+			{/* Comparison Section */}
+			{otaManagementPageData.withoutItems && otaManagementPageData.withItems && (
+				<OTAComparison
+					withoutItems={otaManagementPageData.withoutItems}
+					withItems={otaManagementPageData.withItems}
+					impact={otaManagementPageData.impact || ""}
+				/>
+			)}
+
 			<ConnectCTA />
 		</>
 	);

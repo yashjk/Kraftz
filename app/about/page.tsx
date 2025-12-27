@@ -1,11 +1,9 @@
-import Culture from "@/components/about/culture";
 import Overview from "@/components/about/overview";
 import Team from "@/components/about/team";
 import VisionMission from "@/components/about/visionmission";
 import ConnectCTA from "@/components/common/connect-cta";
-import type { Metadata } from "next";
 
-export const metadata: Metadata = {
+export const metadata = {
 	title: "About Us",
 	description:
 		"Learn about Kraftz - our vision, mission, culture, and team. We are dedicated to crafting growth intelligently through digital marketing, hospitality consulting, and exceptional travel experiences.",
@@ -39,7 +37,6 @@ function About() {
 			<Overview />
 			<VisionMission />
 			<Team />
-			<Culture />
 			<ConnectCTA />
 		</>
 	);

@@ -12,9 +12,9 @@ function Overview() {
 			<div className="mx-auto w-full">
 				<div className="flex flex-col items-center text-center px-6 md:px-20 ">
 					<div className="flex flex-col gap-4 items-center w-full">
-						<h2 className="typ-section-title text-[#0249A7]">
+							<h2 className="typ-section-title text-[#0249A7]">
 							{welcomeContent.title}
-						</h2>
+							</h2>
 
 						<div className="typ-body text-muted-foreground w-full space-y-4">
 							{welcomeContent.paragraphs.map((paragraph, index) => (

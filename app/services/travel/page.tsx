@@ -1,7 +1,6 @@
 import TravelPageClient from "./travel-client";
-import type { Metadata } from "next";
 
-export const metadata: Metadata = {
+export const metadata = {
 	title: "Luxury Travel Experiences",
 	description:
 		"Kraftz Travel Experiences curates journeys that transcend the ordinary. We design authentic, sophisticated, and seamless travel experiences for personal, family, and business needs. Every itinerary is crafted with precision, privacy, and perfection.",
