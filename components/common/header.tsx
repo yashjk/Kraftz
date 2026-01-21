@@ -21,7 +21,7 @@ import {
 	type ServiceNavLink,
 } from "@/lib/config/navigation";
 
-const MotionLink = motion(Link);
+const MotionLink = motion.create(Link);
 
 function Header() {
 	const [mobileMenuOpen, setMobileMenuOpen] = useState(false);

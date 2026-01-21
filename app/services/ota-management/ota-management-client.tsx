@@ -15,15 +15,16 @@ function OTAManagementPageClient() {
 				imageSrc={otaManagementPageData.imageSrc}
 				backgroundPosition={otaManagementPageData.backgroundPosition}
 				description={otaManagementPageData.heroMessage || ""}
+				textShadow
 			>
 				<motion.p
 					initial={{ opacity: 0, y: 20 }}
 					animate={{ opacity: 1, y: 0 }}
 					transition={{ duration: 0.6, delay: 0.3 }}
-					className="typ-body text-white mt-4"
+					className="typ-body text-white mt-4 text-center"
 					style={{
 						textShadow:
-							"1px 1px 4px rgba(0, 0, 0, 0.5), 0 0 10px rgba(0, 0, 0, 0.3)",
+							"1px 1px 4px rgba(0, 0, 0, 0.8), 0 0 10px rgba(0, 0, 0, 0.5)",
 					}}
 				>
 					{otaManagementPageData.description}

@@ -22,6 +22,7 @@ export type ServicePageData = {
 export const hospitalityPageData: ServicePageData = {
 	title: "Hospitality Solutions",
 	imageSrc: "/hospitality-hero.jpg",
+	backgroundPosition: "right -25%",
 	description: `Increase direct bookings, enhance channel performance and distribution…. Kraftz is your strategic partner for transformation.`,
 	sections: [
 		{
@@ -30,7 +31,6 @@ export const hospitalityPageData: ServicePageData = {
 			content: [
 				"At Kraftz Hospitality, we view revenue management as the commercial heartbeat of every hotel. We deliver strategies and develop revenue ecosystem that optimize performance and profitability.",
 			],
-			imageSrc: "/why-choose-2.jpg",
 		},
 		{
 			id: "distribution-channel-management",
@@ -38,7 +38,6 @@ export const hospitalityPageData: ServicePageData = {
 			content: [
 				"We help hotels maximize reach, visibility, and revenue by strategically managing distribution across channels. We evaluate your current channel mix, and market opportunities to design a tailored distribution strategy.",
 			],
-			imageSrc: "/Distribution channel management.png",
 		},
 		{
 			id: "data-business-intelligence",
@@ -46,7 +45,6 @@ export const hospitalityPageData: ServicePageData = {
 			content: [
 				"Data is the foundation of modern hotel performance. We leverage data, insights, and predictive analytics to forecast demand, enable revenue opportunities and enhance guest experiences.",
 			],
-			imageSrc: "/why-choose-1.jpg",
 		},
 		{
 			id: "reputation-management-orm",
@@ -54,7 +52,6 @@ export const hospitalityPageData: ServicePageData = {
 			content: [
 				"Reputation defines your brand's success. Kraftz helps hotels with comprehensive review monitoring, response management, and customer sentiment reporting across Google, TripAdvisor and OTAs.",
 			],
-			imageSrc: "/Online reputation management.png",
 		},
 		{
 			id: "content-management",
@@ -62,7 +59,6 @@ export const hospitalityPageData: ServicePageData = {
 			content: [
 				"Great content sells experiences before the booking happens. Kraftz offers end-to-end content management including photography, video content, blogs, storytelling, and influencer collaboration.",
 			],
-			imageSrc: "/why-choose-5.jpg",
 		},
 	],
 };
@@ -129,7 +125,8 @@ export const otaManagementPageData: ServicePageData = {
 	title: "OTA Management",
 	imageSrc: "/ota-hero.jpg",
 	backgroundPosition: "right center",
-	heroMessage: "Transform Online Travel Agency channels into high-performing revenue assets",
+	heroMessage:
+		"Transform Online Travel Agency channels into high-performing revenue assets",
 	description: `OTAs are a critical revenue engine for hotels today, driving global visibility, demand generation, and booking volume. Kraftz delivers end-to-end OTA management, to optimize performance, strengthen rankings, improve conversion and control costs.
 We help hotels accelerate revenue growth by combining structured audits, pricing alignment, rate parity control, and OTA strategies. We create a healthier balance between OTA and direct bookings directly impacting ADR, RevPAR, and profitability.`,
 	withoutItems: [
@@ -152,7 +149,8 @@ We help hotels accelerate revenue growth by combining structured audits, pricing
 		"Balanced multi-channel distribution strategy",
 		"Maximized revenue through structured OTA optimization",
 	],
-	impact: "Kraftz Impact: Higher OTA performance · Improved rankings · Higher bookings · Lower costs · Strong OTA relationships",
+	impact:
+		"Kraftz Impact: Higher OTA performance · Improved rankings · Higher bookings · Lower costs · Strong OTA relationships",
 	sections: [
 		{
 			id: "ota-channel-setup",
@@ -212,7 +210,6 @@ export const travelPageData: ServicePageData = {
 			content: [
 				"From hidden retreats to desert escapes, Kraftz designs meaningful journeys for individuals and families. From private villas and personalized itineraries to immersive cultural touchpoints ensuring every journey feels like a once-in-a-lifetime story.",
 			],
-			imageSrc: "/Family Travel.jpg",
 		},
 		{
 			id: "corporate-travel",
@@ -220,7 +217,6 @@ export const travelPageData: ServicePageData = {
 			content: [
 				"For enterprises and executives, Kraftz curates travel experiences that balance efficiency with elegance. We offer corporate travel management, executive retreats, and leadership off-sites designed for productivity, comfort, and prestige.",
 			],
-			imageSrc: "/Corporate travel.jpg",
 		},
 		{
 			id: "ultra-luxury-lifestyle",
@@ -228,7 +224,6 @@ export const travelPageData: ServicePageData = {
 			content: [
 				"We open doors to the extraordinary private jets, yacht charters, and world-class hospitality experiences. Kraftz partners with global luxury brands to provide bespoke lifestyle experiences that redefine exclusivity for HNIs.",
 			],
-			imageSrc: "/Ultra-Luxury.jpg",
 		},
 		{
 			id: "cultural-experiential-journeys",
@@ -236,7 +231,6 @@ export const travelPageData: ServicePageData = {
 			content: [
 				"Travel is transformation. Our cultural journeys connect travelers with local traditions, gastronomy, art, and heritage. Whether it's a tea ceremony in Kyoto, desert safari in Abu Dhabi, or vineyard retreat in Tuscany, Kraftz turns every destination into a living story.",
 			],
-			imageSrc: "/Cultural.jpg",
 		},
 	],
 };

@@ -1,7 +1,7 @@
 "use client";
 
 import ServicesHero from "@/components/services/hero";
-import { VisualSection } from "@/components/services/visual-section";
+import { DigitalMarketingEditorial } from "@/components/services/digital-marketing-editorial";
 import ConnectCTA from "@/components/common/connect-cta";
 import { digitalMarketingPageData } from "@/lib/config/services-pages";
 
@@ -14,16 +14,7 @@ function DigitalMarketingPageClient() {
 				imageSrc={digitalMarketingPageData.imageSrc}
 				description={digitalMarketingPageData.description}
 			/>
-			{digitalMarketingPageData.sections.map((section, index) => (
-				<VisualSection
-					key={section.id}
-					id={section.id}
-					title={section.title}
-					content={section.content}
-					imageSrc={section.imageSrc}
-					index={index}
-				/>
-			))}
+			<DigitalMarketingEditorial sections={digitalMarketingPageData.sections} />
 			<ConnectCTA />
 		</>
 	);
