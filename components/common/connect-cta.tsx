@@ -11,7 +11,7 @@ function ConnectCTA({
 	message = "Every hotel has untapped potential. Let's unlock yours - with strategy, precision, and imagination.",
 }: ConnectCTAProps) {
 	return (
-		<section className="relative px-8 md:px-16 lg:px-28 py-4 md:py-6 bg-background text-center">
+		<section className="relative px-2 md:px-3 py-4 md:py-6 bg-background text-center">
 			<div className="relative z-10">
 				<div className="max-w-3xl mx-auto mb-4">
 					{/* Decorative quotation marks */}

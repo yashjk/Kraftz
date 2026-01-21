@@ -3,9 +3,14 @@
 import { useState } from "react";
 import { motion } from "framer-motion";
 import { Sparkles, X, Mail, Phone } from "lucide-react";
-import { Dialog, DialogContent } from "@/components/ui/dialog";
+import { Dialog, DialogContent, DialogTitle } from "@/components/ui/dialog";
 import { contactInfo } from "@/lib/data";
 import { cn } from "@/lib/utils";
+
+const MotionButton = motion.create("button");
+const MotionDiv = motion.create("div");
+const MotionA = motion.create("a");
+const MotionSpan = motion.create("span");
 
 export function GetFreeAuditButton() {
 	const [isOpen, setIsOpen] = useState(false);
@@ -13,28 +18,54 @@ export function GetFreeAuditButton() {
 	return (
 		<>
 			{/* Floating Button */}
-			<motion.button
+			<MotionButton
 				onClick={() => setIsOpen(true)}
-				className="fixed bottom-6 right-6 z-50 flex items-center gap-2 bg-gradient-to-r from-[#0249A7] to-[#0c5ed9] hover:from-[#033d85] hover:to-[#0a4fb8] text-white px-4 py-2 rounded-full shadow-lg hover:shadow-xl transition-all duration-300 group"
-				whileHover={{ scale: 1.05 }}
+				className="fixed bottom-6 right-6 z-50 flex items-center gap-3 bg-gradient-to-r from-[#0249A7] to-[#0c5ed9] hover:from-[#033d85] hover:to-[#0a4fb8] text-white px-6 py-3 rounded-full shadow-lg hover:shadow-xl transition-all duration-300 group"
+				whileHover={{ scale: 1.08 }}
 				whileTap={{ scale: 0.95 }}
-				initial={{ opacity: 0, y: 20 }}
-				animate={{ opacity: 1, y: 0 }}
-				transition={{ delay: 1 }}
+				animate={{
+					scale: [1, 1.12, 1],
+					boxShadow: [
+						"0 10px 25px rgba(2, 73, 167, 0.3)",
+						"0 15px 35px rgba(2, 73, 167, 0.5)",
+						"0 10px 25px rgba(2, 73, 167, 0.3)",
+					],
+				}}
+				transition={{
+					duration: 1.5,
+					repeat: Infinity,
+					repeatType: "reverse",
+					ease: [0.4, 0, 0.6, 1],
+				}}
 			>
-				<Sparkles className="w-4 h-4 group-hover:rotate-12 transition-transform" />
-				<span className="font-semibold text-sm">Get Free Audit</span>
-			</motion.button>
+				<MotionSpan
+					animate={{
+						scale: [1, 1.2, 1],
+						rotate: [0, 12, 0],
+					}}
+					transition={{
+						duration: 1.5,
+						repeat: Infinity,
+						repeatType: "reverse",
+						ease: [0.4, 0, 0.6, 1],
+					}}
+					className="inline-block"
+				>
+					<Sparkles className="w-6 h-6" />
+				</MotionSpan>
+				<span className="font-semibold text-lg">Get Free Audit</span>
+			</MotionButton>
 
 			{/* Contact Dialog */}
 			<Dialog open={isOpen} onOpenChange={setIsOpen}>
 				<DialogContent
-					className="sm:max-w-[600px] p-0 gap-0 overflow-hidden"
+					className="sm:max-w-[600px] p-0 gap-0 overflow-hidden data-[state=open]:zoom-in-90 data-[state=closed]:zoom-out-90 duration-300 shadow-xl"
 					showCloseButton={false}
 				>
-					<motion.div
-						initial={{ opacity: 0, scale: 0.9 }}
+					<MotionDiv
+						initial={{ opacity: 0, scale: 0.88 }}
 						animate={{ opacity: 1, scale: 1 }}
+						transition={{ type: "spring", stiffness: 420, damping: 24 }}
 						className="relative"
 					>
 						{/* Header */}
@@ -56,9 +87,9 @@ export function GetFreeAuditButton() {
 										<Sparkles className="w-6 h-6 text-[#FF7A18]" />
 									</div>
 									<div>
-										<h2 className="typ-section-title text-white mb-1">
+										<DialogTitle className="typ-section-title text-white mb-1">
 											Get Free Audit
-										</h2>
+										</DialogTitle>
 										<p className="typ-body text-white/80 text-sm">
 											Connect with the Kraftz team
 										</p>
@@ -68,9 +99,14 @@ export function GetFreeAuditButton() {
 						</div>
 
 						{/* Contact Information */}
-						<div className="p-6 md:p-8 bg-background space-y-6">
+						<MotionDiv
+							initial={{ opacity: 0, y: 8 }}
+							animate={{ opacity: 1, y: 0 }}
+							transition={{ delay: 0.1, duration: 0.28, ease: [0.25, 0.46, 0.45, 0.94] }}
+							className="p-6 md:p-8 bg-background space-y-6"
+						>
 							{/* Email */}
-							<motion.a
+							<MotionA
 								href={`mailto:${contactInfo.email}`}
 								className="group flex items-start gap-4 p-4 rounded-xl border border-border hover:border-primary/50 hover:bg-primary/5 transition-all"
 								whileHover={{ x: 4 }}
@@ -86,7 +122,7 @@ export function GetFreeAuditButton() {
 										{contactInfo.email}
 									</div>
 								</div>
-							</motion.a>
+							</MotionA>
 
 							{/* Phone Numbers */}
 							<div className="p-4 rounded-xl border border-border">
@@ -99,33 +135,42 @@ export function GetFreeAuditButton() {
 											Phone
 										</div>
 										<div className="space-y-2">
-											<motion.a
+											<MotionA
 												href={`tel:${contactInfo.phone_uae.replace(/\s/g, "")}`}
 												className="block typ-body text-muted-foreground hover:text-primary transition-colors"
 												whileHover={{ x: 4 }}
 											>
-												{contactInfo.phone_uae} <span className="text-xs">(UAE)</span>
-											</motion.a>
-											<motion.a
-												href={`tel:${contactInfo.phone_ind_1.replace(/\s/g, "")}`}
+												{contactInfo.phone_uae}{" "}
+												<span className="text-xs">(UAE)</span>
+											</MotionA>
+											<MotionA
+												href={`tel:${contactInfo.phone_ind_2.replace(
+													/\s/g,
+													""
+												)}`}
 												className="block typ-body text-muted-foreground hover:text-primary transition-colors"
 												whileHover={{ x: 4 }}
 											>
-												{contactInfo.phone_ind_1} <span className="text-xs">(India)</span>
-											</motion.a>
-											<motion.a
-												href={`tel:${contactInfo.phone_ind_2.replace(/\s/g, "")}`}
+												{contactInfo.phone_ind_2}{" "}
+												<span className="text-xs">(India)</span>
+											</MotionA>
+											<MotionA
+												href={`tel:${contactInfo.phone_ind_1.replace(
+													/\s/g,
+													""
+												)}`}
 												className="block typ-body text-muted-foreground hover:text-primary transition-colors"
 												whileHover={{ x: 4 }}
 											>
-												{contactInfo.phone_ind_2} <span className="text-xs">(India)</span>
-											</motion.a>
+												{contactInfo.phone_ind_1}{" "}
+												<span className="text-xs">(India)</span>
+											</MotionA>
 										</div>
 									</div>
 								</div>
 							</div>
-						</div>
-					</motion.div>
+						</MotionDiv>
+					</MotionDiv>
 				</DialogContent>
 			</Dialog>
 		</>

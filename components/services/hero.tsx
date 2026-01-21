@@ -11,7 +11,13 @@ interface ServicesHeroProps {
 	children?: ReactNode;
 	imageSrc?: string;
 	backgroundPosition?: string;
+	showOverlay?: boolean;
+	centerText?: boolean;
+	textShadow?: boolean;
 }
+
+const titleShadow = "2px 2px 8px rgba(0, 0, 0, 0.8), 0 0 20px rgba(0, 0, 0, 0.5)";
+const bodyShadow = "1px 1px 4px rgba(0, 0, 0, 0.8), 0 0 10px rgba(0, 0, 0, 0.5)";
 
 function ServicesHero({
 	title,
@@ -20,6 +26,9 @@ function ServicesHero({
 	children,
 	imageSrc = "/hero1.jpg",
 	backgroundPosition = "right top",
+	showOverlay = true,
+	centerText = false,
+	textShadow = false,
 }: ServicesHeroProps) {
 	return (
 		<section
@@ -29,11 +38,12 @@ function ServicesHero({
 				backgroundColor: "#0a0a0a",
 				backgroundPosition: backgroundPosition,
 				backgroundAttachment: "fixed",
-				height: "70vh",
+				height: "80vh",
 			}}
 		>
-			{/* Dark overlay */}
-			<div className="absolute inset-0 bg-[#2a1f1a]/60 z-0" />
+			{showOverlay && (
+				<div className="absolute inset-0 bg-[#2a1f1a]/60 z-0" aria-hidden="true" />
+			)}
 
 			{/* Background decorations - matching main hero style */}
 			<div className="absolute inset-0 overflow-hidden z-1">
@@ -43,11 +53,16 @@ function ServicesHero({
 			</div>
 
 			{/* Content */}
-			<div className="relative h-full px-6 md:px-10 lg:px-12 z-10 flex items-center">
-				<div className="max-w-5xl mx-auto w-full">
+			<div className="relative h-full px-10 z-10 flex items-center">
+				<div className="w-full">
 					<div className="items-center">
 						{/* Text Content */}
-						<div className="text-center lg:text-left space-y-6">
+						<div
+							className={cn(
+								"space-y-6",
+								centerText ? "text-center" : "text-center lg:text-left"
+							)}
+						>
 							{/* Category Badge */}
 
 							{/* Title */}
@@ -58,8 +73,9 @@ function ServicesHero({
 										"flex items-center justify-center gap-2 px-2"
 									)}
 									style={{
-										textShadow:
-											"2px 2px 8px rgba(0, 0, 0, 0.5), 0 0 20px rgba(0, 0, 0, 0.3)",
+										textShadow: textShadow
+											? titleShadow
+											: "2px 2px 8px rgba(0, 0, 0, 0.5), 0 0 20px rgba(0, 0, 0, 0.3)",
 									}}
 								>
 									<img
@@ -82,8 +98,9 @@ function ServicesHero({
 							<p
 								className="typ-body text-white"
 								style={{
-									textShadow:
-										"1px 1px 4px rgba(0, 0, 0, 0.5), 0 0 10px rgba(0, 0, 0, 0.3)",
+									textShadow: textShadow
+										? bodyShadow
+										: "1px 1px 4px rgba(0, 0, 0, 0.5), 0 0 10px rgba(0, 0, 0, 0.3)",
 								}}
 							>
 								{description}

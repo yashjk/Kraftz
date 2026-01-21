@@ -2,7 +2,7 @@ export const heroContent = {
 	tagline: "Krafting Growth Intelligently…",
 	subline:
 		"At Kraftz, we provide end-to-end hospitality and travel solutions, all designed to elevate performance and accelerate growth.",
-	backgroundImage: "/hero1.jpeg",
+	backgroundImage: "/hero1.jpg",
 	backgroundPosition: "center 25%",
 };
 

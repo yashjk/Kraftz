@@ -18,8 +18,7 @@ function Footer() {
 				<div className="mx-auto flex max-w-5xl flex-col items-center gap-5 px-4 py-7 text-center sm:px-6">
 					<Logo />
 					<p className="typ-body text-muted-foreground max-w-md">
-						Krafting growth intelligently across hospitality, digital marketing,
-						and travel.
+          Krafted by Experts. Designed for Hotel Growth.
 					</p>
 					<div className="flex flex-wrap justify-center gap-12 text-xs md:text-sm uppercase tracking-[0.3em] text-muted-foreground">
 						{services.map((service) => (
@@ -55,7 +54,7 @@ function Footer() {
 					</div>
 				</div>
 
-				<div className="border-t border-border px-4 py-3 text-center text-xs md:text-sm text-muted-foreground sm:px-6">
+				<div className="border-t border-border px-4 py-3 text-center text-xs md:text-md text-muted-foreground sm:px-6">
 					<div className="mx-auto flex max-w-5xl flex-col items-center gap-2 sm:flex-row sm:justify-between">
 						<p>
 							© {new Date().getFullYear()} KRAFTz Hospitality and Travel
