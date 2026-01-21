@@ -12,7 +12,6 @@ interface ServicesHeroProps {
 	imageSrc?: string;
 	backgroundPosition?: string;
 	showOverlay?: boolean;
-	centerText?: boolean;
 	textShadow?: boolean;
 }
 
@@ -27,7 +26,6 @@ function ServicesHero({
 	imageSrc = "/hero1.jpg",
 	backgroundPosition = "right top",
 	showOverlay = true,
-	centerText = false,
 	textShadow = false,
 }: ServicesHeroProps) {
 	return (
@@ -53,16 +51,11 @@ function ServicesHero({
 			</div>
 
 			{/* Content */}
-			<div className="relative h-full px-10 z-10 flex items-center">
+			<div className="relative h-full px-4 z-10 flex items-center">
 				<div className="w-full">
 					<div className="items-center">
 						{/* Text Content */}
-						<div
-							className={cn(
-								"space-y-6",
-								centerText ? "text-center" : "text-center lg:text-left"
-							)}
-						>
+						<div className="space-y-6 text-center">
 							{/* Category Badge */}
 
 							{/* Title */}

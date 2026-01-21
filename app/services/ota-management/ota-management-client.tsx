@@ -15,7 +15,6 @@ function OTAManagementPageClient() {
 				imageSrc={otaManagementPageData.imageSrc}
 				backgroundPosition={otaManagementPageData.backgroundPosition}
 				description={otaManagementPageData.heroMessage || ""}
-				centerText
 				textShadow
 			>
 				<motion.p

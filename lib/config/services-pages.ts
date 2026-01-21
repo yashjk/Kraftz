@@ -210,7 +210,6 @@ export const travelPageData: ServicePageData = {
 			content: [
 				"From hidden retreats to desert escapes, Kraftz designs meaningful journeys for individuals and families. From private villas and personalized itineraries to immersive cultural touchpoints ensuring every journey feels like a once-in-a-lifetime story.",
 			],
-			imageSrc: "/Family Travel.jpg",
 		},
 		{
 			id: "corporate-travel",
@@ -218,7 +217,6 @@ export const travelPageData: ServicePageData = {
 			content: [
 				"For enterprises and executives, Kraftz curates travel experiences that balance efficiency with elegance. We offer corporate travel management, executive retreats, and leadership off-sites designed for productivity, comfort, and prestige.",
 			],
-			imageSrc: "/Corporate travel.jpg",
 		},
 		{
 			id: "ultra-luxury-lifestyle",
@@ -226,7 +224,6 @@ export const travelPageData: ServicePageData = {
 			content: [
 				"We open doors to the extraordinary private jets, yacht charters, and world-class hospitality experiences. Kraftz partners with global luxury brands to provide bespoke lifestyle experiences that redefine exclusivity for HNIs.",
 			],
-			imageSrc: "/Ultra-Luxury.jpg",
 		},
 		{
 			id: "cultural-experiential-journeys",
@@ -234,7 +231,6 @@ export const travelPageData: ServicePageData = {
 			content: [
 				"Travel is transformation. Our cultural journeys connect travelers with local traditions, gastronomy, art, and heritage. Whether it's a tea ceremony in Kyoto, desert safari in Abu Dhabi, or vineyard retreat in Tuscany, Kraftz turns every destination into a living story.",
 			],
-			imageSrc: "/Cultural.jpg",
 		},
 	],
 };
